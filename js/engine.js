@@ -33,7 +33,7 @@ class Engine {
 var engine = new Engine();
 
 function randomize() {
-    document.getElementById('survivor-portrait').style.backgroundImage = "url('img/portraits/survivors/" + engine.getRandomSurvivor() + ".png')";
+    document.getElementById('portrait').style.backgroundImage = "url('img/portraits/survivors/" + engine.getRandomSurvivor() + ".png')";
 
     engine.getSurvivorRandomPerks().forEach(function(perk, i) {
         document.getElementsByClassName('perk')[i].style.backgroundImage = "url('img/perks/survivor/" + perk + ".png')";
