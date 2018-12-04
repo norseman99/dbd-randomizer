@@ -1,3 +1,8 @@
+.randomizer {
+    width: 1200px;
+    background-color: #000000;
+}
+
 #survivor-portrait {
     background-color: yellow;
     width: 350px;
@@ -15,7 +20,8 @@
 
 .perk {
     background-color: aqua;
-    width: 100px;
+    width: 256px;
+    height: 256px;
     float: left;
 }
 

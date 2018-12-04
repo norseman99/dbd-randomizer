@@ -4,24 +4,40 @@ const SURVIVORS = [ "dwight",  "meg", "claudette", "jake", "nea", "bill", "david
 class Engine {
 
     getRandomSurvivor() {
-        return SURVIVORS[this.getRandomNumberBetween(0, SURVIVORS.length - 1)];
+        return SURVIVORS[this._getRandomNumberBetween(0, SURVIVORS.length - 1)];
     }
 
-    getRandomNumberBetween(min, max) {
-        let result = Math.floor(Math.random() * (max - min) + min);
+    getSurvivorRandomPerks(){
+        return this._getRandomNumbersBetween(4, 1, 58);
+    }
+
+    _getRandomNumbersBetween(quantity, min, max) {
+        var result = [];
+
+        while (result.length < quantity) {
+            var number = this._getRandomNumberBetween(1, 58);
+
+            if(!result.includes(number)) {
+                result.push(number);
+            }
+        }
 
         return result;
     }
 
-    randomize() {
-        return this.getRandomSurvivor();
+    _getRandomNumberBetween(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
     }
 }
 
 var engine = new Engine();
 
 function randomize() {
-    document.getElementById('survivor-portrait').style.backgroundImage = "url('img/portraits/survivors/" + engine.randomize() + ".png')";;
+    document.getElementById('survivor-portrait').style.backgroundImage = "url('img/portraits/survivors/" + engine.getRandomSurvivor() + ".png')";
+
+    engine.getSurvivorRandomPerks().forEach(function(perk, i) {
+        document.getElementsByClassName('perk')[i].style.backgroundImage = "url('img/perks/survivor/" + perk + ".png')";
+    });
 }
 
 window.onload = function() {
