@@ -1,0 +1,24 @@
+#survivor-portrait {
+    background-color: yellow;
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+
+.survivor-items {
+    background-color: violet;
+}
+
+.survivor-perks {
+    background-color: lightcoral;
+}
+
+.perk {
+    background-color: aqua;
+    width: 100px;
+    float: left;
+}
+
+.controls {
+    clear: right;
+}
