@@ -79,10 +79,21 @@ function randomize() {
     });
 }
 
-window.onload = function() {
-    randomize();
-
+function registerEvents() {
     document.getElementById('randomize').addEventListener("click", function () {
         randomize();
     });
+
+    Array.prototype.forEach.call(document.getElementsByClassName('perk'),function(element) {
+            element.addEventListener('click', function () {
+                let lockElement = this.children[0];
+                lockElement.style.visibility = (lockElement.style.visibility == 'hidden' ? 'visible' : 'hidden');
+            })
+    });
+}
+
+
+window.onload = function() {
+    randomize();
+    registerEvents();
 };

@@ -85,6 +85,15 @@
     float: left;
 }
 
+.perk .perk-lock {
+    background-image: url("../img/misc/locked.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
 #controls {
     background-color: brown;
 }
