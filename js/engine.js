@@ -1,4 +1,4 @@
-const SURVIVORS = [ "dwight",  "meg", "claudette", "jake", "nea", "billy", "david", "laurie", "ace", "feng", "quentin",
+const SURVIVORS = [ "dwight",  "meg", "claudette", "jake", "nea", "bill", "david", "laurie", "ace", "feng", "quentin",
     "tapp", "kate", "francis" ];
 
 class Engine {
@@ -20,8 +20,14 @@ class Engine {
 
 var engine = new Engine();
 
+function randomize() {
+    document.getElementById('survivor-portrait').style.backgroundImage = "url('img/portraits/survivors/" + engine.randomize() + ".png')";;
+}
+
 window.onload = function() {
+    randomize();
+
     document.getElementById('randomize').addEventListener("click", function (ev) {
-        document.getElementById('survivor-portrait').innerHTML = engine.randomize();
+        randomize();
     });
 }
