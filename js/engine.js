@@ -6,6 +6,18 @@ const KILLERS = [ "clown",  "doctor", "freddy", "hag", "hillbilly", "huntress", 
 
 const ROLES = [ "killer", "survivor" ];
 
+class UrlBuilder {
+
+    static buildCharacterPortraitPath(role, character) {
+        return "url('img/portraits/" + role + "/" + character + ".png')"
+    }
+
+    static buildPerkPath(role, perk) {
+        return "url('img/perks/" + role + "/" + perk + ".png')";
+    }
+
+}
+
 class Engine {
 
     pickRandomRole() {
@@ -60,10 +72,10 @@ function randomize() {
 
     document.getElementById("title").innerText = role;
 
-    document.getElementById('portrait').style.backgroundImage = "url('img/portraits/" + role + "/" + engine.pickRandomCharacter(role) + ".png')";
+    document.getElementById('portrait').style.backgroundImage = UrlBuilder.buildCharacterPortraitPath(role, engine.pickRandomCharacter(role));
 
     engine.pickRandomPerks(role).forEach(function(perk, i) {
-        document.getElementsByClassName('perk')[i].style.backgroundImage = "url('img/perks/" + role + "/" + perk + ".png')";
+        document.getElementsByClassName('perk')[i].style.backgroundImage = UrlBuilder.buildPerkPath(role, perk);
     });
 }
 

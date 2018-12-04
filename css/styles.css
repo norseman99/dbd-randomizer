@@ -10,6 +10,7 @@
 
 #portrait {
     background-color: yellow;
+    background-position: center;
     width: 300px;
     height: 350px;
     float: left;
@@ -77,6 +78,7 @@
 
 .perk {
     background-color: aqua;
+    background-position: center;
     border: 1px solid black;
     width: 223px;
     height: 225px;
