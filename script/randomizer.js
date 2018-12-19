@@ -1,7 +1,7 @@
 let randomizer = new Engine();
 let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer);
 let uiHandler = new RandomizerUiHandler(slotMachineEngine);
-let uiPerkGenerator = new RandomizerUiPerkGenerator();
+let uiGenerator = new RandomizerUiGenerator();
 
 function init() {
     let role = randomizer.pickRandomRole();
@@ -9,7 +9,7 @@ function init() {
     uiHandler.updateTitle(role);
     uiHandler.updateCharacterProtrait(role);
 
-    uiPerkGenerator.init();
+    uiGenerator.init();
     uiHandler.init();
     slotMachineEngine.init();
 }

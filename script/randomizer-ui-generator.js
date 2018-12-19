@@ -1,13 +1,21 @@
-class RandomizerUiPerkGenerator {
+class RandomizerUiGenerator {
 
     init() {
-        let _self = this;
+        this._generatePortraitElements();
+        this._generatePerkElements();
+    }
 
+    _generatePerkElements() {
+        let _self = this;
         $('.perk-slot').each(function () {
             for (let i = 1; i <= 58; i++) {
                 $(this).append(_self._createDivElement(i));
             }
         })
+    }
+
+    _generatePortraitElements() {
+
     }
 
     _createDivElement(n) {
