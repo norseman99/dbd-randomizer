@@ -12,10 +12,13 @@ class UrlBuilder {
         return "url('img/portraits/" + role + "/" + character + ".png')"
     }
 
-    static buildPerkPath(role, perk) {
-        return "url('img/perks/" + role + "/" + perk + ".png')";
+    static buildCssPerkPath(role, perk) {
+        return "url(" + this.buildPerkPath(role, perk) + ")";
     }
 
+    static buildPerkPath(role, perk) {
+        return "img/perks/" + role + "/" + perk + ".png";
+    }
 }
 
 class Engine {
@@ -74,24 +77,71 @@ function randomize() {
 
     $('#portrait').css('backgroundImage', UrlBuilder.buildCharacterPortraitPath(role, engine.pickRandomCharacter(role)));
 
-    engine.pickRandomPerks(role).forEach(function(perk, i) {
-        $('.perk').eq(i).css('backgroundImage', UrlBuilder.buildPerkPath(role, perk));
-    });
+    /*engine.pickRandomPerks(role).forEach(function(perk, i) {
+        $('.perk').eq(i).css('backgroundImage', UrlBuilder.buildCssPerkPath(role, perk));
+    });*/
 }
 
 function registerEvents() {
-    $('#randomize').on("click", function () {
-        randomize();
-    });
-
     $('.perk').on('click',function () {
         let lockElement = this.children[0];
         lockElement.style.visibility = (lockElement.style.visibility == 'hidden' ? 'visible' : 'hidden');
     });
 }
 
+function generatePerks() {
+
+    $('.perk-slot').each(function () {
+        for (let i = 1; i <= 58; i++) {
+
+            let img = document.createElement('img');
+            $(img).addClass('perk-img').attr('src', UrlBuilder.buildPerkPath(ROLES[1], i)).attr('height', 225).attr('width', 225);
+
+            let div = document.createElement('div');
+            $(div).addClass('perk-div').append(img);
+
+            $(this).append(div);
+        }
+    })
+
+    let p1 = document.querySelector('#perk-slot1');
+    const mCasino1 = new SlotMachine(p1, {
+        active: 1,
+        delay: 3000,
+        spins: 1
+    });
+
+    let p2 = document.querySelector('#perk-slot2');
+    const mCasino2 = new SlotMachine(p2, {
+        active: 2,
+        delay: 3000,
+        spins: 1
+    });
+
+    let p3 = document.querySelector('#perk-slot3');
+    const mCasino3 = new SlotMachine(p3, {
+        active: 3,
+        delay: 3000,
+        spins: 1
+    });
+
+    let p4 = document.querySelector('#perk-slot4');
+    const mCasino4 = new SlotMachine(p4, {
+        active: 4,
+        delay: 3000,
+        spins: 1
+    });
+
+    $('#randomize').on("click", function () {
+        mCasino1.shuffle();
+        mCasino2.shuffle();
+        mCasino3.shuffle();
+        mCasino4.shuffle();
+    });
+}
 
 $(function() {
     randomize();
     registerEvents();
+    generatePerks();
 });

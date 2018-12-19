@@ -76,13 +76,19 @@
     overflow: hidden;
 }
 
-.perk {
+.perk-slot {
     background-color: aqua;
     background-position: center;
     border: 1px solid black;
     width: 223px;
     height: 225px;
     float: left;
+    margin: 0px;
+}
+
+.perk-slot::before,
+.perk-slot::after {
+    box-sizing: border-box;
 }
 
 .perk .perk-lock {
