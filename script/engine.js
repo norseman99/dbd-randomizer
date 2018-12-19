@@ -68,80 +68,97 @@ class Engine {
     }
 }
 
-let engine = new Engine();
+class SlotMachineEngine {
 
-function randomize() {
+    constructor() {
+        this.slotMachines = [];
+    }
+
+    init() {
+        let _self = this;
+
+        this.slotMachines.push(this._registerSlotMachine('#perk-slot1', 1));
+        this.slotMachines.push(this._registerSlotMachine('#perk-slot2', 2));
+        this.slotMachines.push(this._registerSlotMachine('#perk-slot3', 3));
+        this.slotMachines.push(this._registerSlotMachine('#perk-slot4', 4));
+
+        $('#randomize').on("click", function () {
+            _self.slotMachines.forEach(function (slotMachine) {
+                slotMachine.shuffle();
+            });
+        });
+    }
+
+    _registerSlotMachine(selector, active) {
+        return new SlotMachine(document.querySelector(selector), {
+            active: active,
+            delay: 500,
+            spins: 5
+        });
+    }
+}
+
+class UIHandler {
+
+    updateTitle(role) {
+        $("#title").html(role);
+    }
+
+    updateCharacterProtrait(role) {
+        $('#portrait').css('backgroundImage', UrlBuilder.buildCharacterPortraitPath(role, engine.pickRandomCharacter(role)));
+    }
+
+    registerPerkLock() {
+        $('.perk').on('click',function () {
+            let lockElement = this.children[0];
+            lockElement.style.visibility = (lockElement.style.visibility == 'hidden' ? 'visible' : 'hidden');
+        });
+    }
+}
+
+class UIPerkGenerator {
+
+    init() {
+        let _self = this;
+
+        $('.perk-slot').each(function () {
+            for (let i = 1; i <= 58; i++) {
+                $(this).append(_self._createDivElement(_self._createImgElement(i)));
+            }
+        })
+    }
+
+    _createImgElement(n) {
+        let img = document.createElement('img');
+
+        $(img).addClass('perk-img').attr('src', UrlBuilder.buildPerkPath(ROLES[1], n))
+            .attr('height', 225).attr('width', 225);
+
+        return img;
+    }
+
+    _createDivElement(img) {
+        let div = document.createElement('div');
+        $(div).addClass('perk-div').append(img);
+        return div;
+    }
+}
+
+let engine = new Engine();
+let uiHandler = new UIHandler();
+let uiPerkGenerator = new UIPerkGenerator();
+let slotMachineEngine = new SlotMachineEngine();
+
+function init() {
     let role = engine.pickRandomRole();
 
-    $("#title").html(role);
-
-    $('#portrait').css('backgroundImage', UrlBuilder.buildCharacterPortraitPath(role, engine.pickRandomCharacter(role)));
-
-    /*engine.pickRandomPerks(role).forEach(function(perk, i) {
-        $('.perk').eq(i).css('backgroundImage', UrlBuilder.buildCssPerkPath(role, perk));
-    });*/
-}
-
-function registerEvents() {
-    $('.perk').on('click',function () {
-        let lockElement = this.children[0];
-        lockElement.style.visibility = (lockElement.style.visibility == 'hidden' ? 'visible' : 'hidden');
-    });
-}
-
-function generatePerks() {
-
-    $('.perk-slot').each(function () {
-        for (let i = 1; i <= 58; i++) {
-
-            let img = document.createElement('img');
-            $(img).addClass('perk-img').attr('src', UrlBuilder.buildPerkPath(ROLES[1], i)).attr('height', 225).attr('width', 225);
-
-            let div = document.createElement('div');
-            $(div).addClass('perk-div').append(img);
-
-            $(this).append(div);
-        }
-    })
-
-    let p1 = document.querySelector('#perk-slot1');
-    const mCasino1 = new SlotMachine(p1, {
-        active: 1,
-        delay: 3000,
-        spins: 1
-    });
-
-    let p2 = document.querySelector('#perk-slot2');
-    const mCasino2 = new SlotMachine(p2, {
-        active: 2,
-        delay: 3000,
-        spins: 1
-    });
-
-    let p3 = document.querySelector('#perk-slot3');
-    const mCasino3 = new SlotMachine(p3, {
-        active: 3,
-        delay: 3000,
-        spins: 1
-    });
-
-    let p4 = document.querySelector('#perk-slot4');
-    const mCasino4 = new SlotMachine(p4, {
-        active: 4,
-        delay: 3000,
-        spins: 1
-    });
-
-    $('#randomize').on("click", function () {
-        mCasino1.shuffle();
-        mCasino2.shuffle();
-        mCasino3.shuffle();
-        mCasino4.shuffle();
-    });
+    uiHandler.updateTitle(role);
+    uiHandler.updateCharacterProtrait(role);
 }
 
 $(function() {
-    randomize();
-    registerEvents();
-    generatePerks();
+    uiPerkGenerator.init();
+    slotMachineEngine.init();
+
+    init();
 });
