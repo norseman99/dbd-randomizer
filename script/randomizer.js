@@ -1,5 +1,5 @@
 let randomizer = new Engine();
-let slotMachineEngine = new RandomizerSlotMachineEngine();
+let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer);
 let uiHandler = new RandomizerUiHandler(slotMachineEngine);
 let uiPerkGenerator = new RandomizerUiPerkGenerator();
 

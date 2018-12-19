@@ -1,7 +1,8 @@
 class RandomizerSlotMachineEngine {
 
-    constructor() {
+    constructor(engine) {
         this.slotMachines = [];
+        this.engine = engine;
     }
 
     init() {
@@ -19,9 +20,15 @@ class RandomizerSlotMachineEngine {
         });
     }
 
-    shuffle() {
+    randomize() {
+        let role = this.engine.pickRandomRole();
+
         this.slotMachines.forEach(function (slotMachine) {
             slotMachine.shuffle();
         });
+
+        return {
+            role: role
+        };
     }
 }
