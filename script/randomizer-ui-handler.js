@@ -1,31 +1,37 @@
 class RandomizerUiHandler {
 
-    constructor(engine, slotMachineEngine) {
-        this.slotMachineEngine = slotMachineEngine;
+    init(slotMachineEngine) {
+        this._registerRandomizeEvent(slotMachineEngine);
     }
 
-    init() {
-        this._registerRandomizeEvent();
-    }
-
-    randomize() {
-        this.updateTitle("The wheel is turning...")
-
-        let result = slotMachineEngine.randomize();
-
-        let self = this;
-        setTimeout(function () {
-            self.updateTitle(result.role);
-        }, 1000);
-
+    updateUI(role) {
+        this.updateTitle(role);
+        this._enableRole(role);
     }
 
     updateTitle(message) {
         $("#title").html(message);
     }
 
-    updateCharacterProtrait(role) {
-        $('#portrait').css('backgroundImage', RandomizerUrlBuilder.buildCharacterPortraitPath(role, randomizer.pickRandomCharacter(role)));
+    enableButtons() {
+        $('#randomize').attr('disabled', false);
+    }
+
+    _enableRole(role) {
+        let killersDisplay = 'none';
+        let survivorsDisplay = 'none';
+
+        switch(role) {
+            case ROLES[0]:
+                killersDisplay = '';
+                break;
+            case ROLES[1]:
+                survivorsDisplay = '';
+                break;
+        }
+
+        $('#killers').css('display', killersDisplay);
+        $('#survivors').css('display', survivorsDisplay);
     }
 
     _registerPerkLock() {
@@ -35,11 +41,11 @@ class RandomizerUiHandler {
         });
     }
 
-    _registerRandomizeEvent() {
-        let self = this;
-
+    _registerRandomizeEvent(slotMachineEngine) {
         $('#randomize').on("click", function () {
-            self.randomize();
+            $(this).attr('disabled', true);
+
+            slotMachineEngine.randomize();
         });
     }
 }

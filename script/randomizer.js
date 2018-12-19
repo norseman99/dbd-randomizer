@@ -1,15 +1,15 @@
 let randomizer = new Engine();
-let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer);
-let uiHandler = new RandomizerUiHandler(slotMachineEngine);
+let uiHandler = new RandomizerUiHandler();
+let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer, uiHandler);
 let uiGenerator = new RandomizerUiGenerator();
 
 function init() {
     let role = randomizer.pickRandomRole();
 
-    uiHandler.updateTitle(role);
+    uiHandler.updateUI(role);
 
     uiGenerator.init();
-    uiHandler.init();
+    uiHandler.init(slotMachineEngine);
     slotMachineEngine.init();
 }
 

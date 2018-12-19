@@ -1,7 +1,8 @@
 class RandomizerUiGenerator {
 
     init() {
-        this._generatePortraitElements();
+        this._generateKillerPortraitElements();
+        this._generateSurvivorPortraitElements();
         this._generatePerkElements();
     }
 
@@ -14,12 +15,20 @@ class RandomizerUiGenerator {
         })
     }
 
-    _generatePortraitElements() {
+    _generateKillerPortraitElements() {
+        this._generatePortraitElements('#killers', 'killer', ROLES[0], KILLERS);
+    }
+
+    _generateSurvivorPortraitElements() {
+        this._generatePortraitElements('#survivors', 'survivor', ROLES[1], SURVIVORS);
+    }
+
+    _generatePortraitElements(selector, className, role, characters) {
         let _self = this;
-        $('#portrait').each(function () {
+        $(selector).each(function () {
             let portrait = this;
-            KILLERS.forEach(function (character) {
-                $(portrait).append(_self._createDivElement('killer', RandomizerUrlBuilder.buildCharacterPortraitPath(ROLES[0], character)));
+            characters.forEach(function (character) {
+                $(portrait).append(_self._createDivElement(className, RandomizerUrlBuilder.buildCharacterPortraitPath(role, character)));
             });
         })
     }
