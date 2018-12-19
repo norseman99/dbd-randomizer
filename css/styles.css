@@ -91,6 +91,13 @@
     box-sizing: border-box;
 }
 
+.perk {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 225px;
+    height: 225px;
+}
+
 .perk .perk-lock {
     background-image: url("../img/misc/locked.png");
     background-repeat: no-repeat;

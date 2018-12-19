@@ -5,23 +5,14 @@ class RandomizerUiPerkGenerator {
 
         $('.perk-slot').each(function () {
             for (let i = 1; i <= 58; i++) {
-                $(this).append(_self._createDivElement(_self._createImgElement(i)));
+                $(this).append(_self._createDivElement(i));
             }
         })
     }
 
-    _createImgElement(n) {
-        let img = document.createElement('img');
-
-        $(img).addClass('perk-img').attr('src', RandomizerUrlBuilder.buildPerkPath(ROLES[1], n))
-            .attr('height', 225).attr('width', 225);
-
-        return img;
-    }
-
-    _createDivElement(img) {
+    _createDivElement(n) {
         let div = document.createElement('div');
-        $(div).addClass('perk-div').append(img);
+        $(div).addClass('perk').css('backgroundImage', RandomizerUrlBuilder.buildCssPerkPath(ROLES[1], n));
         return div;
     }
 }
