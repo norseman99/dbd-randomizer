@@ -1,15 +1,17 @@
 class RandomizerSlotMachineEngine {
 
     constructor(engine) {
-        this.slotMachines = [];
+                this.perkSlotMachines = [];
         this.engine = engine;
     }
 
     init() {
-        this.slotMachines.push(this._registerSlotMachine('#perk-slot1', 1));
-        this.slotMachines.push(this._registerSlotMachine('#perk-slot2', 2));
-        this.slotMachines.push(this._registerSlotMachine('#perk-slot3', 3));
-        this.slotMachines.push(this._registerSlotMachine('#perk-slot4', 4));
+        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot1', 1));
+        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot2', 2));
+        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot3', 3));
+        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot4', 4));
+
+        this.killerSlotMachine = this._registerSlotMachine('#portrait', 0);
     }
 
     _registerSlotMachine(selector, active) {
@@ -22,10 +24,20 @@ class RandomizerSlotMachineEngine {
 
     randomize() {
         let role = this.engine.pickRandomRole();
+        let self = this;
 
-        this.slotMachines.forEach(function (slotMachine) {
-            slotMachine.shuffle();
+        this.killerSlotMachine.shuffle(9999999);
+
+        this.perkSlotMachines.forEach(function (slotMachine) {
+            slotMachine.shuffle(9999999);
         });
+
+        setTimeout(function () {
+            self.killerSlotMachine.stop();
+            self.perkSlotMachines.forEach(function (slotMachine) {
+                slotMachine.stop();
+            });
+        }, 1000)
 
         return {
             role: role

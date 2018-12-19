@@ -7,7 +7,6 @@ function init() {
     let role = randomizer.pickRandomRole();
 
     uiHandler.updateTitle(role);
-    uiHandler.updateCharacterProtrait(role);
 
     uiGenerator.init();
     uiHandler.init();
