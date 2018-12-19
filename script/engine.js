@@ -70,30 +70,28 @@ let engine = new Engine();
 function randomize() {
     let role = engine.pickRandomRole();
 
-    document.getElementById("title").innerText = role;
+    $("#title").html(role);
 
-    document.getElementById('portrait').style.backgroundImage = UrlBuilder.buildCharacterPortraitPath(role, engine.pickRandomCharacter(role));
+    $('#portrait').css('backgroundImage', UrlBuilder.buildCharacterPortraitPath(role, engine.pickRandomCharacter(role)));
 
     engine.pickRandomPerks(role).forEach(function(perk, i) {
-        document.getElementsByClassName('perk')[i].style.backgroundImage = UrlBuilder.buildPerkPath(role, perk);
+        $('.perk').eq(i).css('backgroundImage', UrlBuilder.buildPerkPath(role, perk));
     });
 }
 
 function registerEvents() {
-    document.getElementById('randomize').addEventListener("click", function () {
+    $('#randomize').on("click", function () {
         randomize();
     });
 
-    Array.prototype.forEach.call(document.getElementsByClassName('perk'),function(element) {
-            element.addEventListener('click', function () {
-                let lockElement = this.children[0];
-                lockElement.style.visibility = (lockElement.style.visibility == 'hidden' ? 'visible' : 'hidden');
-            })
+    $('.perk').on('click',function () {
+        let lockElement = this.children[0];
+        lockElement.style.visibility = (lockElement.style.visibility == 'hidden' ? 'visible' : 'hidden');
     });
 }
 
 
-window.onload = function() {
+$(function() {
     randomize();
     registerEvents();
-};
+});
