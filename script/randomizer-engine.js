@@ -1,11 +1,3 @@
-const SURVIVORS = [ "dwight",  "meg", "claudette", "jake", "nea", "bill", "david", "laurie", "ace", "feng", "quentin",
-    "tapp", "kate", "francis" ];
-
-const KILLERS = [ "clown",  "doctor", "freddy", "hag", "hillbilly", "huntress", "leatherface", "myers", "nurse", "pig", "spirit",
-    "trapper", "wraith" ];
-
-const ROLES = [ "killer", "survivor" ];
-
 class Engine {
 
     pickRandomRole() {
@@ -15,23 +7,27 @@ class Engine {
     pickRandomCharacter(role) {
         switch(role) {
             case ROLES[0]:
-                return this._pickRandom(KILLERS)
+                return this._pickRandomNumber(KILLERS)
             case ROLES[1]:
-                return this._pickRandom(SURVIVORS)
+                return this._pickRandomNumber(SURVIVORS)
         }
     }
 
     pickRandomPerks(role){
         switch(role) {
             case ROLES[0]:
-                return this._getRandomNumbersBetween(4, 1, 49);
+                return this._getRandomNumbersBetween(4, 0, 48);
             case ROLES[1]:
-                return this._getRandomNumbersBetween(4, 1, 58);
+                return this._getRandomNumbersBetween(4, 0, 57);
         }
     }
 
     _pickRandom(array) {
         return array[this._getRandomNumberBetween(0, array.length)];
+    }
+
+    _pickRandomNumber(array) {
+        return this._getRandomNumberBetween(0, array.length);
     }
 
     _getRandomNumbersBetween(quantity, min, max) {
