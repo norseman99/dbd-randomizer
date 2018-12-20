@@ -11,20 +11,17 @@ class RandomizerSlotMachineEngine {
         this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot2', 2, 'perk', 1));
         this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot3', 3, 'perk', 2));
         this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot4', 4, 'perk', 3));
+
+        this.killerSlotMachine = this._registerSlotMachine('#killers', 0, 'killer', 0);
+        this.survivorSlotMachine = this._registerSlotMachine('#survivors', 0, 'survivor', 0);
     }
 
     shufflePortrait(role) {
-        this._destroySlotMachines();
-
         switch(role) {
             case ROLES[0]:
-                this.killerSlotMachine = this._registerSlotMachine('#killers', 0, 'killer', 0);
-
                 this._shufflePortraitMachine(this.killerSlotMachine);
                 break;
             case ROLES[1]:
-                this.survivorSlotMachine = this._registerSlotMachine('#survivors', 0, 'survivor', 0);
-
                 this._shufflePortraitMachine(this.survivorSlotMachine);
                 break;
         }
