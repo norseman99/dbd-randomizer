@@ -14,8 +14,8 @@ class RandomizerUiGenerator {
     static _generateKillerPerkElements() {
         $('#killer .perk-slot').each(function () {
             $(this).html('');
-            for (let i = 1; i <= 48; i++) {
-                $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[0], i)));
+            for (let i = 0; i < KILLER_PERKS.length; i++) {
+                $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[0], KILLER_PERKS[i])));
             }
         })
     }
@@ -23,8 +23,8 @@ class RandomizerUiGenerator {
     static _generateSurvivorPerkElements() {
         $('#survivor .perk-slot').each(function () {
             $(this).html('');
-            for (let i = 1; i <= 58; i++) {
-                $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[1], i)));
+            for (let i = 0; i < SURVIVOR_PERKS.length; i++) {
+                $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[1], SURVIVOR_PERKS[i])));
             }
         })
     }

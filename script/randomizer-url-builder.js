@@ -9,6 +9,6 @@ class RandomizerUrlBuilder {
     }
 
     static buildPerkPath(role, perk) {
-        return "img/perks/" + role + "/" + perk + ".png";
+        return "img/perks/" + role + "/iconPerks_" + perk + ".png";
     }
 }

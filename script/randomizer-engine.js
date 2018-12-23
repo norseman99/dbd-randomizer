@@ -16,9 +16,9 @@ class Engine {
     pickRandomPerks(role){
         switch(role) {
             case ROLES[0]:
-                return this._getRandomNumbersBetween(4, 0, 48);
+                return this._getRandomNumbersBetween(4, 0, KILLER_PERKS.length - 1);
             case ROLES[1]:
-                return this._getRandomNumbersBetween(4, 0, 57);
+                return this._getRandomNumbersBetween(4, 0, SURVIVOR_PERKS.length -1);
         }
     }
 
