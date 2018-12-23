@@ -30,8 +30,8 @@ class RandomizerUiHandler {
                 break;
         }
 
-        $('#killers').css('display', killersDisplay);
-        $('#survivors').css('display', survivorsDisplay);
+        $('#killer').css('display', killersDisplay);
+        $('#survivor').css('display', survivorsDisplay);
     }
 
     _registerPerkLock() {

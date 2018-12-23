@@ -1,39 +1,53 @@
 class RandomizerUiGenerator {
 
-    init() {
-        this._generateKillerPortraitElements();
-        this._generateSurvivorPortraitElements();
-        this._generatePerkElements();
+    static generateAllElements() {
+        RandomizerUiGenerator._generateKillerPortraitElements();
+        RandomizerUiGenerator._generateSurvivorPortraitElements();
+        RandomizerUiGenerator._generatePerkElements();
     }
 
-    _generatePerkElements() {
-        let _self = this;
-        $('.perk-slot').each(function () {
-            for (let i = 1; i <= 58; i++) {
-                $(this).append(_self._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[1], i)));
+    static _generatePerkElements() {
+        RandomizerUiGenerator._generateKillerPerkElements();
+        RandomizerUiGenerator._generateSurvivorPerkElements();
+    }
+
+    static _generateKillerPerkElements() {
+        $('#killer .perk-slot').each(function () {
+            $(this).html('');
+            for (let i = 1; i <= 48; i++) {
+                $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[0], i)));
             }
         })
     }
 
-    _generateKillerPortraitElements() {
-        this._generatePortraitElements('#killers', 'killer', ROLES[0], KILLERS);
+    static _generateSurvivorPerkElements() {
+        $('#survivor .perk-slot').each(function () {
+            $(this).html('');
+            for (let i = 1; i <= 58; i++) {
+                $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[1], i)));
+            }
+        })
     }
 
-    _generateSurvivorPortraitElements() {
-        this._generatePortraitElements('#survivors', 'survivor', ROLES[1], SURVIVORS);
+    static _generateKillerPortraitElements() {
+        RandomizerUiGenerator._generatePortraitElements('#killer .portrait', 'killer', ROLES[0], KILLERS);
     }
 
-    _generatePortraitElements(selector, className, role, characters) {
-        let _self = this;
+    static _generateSurvivorPortraitElements() {
+        RandomizerUiGenerator._generatePortraitElements('#survivor .portrait', 'survivor', ROLES[1], SURVIVORS);
+    }
+
+    static _generatePortraitElements(selector, className, role, characters) {
+        $(selector).html('');
         $(selector).each(function () {
             let portrait = this;
             characters.forEach(function (character) {
-                $(portrait).append(_self._createDivElement(className, RandomizerUrlBuilder.buildCharacterPortraitPath(role, character)));
+                $(portrait).append(RandomizerUiGenerator._createDivElement(className, RandomizerUrlBuilder.buildCharacterPortraitPath(role, character)));
             });
         })
     }
 
-    _createDivElement(className, backgroundImage) {
+    static _createDivElement(className, backgroundImage) {
         let div = document.createElement('div');
         $(div).addClass(className).css('backgroundImage', backgroundImage);
         return div;

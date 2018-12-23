@@ -1,19 +1,17 @@
 class RandomizerSlotMachineEngine {
 
     constructor(engine, uiHandler) {
-        this.perkSlotMachines = [];
+        this.killerPerksSlotMachines = [];
+        this.survivorPerksSlotMachines = [];
         this.engine = engine;
         this.uiHandler = uiHandler;
     }
 
     init() {
-        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot1', 1, 'perk', 0));
-        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot2', 2, 'perk', 1));
-        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot3', 3, 'perk', 2));
-        this.perkSlotMachines.push(this._registerSlotMachine('#perk-slot4', 4, 'perk', 3));
-
-        this.killerSlotMachine = this._registerSlotMachine('#killers', 0, 'killer', 0);
-        this.survivorSlotMachine = this._registerSlotMachine('#survivors', 0, 'survivor', 0);
+        this._registerKillerPerksSlotMachines()
+        this._registerSurvivorPerksSlotMachines();
+        this._registerKillerSlotMachine();
+        this._registerSurvivorSlotMachine();
     }
 
     shufflePortrait(role) {
@@ -35,15 +33,24 @@ class RandomizerSlotMachineEngine {
         this.characterSlotMachineResult = this.engine.pickRandomCharacter(role);
     }
 
-    shufflePerks() {
-        let self = this;
+    shufflePerks(role) {
+        switch (role) {
+            case ROLES[0]:
+                this._shufflePerks(this.killerPerksSlotMachines);
+                break;
+            case ROLES[1]:
+                this._shufflePerks(this.survivorPerksSlotMachines);
+                break;
+        }
+    }
 
-        this.perkSlotMachines.forEach(function (slotMachine) {
+    _shufflePerks(perkSlotMachines) {
+        perkSlotMachines.forEach(function (slotMachine) {
             slotMachine.shuffle(9999999);
         });
 
         setTimeout(function () {
-            self.perkSlotMachines.forEach(function (slotMachine) {
+            perkSlotMachines.forEach(function (slotMachine) {
                 slotMachine.stop();
             });
         }, 1000)
@@ -55,6 +62,30 @@ class RandomizerSlotMachineEngine {
         setTimeout(function () {
             slotMachine.stop();
         }, 1000);
+    }
+
+    _registerKillerPerksSlotMachines() {
+        this.killerPerksSlotMachines = [];
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot1', 1, 'perk', 0));
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot2', 2, 'perk', 1));
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot3', 3, 'perk', 2));
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot4', 4, 'perk', 3));
+    }
+
+    _registerSurvivorPerksSlotMachines() {
+        this.survivorPerksSlotMachines = [];
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot1', 1, 'perk', 0));
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot2', 2, 'perk', 1));
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot3', 3, 'perk', 2));
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot4', 4, 'perk', 3));
+    }
+
+    _registerKillerSlotMachine() {
+        this.killerSlotMachine = this._registerSlotMachine('#killer .portrait', 0, 'killer', 0);
+    }
+
+    _registerSurvivorSlotMachine() {
+        this.survivorSlotMachine = this._registerSlotMachine('#survivor .portrait', 0, 'survivor', 0);
     }
 
     _registerSlotMachine(selector, active, type, index) {
@@ -73,7 +104,6 @@ class RandomizerSlotMachineEngine {
     _getRandomizeResult(type, index) {
         switch(type) {
             case 'perk':
-                console.log(this.perkSlotMachinesResult);
                 return this.perkSlotMachinesResult[index];
             case 'killer':
             case 'survivor':
@@ -89,7 +119,6 @@ class RandomizerSlotMachineEngine {
         }
 
         if (this.survivorSlotMachine != undefined) {
-            console.log(this.survivorSlotMachine);
             this.survivorSlotMachine.destroy();
         }
     }
@@ -103,13 +132,16 @@ class RandomizerSlotMachineEngine {
         setTimeout(function () {
             self.uiHandler.updateUI(role);
 
+            RandomizerUiGenerator.generateAllElements();
+            self.init();
+
             setTimeout(function () {
                 self.randomizeCharacter(role);
                 self.shufflePortrait(role);
 
                 setTimeout(function () {
                     self.randomizePerks(role);
-                    self.shufflePerks();
+                    self.shufflePerks(role);
                     self.uiHandler.enableButtons();
                     //self._destroySlotMachines();
                 }, 1000);
