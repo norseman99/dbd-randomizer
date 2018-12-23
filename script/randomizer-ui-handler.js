@@ -63,14 +63,14 @@ class RandomizerUiHandler {
             self.updateTitle("The wheel is turning...");
             self.disableButtons();
 
-            slotMachineEngine.randomize('killer');
+            slotMachineEngine.randomizeRole('killer');
         });
 
         $('#randomize-survivor').on("click", function () {
             self.updateTitle("The wheel is turning...");
             self.disableButtons();
 
-            slotMachineEngine.randomize('survivor');
+            slotMachineEngine.randomizeRole('survivor');
         });
     }
 }

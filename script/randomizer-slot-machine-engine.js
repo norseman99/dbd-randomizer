@@ -124,10 +124,10 @@ class RandomizerSlotMachineEngine {
     }
 
     randomize() {
-        this.randomize(this.engine.pickRandomRole());
+        this.randomizeRole(this.engine.pickRandomRole());
     }
 
-    randomize(role) {
+    randomizeRole(role) {
         let self = this;
 
         setTimeout(function () {
