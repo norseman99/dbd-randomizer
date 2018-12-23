@@ -1,6 +1,12 @@
+body {
+    background-color: #000000;
+
+}
+
 #randomizer {
     width: 1200px;
-    background-color: #000000;
+    margin: 0 auto;
+    background-color: darkgolden rod;
 }
 
 #randomizer #title {
