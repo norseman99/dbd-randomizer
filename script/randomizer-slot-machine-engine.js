@@ -124,10 +124,11 @@ class RandomizerSlotMachineEngine {
     }
 
     randomize() {
-        this.uiHandler.updateTitle("The wheel is turning...")
+        this.randomize(this.engine.pickRandomRole());
+    }
 
+    randomize(role) {
         let self = this;
-        let role = this.engine.pickRandomRole();
 
         setTimeout(function () {
             self.uiHandler.updateUI(role);

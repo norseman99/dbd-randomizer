@@ -14,7 +14,15 @@ class RandomizerUiHandler {
     }
 
     enableButtons() {
-        $('#randomize').attr('disabled', false);
+        $('#randomize-all').attr('disabled', false);
+        $('#randomize-killer').attr('disabled', false);
+        $('#randomize-survivor').attr('disabled', false);
+    }
+
+    disableButtons() {
+        $('#randomize-all').attr('disabled', true);
+        $('#randomize-killer').attr('disabled', true);
+        $('#randomize-survivor').attr('disabled', true);
     }
 
     _enableRole(role) {
@@ -42,10 +50,27 @@ class RandomizerUiHandler {
     }
 
     _registerRandomizeEvent(slotMachineEngine) {
-        $('#randomize').on("click", function () {
-            $(this).attr('disabled', true);
+        let self = this;
+
+        $('#randomize-all').on("click", function () {
+            self.updateTitle("The wheel is turning...");
+            self.disableButtons();
 
             slotMachineEngine.randomize();
+        });
+
+        $('#randomize-killer').on("click", function () {
+            self.updateTitle("The wheel is turning...");
+            self.disableButtons();
+
+            slotMachineEngine.randomize('killer');
+        });
+
+        $('#randomize-survivor').on("click", function () {
+            self.updateTitle("The wheel is turning...");
+            self.disableButtons();
+
+            slotMachineEngine.randomize('survivor');
         });
     }
 }
