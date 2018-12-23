@@ -53,7 +53,7 @@ class RandomizerSlotMachineEngine {
             perkSlotMachines.forEach(function (slotMachine) {
                 slotMachine.stop();
             });
-        }, 1000)
+        }, PERK_SLOT_SHUFFLE_TIME)
     }
 
     _shufflePortraitMachine(slotMachine) {
@@ -61,7 +61,7 @@ class RandomizerSlotMachineEngine {
 
         setTimeout(function () {
             slotMachine.stop();
-        }, 1000);
+        }, CHARACTER_SLOT_SHUFFLE_TIME);
     }
 
     _registerKillerPerksSlotMachines() {
@@ -145,10 +145,10 @@ class RandomizerSlotMachineEngine {
                     self.shufflePerks(role);
                     self.uiHandler.enableButtons();
                     //self._destroySlotMachines();
-                }, 1000);
+                }, PERK_SLOT_SHUFFLE_TIME);
 
-            }, 1000);
+            }, CHARACTER_SLOT_SHUFFLE_TIME );
 
-        }, 1000);
+        }, ROLE_SLOT_SHUFFLE_TIME);
     }
 }
