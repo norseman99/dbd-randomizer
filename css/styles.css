@@ -232,9 +232,9 @@ body {
     color: white;
 }
 #controls .button:disabled {
-    background-color: red;
     border-radius: 5px;
     text-decoration: none;
     border: white solid 1px;
     color: white;
+    display: none;
 }
