@@ -109,14 +109,23 @@ class RandomizerSlotMachineEngine {
 
     _registerSlotMachine(selector, active, type, index) {
         let self = this;
-
-        return new SlotMachine(document.querySelector(selector), {
+        let options = {
             active: active,
             delay: SLOT_MACHINE_DELAY,
             randomize: function () {
                 return self._getRandomizeResult(type, index);
             }
-        });
+        };
+
+        if (type === 'perk' && index === 3) {
+            options.onComplete = function () {
+                self.uiHandler.enableButtons();
+            }
+        }
+
+        console.log(options);
+
+        return new SlotMachine(document.querySelector(selector), options);
     }
 
     _getRandomizeResult(type, index) {
@@ -157,10 +166,6 @@ class RandomizerSlotMachineEngine {
                 setTimeout(function () {
                     self.randomizePerks(role);
                     self.shufflePerks(role);
-
-                    setTimeout(function () {
-                        self.uiHandler.enableButtons();
-                    }, PERK_SLOT_SHUFFLE_TIME + 500);
 
                 }, CHARACTER_SLOT_SHUFFLE_TIME);
 
