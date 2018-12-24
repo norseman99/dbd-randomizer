@@ -8,7 +8,15 @@ class RandomizerUrlBuilder {
         return "img/perks/" + role + "/iconPerks_" + perk + ".png";
     }
 
+    static buildPerkBackPath(rare) {
+        return "img/perks/bg/" + (rare ? 'rare' : 'veryrare') + ".png";
+    }
+
     static buildCssPerkPath(role, perk) {
         return "url(" + this.buildPerkPath(role, perk) + ")";
+    }
+
+    static buildCssPerkBackPath(rare) {
+        return "url(" + this.buildPerkBackPath(rare) + ")";
     }
 }
