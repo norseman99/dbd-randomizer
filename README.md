@@ -13,4 +13,4 @@
 # Copyrights
 Dead by Daylight content and materials are the intellectual property of their respective owners.
 
-All colored perks are the work of [Happy Clown](http://www.twitch.tv/werewolfjester).
+All colored perks are the work of [Happy Clown](http://www.twitch.tv/werewolfjester) ([Steam](https://steamcommunity.com/profiles/76561198307075794)).

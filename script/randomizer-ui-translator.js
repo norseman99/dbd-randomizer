@@ -32,7 +32,7 @@ const TRANSLATIONS = {
         "CHARACTER_LAURIE": "Laurie Strode",
         "CHARACTER_ACE": "Ace Visconti",
         "CHARACTER_FENG": "Feng Min",
-        "CHARACTER_QUENTIN": "Quentin",
+        "CHARACTER_QUENTIN": "Quentin Smith",
         "CHARACTER_TAPP": "David Tapp",
         "CHARACTER_KATE": "Kate Denson",
         "CHARACTER_FRANCIS": "Adam Francis",
