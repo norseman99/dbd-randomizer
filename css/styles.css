@@ -163,6 +163,7 @@ body {
 }
 
 .perk-slot {
+    border-radius: 10px;
     background-color: var(--perk-bg-color);
     background-position: center;
     border: 1px solid black;
