@@ -123,8 +123,6 @@ class RandomizerSlotMachineEngine {
             }
         }
 
-        console.log(options);
-
         return new SlotMachine(document.querySelector(selector), options);
     }
 
