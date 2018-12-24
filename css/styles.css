@@ -45,6 +45,7 @@ body {
 }
 
 #role {
+    border-radius: 25px;
     background-color: var(--main-bg-color);
     margin: 125px 475px;
     position: absolute;
