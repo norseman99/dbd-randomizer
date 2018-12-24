@@ -1,6 +1,6 @@
 const ROLE_SLOT_SHUFFLE_TIME = 1000;
-const PERK_SLOT_SHUFFLE_TIME = 2000;
-const CHARACTER_SLOT_SHUFFLE_TIME = 2000;
+const PERK_SLOT_SHUFFLE_TIME = 5000; // the duration of the perk shuffle in ms
+const CHARACTER_SLOT_SHUFFLE_TIME = 5000; // the duration of the character shuffle in ms
 
 const ROLES = [
     "killer",

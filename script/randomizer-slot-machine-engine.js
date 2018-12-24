@@ -94,7 +94,6 @@ class RandomizerSlotMachineEngine {
         return new SlotMachine(document.querySelector(selector), {
             active: active,
             delay: 500,
-            spins: 5,
             randomize: function () {
                 return self._getRandomizeResult(type, index);
             }
@@ -143,12 +142,15 @@ class RandomizerSlotMachineEngine {
                 setTimeout(function () {
                     self.randomizePerks(role);
                     self.shufflePerks(role);
-                    self.uiHandler.enableButtons();
-                    //self._destroySlotMachines();
-                }, PERK_SLOT_SHUFFLE_TIME);
 
-            }, CHARACTER_SLOT_SHUFFLE_TIME );
+                    setTimeout(function () {
+                        self.uiHandler.enableButtons();
+                    }, PERK_SLOT_SHUFFLE_TIME + 500);
 
-        }, ROLE_SLOT_SHUFFLE_TIME);
+                }, CHARACTER_SLOT_SHUFFLE_TIME);
+
+            }, ROLE_SLOT_SHUFFLE_TIME );
+
+        }, 1000);
     }
 }
