@@ -41,13 +41,23 @@ class RandomizerUiHandler {
         $('#overlay #role-result').html('');
     }
 
-    enableButtons() {
+    togglePerklessOverlay(role, show) {
+        if (show) {
+            $('#' + role + '-perks-overlay').css('display', 'block');
+        } else {
+            $('#' + role + '-perks-overlay').css('display', 'none');
+        }
+    }
+
+    enableControls() {
+        $('#controls').css('display', 'block');
         $('#randomize-all').attr('disabled', false);
         $('#randomize-killer').attr('disabled', false);
         $('#randomize-survivor').attr('disabled', false);
     }
 
-    disableButtons() {
+    disableControls() {
+        $('#controls').css('display', 'none');
         $('#randomize-all').attr('disabled', true);
         $('#randomize-killer').attr('disabled', true);
         $('#randomize-survivor').attr('disabled', true);
@@ -80,22 +90,9 @@ class RandomizerUiHandler {
     _registerRandomizeEvent(slotMachineEngine) {
         let self = this;
 
-        $('#randomize-all').on("click", function () {
-            self.disableButtons();
-
-            slotMachineEngine.randomize();
-        });
-
-        $('#randomize-killer').on("click", function () {
-            self.disableButtons();
-
-            slotMachineEngine.randomizeForRole('killer', 0);
-        });
-
-        $('#randomize-survivor').on("click", function () {
-            self.disableButtons();
-
-            slotMachineEngine.randomizeForRole('survivor', 0);
+        $('.randomizer').on("click", function () {
+            self.disableControls();
+            slotMachineEngine.randomize($(this).attr('data-character'), $(this).attr('data-perkless'));
         });
     }
 }

@@ -24,7 +24,7 @@ body {
     height: 380px;
     margin: 0 auto;
     position: absolute;
-    top: 500px;
+    top: 450px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -42,7 +42,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     vertical-align: middle;
-    height: 500px;
+    height: 450px;
 }
 
 #role {
@@ -69,6 +69,10 @@ body {
     background-repeat: no-repeat;
     width: 200px;
     height: 180px;
+}
+
+#killer {
+    display: none;
 }
 
 .portrait {
@@ -128,10 +132,6 @@ body {
     background-size: cover;
 }
 
-#killer {
-    display: none;
-}
-
 #killer .role-result {
     background-image: url('../img/role/killer.png');
 }
@@ -169,6 +169,22 @@ body {
 .perks {
     height: 245px;
     overflow: hidden;
+}
+
+.perks-overlay {
+    background-image: url('../img/misc/dbd-perkless.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 98;
+    width: 900px;
+    height: 255px;
+    margin: 0 auto;
+    position: absolute;
+    top: 575px;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    display: none;
 }
 
 .perk-slot {
@@ -220,14 +236,22 @@ body {
 }
 
 #controls {
-    margin: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 5px;
     background-color: var(--controls-bg-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#controls .controls-panel {
+    padding: 5px;
 }
 
 #controls .button {
     background-color: black;
     border-radius: 5px;
-    text-decoration: none;
+    text-transform: uppercase;
     border: white solid 1px;
     color: white;
 }
