@@ -12,6 +12,15 @@ class RandomizerUiTranslator {
 
 const TRANSLATIONS = {
     'en': {
+        "UI_PERK_RANDOMIZER": "Perk Randomizer",
+        "UI_PERKLESS_RANDOMIZER": "Perkless Randomizer",
+        "UI_ANY": "Any",
+        "UI_KILLER": "Killer",
+        "UI_SURVIVOR": "Survivor",
+        "UI_OVERLAY_TEXT1": "THE WHEELS ARE TURNING!",
+        "UI_OVERLAY_TEXT2": "LET'S GO!",
+        "UI_OVERLAY_RESULT_KILLER": "KILLER IT IS!",
+        "UI_OVERLAY_RESULT_SURVIVOR": "SURVIVOR IT IS!",
         "CHARACTER_DWIGHT": "Dwight Fairfield",
         "CHARACTER_MEG": "Meg Thomas",
         "CHARACTER_CLAUDETTE": "Claudette Morel",

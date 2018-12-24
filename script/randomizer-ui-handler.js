@@ -4,6 +4,7 @@ class RandomizerUiHandler {
     }
 
     init(slotMachineEngine) {
+        this._initTranslations()
         this._registerRandomizeEvent(slotMachineEngine);
     }
 
@@ -14,7 +15,7 @@ class RandomizerUiHandler {
     updateRoleResult(role) {
         this.showResultsOverlay();
 
-        $('#overlay #role-result').html(role.toUpperCase() + ' it is!');
+        $('#overlay #role-result').html(uiTranslator.getTranslation('UI_OVERLAY_RESULT_' + role.toUpperCase()));
     }
 
     updateCharacterName(role, character) {
@@ -85,6 +86,19 @@ class RandomizerUiHandler {
             let lockElement = this.children[0];
             lockElement.style.visibility = (lockElement.style.visibility == 'hidden' ? 'visible' : 'hidden');
         });
+    }
+
+    _initTranslations() {
+        $('#perk-randomizer').html(uiTranslator.getTranslation('UI_PERK_RANDOMIZER'));
+        $('#perkless-randomizer').html(uiTranslator.getTranslation('UI_PERKLESS_RANDOMIZER'));
+        $('#perk-randomize-all').attr('value', uiTranslator.getTranslation('UI_ANY'));
+        $('#perk-randomize-killer').attr('value', uiTranslator.getTranslation('UI_KILLER'));
+        $('#perk-randomize-survivor').attr('value', uiTranslator.getTranslation('UI_SURVIVOR'));
+        $('#perkless-randomize-all').attr('value', uiTranslator.getTranslation('UI_ANY'));
+        $('#perkless-randomize-killer').attr('value', uiTranslator.getTranslation('UI_KILLER'));
+        $('#perkless-randomize-survivor').attr('value', uiTranslator.getTranslation('UI_SURVIVOR'));
+        $('#overlay-text-1').attr('value', uiTranslator.getTranslation('UI_OVERLAY_TEXT1'));
+        $('#overlay-text-2').attr('value', uiTranslator.getTranslation('UI_OVERLAY_TEXT2'));
     }
 
     _registerRandomizeEvent(slotMachineEngine) {
