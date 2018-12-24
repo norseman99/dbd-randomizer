@@ -23,7 +23,7 @@ const SURVIVORS = [
     "tapp",
     "kate",
     "francis"
-];
+]; // list of all available survivors
 
 const KILLERS = [
     "clown",
@@ -40,7 +40,7 @@ const KILLERS = [
     "spirit",
     "trapper",
     "wraith"
-];
+]; // list of all available killers
 
 const KILLER_PERKS = [
     "agitation",
@@ -95,7 +95,7 @@ const KILLER_PERKS = [
     "unnervingPresence",
     "unrelenting",
     "whispers"
-]
+]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
     "aceInTheHole",
@@ -159,4 +159,4 @@ const SURVIVOR_PERKS = [
     "wellMakeIt",
     "WereGonnaLiveForever",
     "windowsOfOpportunity"
-]
+]; // list of all survivor perks
