@@ -1,18 +1,38 @@
 :root {
     --main-bg-color: black;
-    --title-color: white;
-    --title-bg-color: black;
     --portrait-bg-color: black;
     --misc-result-bg-color: transparent;
-    --item-bg-color: green;
-    --item-addon-bg-color: red;
-    --offer-bg-color: white;
+    --item-bg-color: transparent;
+    --item-addon-bg-color: transparent;
+    --offer-bg-color: transparent;
     --perk-bg-color: grey;
     --controls-bg-color: black;
 }
 
 body {
     background-color: var(--main-bg-color);
+}
+
+#overlay {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    z-index: 99;
+    width: 1200px;
+    height: 360px;
+    margin: 0 auto;
+    position: absolute;
+    top: 500px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+#randomizer {
+    width: 1200px;
+    margin: 0 auto;
 }
 
 #top {
@@ -33,11 +53,11 @@ body {
     overflow: hidden;
 }
 
-#role-killer {
+.role-killer {
     background-image: url('../img/role/killer.png');
 }
 
-#role-survivor {
+.role-survivor {
     background-image: url('../img/role/survivor.png');
 }
 
@@ -47,17 +67,6 @@ body {
     background-repeat: no-repeat;
     width: 200px;
     height: 180px;
-}
-
-#randomizer {
-    width: 1200px;
-    margin: 0 auto;
-}
-
-#randomizer #title {
-    background-color: var(--title-bg-color);
-    color: var(--title-color);;
-    text-align: center;
 }
 
 .portrait {
@@ -107,6 +116,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+#killer {
+    display: none;
 }
 
 #killer .role-result {

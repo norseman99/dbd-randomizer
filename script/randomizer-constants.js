@@ -1,5 +1,5 @@
 const SLOT_MACHINE_DELAY = 500;
-const ROLE_SLOT_SHUFFLE_TIME = 1000;
+const ROLE_SLOT_SHUFFLE_TIME = 5000;
 const PERK_SLOT_SHUFFLE_TIME = 1000; // the duration of the perk shuffle in ms
 const CHARACTER_SLOT_SHUFFLE_TIME = 1000; // the duration of the character shuffle in ms
 
