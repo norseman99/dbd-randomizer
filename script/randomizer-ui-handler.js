@@ -22,8 +22,9 @@ class RandomizerUiHandler {
     }
 
     updatePerkNames(role, perks) {
+        let self = this;
         $('#' + role + " .perk-slot-name").each(function (index, element) {
-            $(element).html(perks[index]);
+            $(element).html(self.uiTranslator.getTranslation('PERK_' + perks[index].toUpperCase()));
         });
     }
 
