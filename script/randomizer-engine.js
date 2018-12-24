@@ -1,25 +1,46 @@
 class Engine {
 
     pickRandomRole() {
-        return this._pickRandomNumber(ROLES);
+        let id = this._pickRandomNumber(ROLES);
+
+        return { id: id, role: ROLES[id]};
     }
 
     pickRandomCharacter(role) {
+        let id, character;
+
         switch(role) {
             case ROLES[0]:
-                return this._pickRandomNumber(KILLERS)
+                id = this._pickRandomNumber(KILLERS);
+                character = KILLERS[id];
+                break;
             case ROLES[1]:
-                return this._pickRandomNumber(SURVIVORS)
+                id = this._pickRandomNumber(SURVIVORS);
+                character = SURVIVORS[id];
+                break;
         }
+
+        return { id: id, character: character };
     }
 
     pickRandomPerks(role){
+        let ids, perks;
         switch(role) {
             case ROLES[0]:
-                return this._getRandomNumbersBetween(4, 0, KILLER_PERKS.length - 1);
+                ids = this._getRandomNumbersBetween(4, 0, KILLER_PERKS.length - 1);
+                perks =  ids.map(function (id) {
+                   return KILLER_PERKS[id];
+                });
+                break;
             case ROLES[1]:
-                return this._getRandomNumbersBetween(4, 0, SURVIVOR_PERKS.length -1);
+                ids = this._getRandomNumbersBetween(4, 0, SURVIVOR_PERKS.length -1);
+                perks =  ids.map(function (id) {
+                    return SURVIVOR_PERKS[id];
+                });
+                break;
         }
+
+        return { ids: ids, perks: perks };
     }
 
     _pickRandomNumber(array) {

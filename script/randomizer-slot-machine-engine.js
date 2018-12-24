@@ -16,22 +16,22 @@ class RandomizerSlotMachineEngine {
         })
     }
 
-    pickRandomRole() {
-        return ROLES[this.randomizeRole()];
-    }
-
     randomizeRole() {
-        this.roleSlotMachineResult = this.engine.pickRandomRole();
-
-        return this.roleSlotMachineResult;
+        let result = this.engine.pickRandomRole();
+        this.roleSlotMachineResult = result.id;
+        return result.role;
     }
 
     randomizeCharacter(role) {
-        this.characterSlotMachineResult = this.engine.pickRandomCharacter(role);
+        let result = this.engine.pickRandomCharacter(role);
+        this.characterSlotMachineResult = result.id;
+        return result.character;
     }
 
     randomizePerks(role) {
-        this.perkSlotMachinesResult = this.engine.pickRandomPerks(role);
+        let result = this.engine.pickRandomPerks(role)
+        this.perkSlotMachinesResult = result.ids;
+        return result.perks;
     }
 
     shuffleRole() {
@@ -99,26 +99,26 @@ class RandomizerSlotMachineEngine {
 
     _registerKillerPerksSlotMachines() {
         this.killerPerksSlotMachines = [];
-        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot1', 1, 'perk', 0));
-        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot2', 2, 'perk', 1));
-        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot3', 3, 'perk', 2));
-        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot4', 4, 'perk', 3));
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot1 .perk-slot-image', 1, 'perk', 0));
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot2 .perk-slot-image', 2, 'perk', 1));
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot3 .perk-slot-image', 3, 'perk', 2));
+        this.killerPerksSlotMachines.push(this._registerSlotMachine('#killer-perk-slot4 .perk-slot-image', 4, 'perk', 3));
     }
 
     _registerSurvivorPerksSlotMachines() {
         this.survivorPerksSlotMachines = [];
-        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot1', 1, 'perk', 0));
-        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot2', 2, 'perk', 1));
-        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot3', 3, 'perk', 2));
-        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot4', 4, 'perk', 3));
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot1 .perk-slot-image', 1, 'perk', 0));
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot2 .perk-slot-image', 2, 'perk', 1));
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot3 .perk-slot-image', 3, 'perk', 2));
+        this.survivorPerksSlotMachines.push(this._registerSlotMachine('#survivor-perk-slot4 .perk-slot-image', 4, 'perk', 3));
     }
 
     _registerKillerSlotMachine() {
-        this.killerSlotMachine = this._registerSlotMachine('#killer .portrait', 0, 'killer', 0);
+        this.killerSlotMachine = this._registerSlotMachine('#killer .portrait-image', 0, 'killer', 0);
     }
 
     _registerSurvivorSlotMachine() {
-        this.survivorSlotMachine = this._registerSlotMachine('#survivor .portrait', 0, 'survivor', 0);
+        this.survivorSlotMachine = this._registerSlotMachine('#survivor .portrait-image', 0, 'survivor', 0);
     }
 
     _registerSlotMachine(selector, active, type, index) {
@@ -157,7 +157,7 @@ class RandomizerSlotMachineEngine {
         let self = this;
         this.uiHandler.showResultsOverlay();
 
-        let role = this.pickRandomRole();
+        let role = this.randomizeRole();
         this.shuffleRole();
 
         self.randomizeForRole(role,ROLE_SLOT_SHUFFLE_TIME + SLOT_MACHINE_DELAY);
@@ -177,14 +177,19 @@ class RandomizerSlotMachineEngine {
                 self.uiHandler.hideResultsOverlay();
 
                 setTimeout(function () {
-                    self.randomizeCharacter(role);
+                    let character = self.randomizeCharacter(role);
                     self.shuffleCharacter(role);
 
                     setTimeout(function () {
-                        self.randomizePerks(role);
+                        self.uiHandler.updateCharacterName(role, character)
+                        let perks = self.randomizePerks(role);
                         self.shufflePerks(role);
 
-                    }, CHARACTER_SLOT_SHUFFLE_TIME + SLOT_MACHINE_DELAY);
+                        setTimeout(function () {
+                            self.uiHandler.updatePerkNames(role, perks);
+                        }, PERK_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
+
+                    }, CHARACTER_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
 
                 }, 1500) // wait time to read results
 

@@ -12,7 +12,7 @@ class RandomizerUiGenerator {
     }
 
     static _generateKillerPerkElements() {
-        $('#killer .perk-slot').each(function () {
+        $('#killer .perk-slot-image').each(function () {
             $(this).html('');
             for (let i = 0; i < KILLER_PERKS.length; i++) {
                 $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[0], KILLER_PERKS[i])));
@@ -21,7 +21,7 @@ class RandomizerUiGenerator {
     }
 
     static _generateSurvivorPerkElements() {
-        $('#survivor .perk-slot').each(function () {
+        $('#survivor .perk-slot-image').each(function () {
             $(this).html('');
             for (let i = 0; i < SURVIVOR_PERKS.length; i++) {
                 $(this).append(RandomizerUiGenerator._createDivElement('perk', RandomizerUrlBuilder.buildCssPerkPath(ROLES[1], SURVIVOR_PERKS[i])));
@@ -30,11 +30,11 @@ class RandomizerUiGenerator {
     }
 
     static _generateKillerPortraitElements() {
-        RandomizerUiGenerator._generatePortraitElements('#killer .portrait', 'killer', ROLES[0], KILLERS);
+        RandomizerUiGenerator._generatePortraitElements('#killer .portrait-image', 'killer', ROLES[0], KILLERS);
     }
 
     static _generateSurvivorPortraitElements() {
-        RandomizerUiGenerator._generatePortraitElements('#survivor .portrait', 'survivor', ROLES[1], SURVIVORS);
+        RandomizerUiGenerator._generatePortraitElements('#survivor .portrait-image', 'survivor', ROLES[1], SURVIVORS);
     }
 
     static _generatePortraitElements(selector, className, role, characters) {

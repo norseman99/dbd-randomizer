@@ -1,4 +1,7 @@
 class RandomizerUiHandler {
+    constructor(uiTranslator) {
+        this.uiTranslator = uiTranslator;
+    }
 
     init(slotMachineEngine) {
         this._registerRandomizeEvent(slotMachineEngine);
@@ -14,8 +17,21 @@ class RandomizerUiHandler {
         $('#overlay #role-result').html(role.toUpperCase() + ' it is!');
     }
 
+    updateCharacterName(role, character) {
+        $('#' + role + " .portrait-name").html(this.uiTranslator.getTranslation('CHARACTER_' + character.toUpperCase()));
+    }
+
+    updatePerkNames(role, perks) {
+        $('#' + role + " .perk-slot-name").each(function (index, element) {
+            $(element).html(perks[index]);
+        });
+    }
+
     showResultsOverlay() {
         $('#overlay #role-result').html('');
+        $('.portrait-name').html('');
+        $('.perk-slot-name').html('');
+
         $("#overlay").css('display', 'block');
     }
 

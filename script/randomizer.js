@@ -1,5 +1,6 @@
 let randomizer = new Engine();
-let uiHandler = new RandomizerUiHandler();
+let uiTranslator = new RandomizerUiTranslator();
+let uiHandler = new RandomizerUiHandler(uiTranslator);
 let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer, uiHandler);
 
 function init() {
