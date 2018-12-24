@@ -1,7 +1,7 @@
 class Engine {
 
     pickRandomRole() {
-        return this._pickRandom(ROLES);
+        return this._pickRandomNumber(ROLES);
     }
 
     pickRandomCharacter(role) {
@@ -20,10 +20,6 @@ class Engine {
             case ROLES[1]:
                 return this._getRandomNumbersBetween(4, 0, SURVIVOR_PERKS.length -1);
         }
-    }
-
-    _pickRandom(array) {
-        return array[this._getRandomNumberBetween(0, array.length)];
     }
 
     _pickRandomNumber(array) {

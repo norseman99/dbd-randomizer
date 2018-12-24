@@ -3,7 +3,7 @@ let uiHandler = new RandomizerUiHandler();
 let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer, uiHandler);
 
 function init() {
-    let role = randomizer.pickRandomRole();
+    let role = slotMachineEngine.pickRandomRole();
 
     uiHandler.updateUI(role);
 

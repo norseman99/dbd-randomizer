@@ -5,12 +5,7 @@ class RandomizerUiHandler {
     }
 
     updateUI(role) {
-        this.updateTitle(role);
         this._enableRole(role);
-    }
-
-    updateTitle(message) {
-        $("#title").html(message);
     }
 
     enableButtons() {
@@ -53,24 +48,21 @@ class RandomizerUiHandler {
         let self = this;
 
         $('#randomize-all').on("click", function () {
-            self.updateTitle("The wheel is turning...");
             self.disableButtons();
 
             slotMachineEngine.randomize();
         });
 
         $('#randomize-killer').on("click", function () {
-            self.updateTitle("The wheel is turning...");
             self.disableButtons();
 
-            slotMachineEngine.randomizeRole('killer');
+            slotMachineEngine.randomizeForRole('killer');
         });
 
         $('#randomize-survivor').on("click", function () {
-            self.updateTitle("The wheel is turning...");
             self.disableButtons();
 
-            slotMachineEngine.randomizeRole('survivor');
+            slotMachineEngine.randomizeForRole('survivor');
         });
     }
 }

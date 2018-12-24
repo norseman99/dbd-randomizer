@@ -4,9 +4,9 @@
     --title-bg-color: black;
     --portrait-bg-color: black;
     --misc-result-bg-color: transparent;
-    --item-bg-color: transparent;
-    --item-addon-bg-color: transparent;
-    --offer-bg-color: transparent;
+    --item-bg-color: green;
+    --item-addon-bg-color: red;
+    --offer-bg-color: white;
     --perk-bg-color: grey;
     --controls-bg-color: black;
 }
@@ -20,7 +20,33 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+    vertical-align: middle;
     height: 500px;
+}
+
+#role {
+    background-color: var(--main-bg-color);
+    margin: 125px 475px;
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    overflow: hidden;
+}
+
+#role-killer {
+    background-image: url('../img/role/killer.png');
+}
+
+#role-survivor {
+    background-image: url('../img/role/survivor.png');
+}
+
+.role-option {
+    background-position-x: -25px;
+    background-position-y: -30px;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 180px;
 }
 
 #randomizer {
@@ -69,13 +95,30 @@ body {
 }
 
 .item-result {
-    width: 70%;
+    width: 60%;
     height: 100%;
     float: left;
 }
 
+.role-result {
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#killer .role-result {
+    background-image: url('../img/role/killer.png');
+}
+
+#survivor .role-result {
+    background-image: url('../img/role/survivor.png');
+}
+
 .offer-result {
-    width: 30%;
+    width: 20%;
     height: 100%;
     float: left;
 }
