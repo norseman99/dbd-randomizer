@@ -163,5 +163,5 @@ const TRANSLATIONS = {
         "PERK_WELLMAKEIT": "We'll Make It",
         "PERK_WEREGONNALIVEFOREVER": "We're Gonna Live Forever",
         "PERK_WINDOWSOFOPPORTUNITY": "Windows Of Opportunity"
-,    }
+    }
 }

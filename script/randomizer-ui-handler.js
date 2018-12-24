@@ -97,8 +97,8 @@ class RandomizerUiHandler {
         $('#perkless-randomize-all').attr('value', uiTranslator.getTranslation('UI_ANY'));
         $('#perkless-randomize-killer').attr('value', uiTranslator.getTranslation('UI_KILLER'));
         $('#perkless-randomize-survivor').attr('value', uiTranslator.getTranslation('UI_SURVIVOR'));
-        $('#overlay-text-1').attr('value', uiTranslator.getTranslation('UI_OVERLAY_TEXT1'));
-        $('#overlay-text-2').attr('value', uiTranslator.getTranslation('UI_OVERLAY_TEXT2'));
+        $('#overlay-text-1').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT1'));
+        $('#overlay-text-2').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT2'));
     }
 
     _registerRandomizeEvent(slotMachineEngine) {
