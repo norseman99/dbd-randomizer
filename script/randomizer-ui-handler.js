@@ -51,14 +51,14 @@ class RandomizerUiHandler {
     }
 
     enableControls() {
-        $('#controls').css('display', 'block');
+        $('#controls').css('visibility', '');
         $('#randomize-all').attr('disabled', false);
         $('#randomize-killer').attr('disabled', false);
         $('#randomize-survivor').attr('disabled', false);
     }
 
     disableControls() {
-        $('#controls').css('display', 'none');
+        $('#controls').css('visibility', 'hidden');
         $('#randomize-all').attr('disabled', true);
         $('#randomize-killer').attr('disabled', true);
         $('#randomize-survivor').attr('disabled', true);

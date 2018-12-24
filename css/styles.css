@@ -262,3 +262,14 @@ body {
     color: white;
     display: none;
 }
+
+a {
+    color: grey;
+    font-weight: bold;
+}
+
+#credits {
+    font-size: 10px;
+    font-family: "Verdana";
+    text-align: right;
+}
