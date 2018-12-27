@@ -204,9 +204,9 @@ class RandomizerSlotMachineEngine {
 
                     }, CHARACTER_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
 
-                }, 1500) // wait time to read results
+                }, DELAY_BEFORE_CHARACTER_ROLE); // wait time to read results
 
-            }, 2000); // setup time
+            }, SHOW_ROLE_RESULT_TIME); // setup time
 
         }, ROLE_SLOT_SHUFFLE_TIME + SLOT_MACHINE_DELAY);
     }
