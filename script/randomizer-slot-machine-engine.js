@@ -164,6 +164,7 @@ class RandomizerSlotMachineEngine {
 
     randomize(role, perkless) {
         this.uiHandler.showResultsOverlay();
+        this.uiHandler.togglePerksOverlay(true);
 
         if (role === undefined) {
             this.shuffleRole();
@@ -176,7 +177,6 @@ class RandomizerSlotMachineEngine {
         setTimeout(function () {
             self.uiHandler.updateRoleResult(role)
             self.uiHandler.updateUI(role);
-            self.uiHandler.togglePerklessOverlay(role, perkless);
 
             RandomizerUiGenerator.generateAllElements();
             self.registerSlotMachinesForRole(role);
@@ -193,6 +193,7 @@ class RandomizerSlotMachineEngine {
                         self.uiHandler.updateCharacterName(role, character)
 
                         if (!perkless) {
+                            self.uiHandler.togglePerksOverlay(false);
                             let perks = self.randomizePerks(role);
                             self.shufflePerks(role);
 

@@ -171,22 +171,6 @@ body {
     overflow: hidden;
 }
 
-.perks-overlay {
-    background-image: url('../img/misc/dbd-perkless.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 98;
-    width: 900px;
-    height: 255px;
-    margin: 0 auto;
-    position: absolute;
-    top: 575px;
-    left: 300px;
-    right: 0;
-    bottom: 0;
-    display: none;
-}
-
 .perk-slot {
     border-radius: 10px;
     background-color: var(--perk-bg-color);
@@ -200,6 +184,13 @@ body {
 .perk-slot::before,
 .perk-slot::after {
     box-sizing: border-box;
+}
+
+.perk-slot-overlay {
+    background-image: url("../img/misc/dbd-icon.png"), url("../img/perks/rarity/blank.png");
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    height: 245px;
 }
 
 .perk-slot-image {
