@@ -9,7 +9,7 @@ class RandomizerUrlBuilder {
     }
 
     static buildPerkBackPath(rare) {
-        return "img/perks/bg/" + (rare ? 'rare' : 'veryrare') + ".png";
+        return "img/perks/rarity/" + (rare ? 'rare' : 'veryrare') + ".png";
     }
 
     static buildCssPerkPath(role, perk) {

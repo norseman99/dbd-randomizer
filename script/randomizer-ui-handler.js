@@ -42,12 +42,8 @@ class RandomizerUiHandler {
         $('#overlay #role-result').html('');
     }
 
-    togglePerklessOverlay(role, show) {
-        if (show) {
-            $('#' + role + '-perks-overlay').css('display', 'block');
-        } else {
-            $('#' + role + '-perks-overlay').css('display', 'none');
-        }
+    togglePerksOverlay(show) {
+        $('.perk-slot-overlay').css('display', show ? 'block' : 'none');
     }
 
     enableControls() {
