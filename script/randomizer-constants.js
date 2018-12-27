@@ -217,12 +217,28 @@ const KILLER_POWERS = {
 }
 
 const POWER_ADDONS = {
-    'clown': {},
-    'doctor': {},
-    'freddy': [
-        'blackBox',
-        'blueDress',
-        'catBlock',
+    'clown': [],
+    'doctor': [
+        'calmCartersNotes',
+        'calmClassI',
+        'calmClassII',
+        'diciplineCartersNote',
+        'diciplineClassII',
+        'diciplineClassIII',
+        'highStimulusElectrod',
+        'interviewTape',
+        'iridescentKing',
+        'mapleKnight',
+        'moldyElectrode',
+        'obedienceCartersNote',
+        'orderCartersNotes',
+        'orderClassI',
+        'orderClassII',
+        'polishedElectrode',
+        'restraintCartersNote',
+        'restraintClassII',
+        'restraintClassIII',
+        'scrappedTape',
         'classPhoto',
         'gardenRake',
         'greenDress',
@@ -241,7 +257,28 @@ const POWER_ADDONS = {
         'woolShirt',
         'zBlock'
     ],
-    'hag': {},
+    'hag': [
+        'bloodiedMud',
+        'bloodiedWater',
+        'bogWater',
+        'crackedTurtleEgg',
+        'cypressNecklet',
+        'deadFlyMud',
+        'disfiguredEar',
+        'dragonflyWings',
+        'driedCicada',
+        'granmasHeart',
+        'halfEggshell',
+        'mintRag',
+        'powderedEggshell',
+        'pussyWillowCatkins',
+        'ropeNecklet',
+        'rustyShackles',
+        'scarredHand',
+        'swampOrchidNecklet',
+        'waterloggedShoe',
+        'willowWreath'
+    ],
     'hillbilly': {},
     'huntress': [
         'amanitaToxin',
@@ -273,12 +310,34 @@ const POWER_ADDONS = {
         'theBeastsMark',
         'theGrease'
     ],
-    'myers': {},
-    'nurse': {},
-    'pig': {},
-    'spirit': {},
-    'trapper': {},
-    'wraith': {}
+    'myers': [
+        'blondeHair',
+        'boyfriendsMemo',
+        'deadRabbit',
+        'glassFragment',
+        'hairBow',
+        'hairBrush',
+        'jewelry',
+        'jewelryBox',
+        'jMyersMemorial',
+        'judithsJournal',
+        'judithsTombstone',
+        'lockOfHair',
+        'memorialFlower',
+        'memorialFlower2',
+        'mirrorShard',
+        'reflectiveFragment',
+        'scratchedMirror',
+        'tackyEarrings',
+        'tombstonePiece',
+        'tuftOfHair',
+        'vanityMirror'
+    ],
+    'nurse': [],
+    'pig': [],
+    'spirit': [],
+    'trapper': [],
+    'wraith': []
 };
 
 const SURVIVOR_ITEMS = {
@@ -305,7 +364,16 @@ const SURVIVOR_ITEMS = {
 };
 
 const ITEMS_ADDONS =  {
-    'key': [],
+    'key': [
+        'bloodAmber',
+        'milkyGlass',
+        'prayerBeads',
+        'prayerRope',
+        'scratchedPearl',
+        'tokenErroded',
+        'tokenGold',
+        'weavedRing'
+    ],
     'medkit': [],
     'flashlight': [],
     'map': [],
