@@ -1,14 +1,27 @@
 class RandomizerUiGenerator {
 
-    static generateAllElements() {
-        RandomizerUiGenerator._generateKillerPortraitElements();
-        RandomizerUiGenerator._generateSurvivorPortraitElements();
-        RandomizerUiGenerator._generatePerkElements();
+    static generateAllElements(role) {
+        switch(role) {
+            case ROLES[0]:
+                RandomizerUiGenerator._generateKillerPortraitElements();
+                break;
+            case ROLES[1]:
+                RandomizerUiGenerator._generateSurvivorPortraitElements();
+                break;
+        }
+
+        RandomizerUiGenerator._generatePerkElements(role);
     }
 
-    static _generatePerkElements() {
-        RandomizerUiGenerator._generateKillerPerkElements();
-        RandomizerUiGenerator._generateSurvivorPerkElements();
+    static _generatePerkElements(role) {
+        switch(role) {
+            case ROLES[0]:
+                RandomizerUiGenerator._generateKillerPerkElements();
+                break;
+            case ROLES[1]:
+                RandomizerUiGenerator._generateSurvivorPerkElements();
+                break;
+        }
     }
 
     static _generateKillerPerkElements() {

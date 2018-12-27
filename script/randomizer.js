@@ -4,7 +4,7 @@ let uiHandler = new RandomizerUiHandler(uiTranslator);
 let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer, uiHandler);
 
 function init() {
-    RandomizerUiGenerator.generateAllElements();
+    RandomizerUiGenerator.generateAllElements(ROLES[1]);
     uiHandler.init(slotMachineEngine);
     slotMachineEngine.init();
 }

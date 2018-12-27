@@ -178,7 +178,7 @@ class RandomizerSlotMachineEngine {
             self.uiHandler.updateRoleResult(role)
             self.uiHandler.updateUI(role);
 
-            RandomizerUiGenerator.generateAllElements();
+            RandomizerUiGenerator.generateAllElements(role);
             self.registerSlotMachinesForRole(role);
 
             setTimeout(function () {
