@@ -130,8 +130,8 @@ body {
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 200px 150px;
-    background-position-y: 1px;
+    background-size: 200px 200px;
+    background-position-y: -30px;
 }
 
 #killer .role-result {
