@@ -119,18 +119,19 @@ body {
 }
 
 .item-result {
-    width: 60%;
+    width: 420px;
     height: 100%;
     float: left;
 }
 
 .role-result {
     float: left;
-    width: 20%;
+    width: 180px;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 200px 150px;
+    background-position-y: 1px;
 }
 
 #killer .role-result {
@@ -142,7 +143,7 @@ body {
 }
 
 .item-image {
-    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/common.png');
+    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 125px 125px;
@@ -170,7 +171,7 @@ body {
 }
 
 .item-addon-image {
-    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/common.png');
+    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 125px 125px;
@@ -188,15 +189,19 @@ body {
 }
 
 .offer-result {
-    width: 20%;
-    height: 100%;
+    width: 300px;
+    height: inherit;
     float: left;
 }
 
-.offer {
-    background-color: var(--offer-bg-color);
-    width: 100%;
-    height: 100%;
+.offer-image {
+    background-image: url('../img/misc/dbd-icon.png'), url('../img/offers/rarity/blank.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 125px 125px;
+    width: 125px;
+    height: inherit;
+    margin: 0 auto;
 }
 
 .perks {
@@ -302,5 +307,6 @@ a {
     clear: left;
     font-size: 9px;
     font-family: "Verdana";
+    padding-top: 20px;
     text-align: right;
 }
