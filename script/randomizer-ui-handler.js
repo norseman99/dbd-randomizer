@@ -96,11 +96,14 @@ class RandomizerUiHandler {
     }
 
     _initTranslations() {
-        $('#perk-randomizer').html(uiTranslator.getTranslation('UI_PERK_RANDOMIZER'));
-        $('#perkless-randomizer').html(uiTranslator.getTranslation('UI_PERKLESS_RANDOMIZER'));
-        $('#perk-randomize-all').attr('value', uiTranslator.getTranslation('UI_ANY'));
-        $('#perk-randomize-killer').attr('value', uiTranslator.getTranslation('UI_KILLER'));
-        $('#perk-randomize-survivor').attr('value', uiTranslator.getTranslation('UI_SURVIVOR'));
+        $('.randomize-label').html(uiTranslator.getTranslation('UI_RANDOMIZE_LABEL'));
+        $('.randomize-with-perks-label').html(uiTranslator.getTranslation('UI_RANDOMIZE_WITH_PERKS_LABEL'));
+        $('#randomize-all').html(uiTranslator.getTranslation('UI_ANY'));
+        $('#randomize-killer').html(uiTranslator.getTranslation('UI_KILLER'));
+        $('#randomize-survivor').html(uiTranslator.getTranslation('UI_SURVIVOR'));
+        $('#randomize-perks').html(uiTranslator.getTranslation('UI_PERKS_ONLY'));
+        $('#randomize-items').html(uiTranslator.getTranslation('UI_ITEMS_ONLY'));
+        $('#randomize-offers').html(uiTranslator.getTranslation('UI_OFFERS_ONLY'));
         $('#overlay-text-1').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT1'));
         $('#overlay-text-2').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT2'));
     }

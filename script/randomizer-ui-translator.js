@@ -12,11 +12,14 @@ class RandomizerUiTranslator {
 
 const TRANSLATIONS = {
     'en': {
-        "UI_PERK_RANDOMIZER": "Perk Randomizer",
-        "UI_PERKLESS_RANDOMIZER": "Perkless Randomizer",
+        "UI_RANDOMIZE_LABEL": "Randomize",
+        "UI_RANDOMIZE_WITH_PERKS_LABEL": "with perks",
         "UI_ANY": "Any",
         "UI_KILLER": "Killer",
         "UI_SURVIVOR": "Survivor",
+        "UI_PERKS_ONLY": "Perks Only",
+        "UI_ITEMS_ONLY": "Items Only",
+        "UI_OFFERS_ONLY": "Offers Only",
         "UI_OVERLAY_TEXT1": "THE WHEELS ARE TURNING!",
         "UI_OVERLAY_TEXT2": "LET'S GO!",
         "UI_OVERLAY_RESULT_KILLER": "KILLER IT IS!",
