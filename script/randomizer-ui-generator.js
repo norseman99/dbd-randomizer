@@ -17,6 +17,7 @@ class RandomizerUiGenerator {
         switch(role) {
             case ROLES[0]:
                 RandomizerUiGenerator._generateKillerPowerElement(character);
+                //RandomizerUiGenerator._generateKillerPowerAddonsElements('trapper');
                 break;
             case ROLES[1]:
                 break;
@@ -25,13 +26,25 @@ class RandomizerUiGenerator {
 
     static _generateKillerPowerElement(killer) {
         $('#killer .item-image').html(RandomizerUiGenerator._createDivElement('item', [
-            RandomizerUrlBuilder.buildCssKillerPowerPath(KILLER_POWERS[killer]),
-            RandomizerUrlBuilder.buildCssAddonPath('common')
+            RandomizerUrlBuilder.buildCssKillerPowerPath(KILLER_POWERS[killer].image),
+            RandomizerUrlBuilder.buildCssAddonBackPath('common')
         ]))
     }
 
-    static _generateKillerPowerAddonsElements() {
+    static _generateKillerPowerAddonsElements(killer) {
+        $('#killer .item-addon-image').each(function () {
+           $(this).html('');
 
+           let addons = KILLER_POWERS[killer].addons;
+           for (let i = 0; i < addons.length; i++) {
+               let addon = addons[i];
+
+               $(this).append(RandomizerUiGenerator._createDivElement('item-addon', [
+                   RandomizerUrlBuilder.buildCssKillerAddonPath(killer, addon.image),
+                   RandomizerUrlBuilder.buildCssAddonBackPath(addon.rarity)
+               ]));
+           }
+        });
     }
 
     static _generateSurvivorItemElemenmt() {

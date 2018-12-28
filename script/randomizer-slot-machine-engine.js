@@ -134,6 +134,12 @@ class RandomizerSlotMachineEngine {
         this.survivorSlotMachine = this._registerSlotMachine('#survivor .portrait-image', 0, 'character', 0);
     }
 
+    _registerKillerAddonsSlotMachine() {
+        this.killerAddonsSlotMachine = [];
+        this.killerAddonsSlotMachine.push(this._registerSlotMachine('#power-addon1', 1, 'addon', 0));
+        this.killerAddonsSlotMachine.push(this._registerSlotMachine('#power-addon2', 2, 'addon', 0));
+    }
+
     _registerSlotMachine(selector, active, type, index) {
         let self = this;
         let options = {

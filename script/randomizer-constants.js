@@ -201,20 +201,83 @@ const RARE_PERKS = [
 ];
 
 const KILLER_POWERS = {
-    'clown': 'gasBomb',
-    'doctor': 'cartersSpark',
-    'freddy': 'dreamMaster',
-    'hag': 'blackenedCatalyst',
-    'hillbilly': 'chainsaw',
-    'huntress': 'huntingHatchets',
-    'leatherface': 'bubbasChainsaw',
-    'legion': 'feralFrenzy',
-    'myers': 'stalker3',
-    'nurse': 'breath',
-    'pig': 'reverseBearTrap',
-    'spirit': 'yamaokasHaunting',
-    'trapper': 'trap',
-    'wraith': 'bell'
+    'clown': {
+        image: 'gasBomb',
+        addons: []
+    },
+    'doctor': {
+        image: 'cartersSpark',
+        addons: []
+    },
+    'freddy': {
+        image: 'dreamMaster',
+        addons: []
+    },
+    'hag': {
+        image: 'blackenedCatalyst',
+        addons: []
+    },
+    'hillbilly': {
+        image: 'chainsaw',
+        addons: []
+    },
+    'huntress': {
+        image: 'huntingHatchets',
+        addons: []
+    },
+    'leatherface': {
+        image: 'bubbasChainsaw',
+        addons: []
+    },
+    'legion': {
+        image: 'feralFrenzy',
+        addons: []
+    },
+    'myers': {
+        image: 'stalker3',
+        addons: []
+    },
+    'nurse': {
+        image: 'breath',
+        addons: []
+    },
+    'pig': {
+        image: 'reverseBearTrap',
+        addons: []
+    },
+    'spirit': {
+        image: 'yamaokasHaunting',
+        addons: []
+    },
+    'trapper': {
+        image: 'trap',
+        addons: [
+            { name: 'Trapper Sack', image: 'trapperSack', rarity: 'common' },
+            { name: 'Trapper Gloves', image: 'trapperGloves', rarity: 'common' },
+            { name: 'Strong Coil Spring', image: 'coilSpring', rarity: 'common' },
+            { name: 'Padded Jaws', image: 'paddedJaws', rarity: 'common' },
+            { name: 'Trapper Bag', image: 'trapperBag', rarity: 'uncommon' },
+            { name: 'Trap Setters', image: 'tapSetters', rarity: 'uncommon' },
+            { name: 'Serrated Jaws', image: 'serratedJaws', rarity: 'uncommon' },
+            { name: 'Logwood Dye', image: 'logwoodDye', rarity: 'uncommon' },
+            { name: '4-Coil Spring Kit', image: 'coilsKit4', rarity: 'uncommon' },
+            { name: 'Wax Brick', image: 'waxBrick', rarity: 'rare' },
+            { name: 'Tar Bottle', image: 'tarBottle', rarity: 'rare' },
+            { name: 'Setting Tools', image: 'settingTools', rarity: 'rare' },
+            { name: 'Secondary Coil', image: 'secondaryCoil', rarity: 'rare' },
+            { name: 'Rusted Jaws', image: 'rustedJaws', rarity: 'rare' },
+            { name: 'Stitched Bag', image: 'stichedBag', rarity: 'veryrare' },
+            { name: 'Oily Coil', image: 'oilyCoil', rarity: 'veryrare' },
+            { name: 'Honing Stone', image: 'honingStone', rarity: 'veryrare' },
+            { name: 'Fastening Tools', image: 'fasteningTools', rarity: 'veryrare' },
+            { name: 'Iridescent Stone', image: 'diamondStone', rarity: 'ultra' },
+            { name: 'Bloody Coil', image: 'bloodyCoil', rarity: 'ultra' }
+        ]
+    },
+    'wraith': {
+        image: 'bell',
+        addons: []
+    }
 }
 
 const POWER_ADDONS = {
@@ -337,7 +400,8 @@ const POWER_ADDONS = {
     'nurse': [],
     'pig': [],
     'spirit': [],
-    'trapper': [],
+    'trapper': [
+    ],
     'wraith': []
 };
 

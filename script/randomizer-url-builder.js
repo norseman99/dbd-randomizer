@@ -16,7 +16,11 @@ class RandomizerUrlBuilder {
         return "url('img/powers/iconPowers_" + killerPower + ".png')";
     }
 
-    static buildCssAddonPath(rarity) {
+    static buildCssKillerAddonPath(killer, imageName) {
+        return "url('img/addons/killers/" + killer + "/iconAddon_" + imageName + ".png')";
+    }
+
+    static buildCssAddonBackPath(rarity) {
         return "url('img/addons/rarity/" + rarity + ".png')";
     }
 
