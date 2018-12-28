@@ -45,6 +45,7 @@ class RandomizerUiHandler {
     }
 
     togglePerksOverlay(show) {
+        $('.perk-slot-name').html('');
         $('.perk-slot-overlay').css('display', show ? 'block' : 'none');
     }
 
