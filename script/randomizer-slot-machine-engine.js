@@ -8,28 +8,36 @@ class RandomizerSlotMachineEngine {
         this.uiHandler = uiHandler;
     }
 
-    init() {
+    init(defaultRole) {
+        this.setActiveRole(defaultRole);
         this._registerRoleSlotMachine();
-
-        let self = this;
-        ROLES.forEach(function (role) {
-            self.registerSlotMachinesForRole(role);
-        })
+        this.registerSlotMachinesForRole(defaultRole);
     }
 
-    randomizeRole() {
-        let result = this.engine.pickRandomRole();
-        this.roleSlotMachineResult = result.id;
-        return result.role;
+    _randomizeRole() {
+        this.roleSlotMachineResult = this.engine.pickRandomRole();
     }
 
-    randomizeCharacter(role) {
+    _randomizeAndGetActiveRole() {
+        this._randomizeRole();
+        return this.getActiveRole();
+    }
+
+    getActiveRole() {
+        return this.roleSlotMachineResult.role;
+    }
+
+    setActiveRole(role) {
+        this.roleSlotMachineResult = { id: ROLES.indexOf(role), role: role};
+    }
+
+    _randomizeCharacter(role) {
         let result = this.engine.pickRandomCharacter(role);
         this.characterSlotMachineResult = result.id;
         return result.character;
     }
 
-    randomizePerks(role) {
+    _randomizePerks(role) {
         let result = this.engine.pickRandomPerks(role)
         this.perkSlotMachinesResult = result.ids;
         return result.perks;
@@ -74,7 +82,7 @@ class RandomizerSlotMachineEngine {
         }
     }
 
-    toggleEnableControlsOnCharacterComplete(value) {
+    _toggleEnableControlsOnCharacterComplete(value) {
         this.controlsOnCharacterComplete = value;
     }
 
@@ -154,7 +162,7 @@ class RandomizerSlotMachineEngine {
     _getRandomizeResult(type, index) {
         switch(type) {
             case 'role':
-                return this.roleSlotMachineResult;
+                return this.roleSlotMachineResult.id;
             case 'perk':
                 return this.perkSlotMachinesResult[index];
             case 'character':
@@ -162,16 +170,16 @@ class RandomizerSlotMachineEngine {
         }
     }
 
-    randomize(role, perkless) {
+    randomize(role, withPerks) {
         this.uiHandler.showResultsOverlay();
         this.uiHandler.togglePerksOverlay(true);
 
         if (role === undefined) {
+            role = this._randomizeAndGetActiveRole();
             this.shuffleRole();
+        } else {
+            this.setActiveRole(role);
         }
-
-        role = (role !== undefined ? role : this.randomizeRole());
-        perkless = perkless === 'true' ? true : false;
 
         let self = this;
         setTimeout(function () {
@@ -185,21 +193,16 @@ class RandomizerSlotMachineEngine {
                 self.uiHandler.hideResultsOverlay();
 
                 setTimeout(function () {
-                    let character = self.randomizeCharacter(role);
-                    self.toggleEnableControlsOnCharacterComplete(perkless);
+                    let character = self._randomizeCharacter(role);
+                    self._toggleEnableControlsOnCharacterComplete(!withPerks);
                     self.shuffleCharacter(role);
 
                     setTimeout(function () {
-                        self.uiHandler.updateCharacterName(role, character)
+                        self.uiHandler.updateCharacterName(role, character);
+                        RandomizerUiGenerator.generateCharacterSpecificElements(role, character);
 
-                        if (!perkless) {
-                            self.uiHandler.togglePerksOverlay(false);
-                            let perks = self.randomizePerks(role);
-                            self.shufflePerks(role);
-
-                            setTimeout(function () {
-                                self.uiHandler.updatePerkNames(role, perks);
-                            }, PERK_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
+                        if (withPerks) {
+                            self.randomizePerks();
                         }
 
                     }, CHARACTER_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
@@ -209,5 +212,17 @@ class RandomizerSlotMachineEngine {
             }, SHOW_ROLE_RESULT_TIME); // setup time
 
         }, ROLE_SLOT_SHUFFLE_TIME + SLOT_MACHINE_DELAY);
+    }
+
+    randomizePerks() {
+        this.uiHandler.togglePerksOverlay(false);
+        let role = this.getActiveRole();
+        let perks = this._randomizePerks(role);
+        this.shufflePerks(role);
+
+        let self = this;
+        setTimeout(function () {
+            self.uiHandler.updatePerkNames(role, perks);
+        }, PERK_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
     }
 }

@@ -208,6 +208,7 @@ const KILLER_POWERS = {
     'hillbilly': 'chainsaw',
     'huntress': 'huntingHatchets',
     'leatherface': 'bubbasChainsaw',
+    'legion': 'feralFrenzy',
     'myers': 'stalker3',
     'nurse': 'breath',
     'pig': 'reverseBearTrap',

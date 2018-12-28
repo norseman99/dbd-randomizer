@@ -13,6 +13,35 @@ class RandomizerUiGenerator {
         RandomizerUiGenerator._generatePerkElements(role);
     }
 
+    static generateCharacterSpecificElements(role, character) {
+        switch(role) {
+            case ROLES[0]:
+                RandomizerUiGenerator._generateKillerPowerElement(character);
+                break;
+            case ROLES[1]:
+                break;
+        }
+    }
+
+    static _generateKillerPowerElement(killer) {
+        $('#killer .item-image').html(RandomizerUiGenerator._createDivElement('item', [
+            RandomizerUrlBuilder.buildCssKillerPowerPath(KILLER_POWERS[killer]),
+            RandomizerUrlBuilder.buildCssAddonPath('common')
+        ]))
+    }
+
+    static _generateKillerPowerAddonsElements() {
+
+    }
+
+    static _generateSurvivorItemElemenmt() {
+
+    }
+
+    static _generateSurvivorItemAddonsElements() {
+
+    }
+
     static _generatePerkElements(role) {
         switch(role) {
             case ROLES[0]:
@@ -61,7 +90,7 @@ class RandomizerUiGenerator {
         $(selector).each(function () {
             let portrait = this;
             characters.forEach(function (character) {
-                $(portrait).append(RandomizerUiGenerator._createDivElement(className, [RandomizerUrlBuilder.buildCharacterPortraitPath(role, character)]));
+                $(portrait).append(RandomizerUiGenerator._createDivElement(className, [RandomizerUrlBuilder.buildCssCharacterPortraitPath(role, character)]));
             });
         })
     }

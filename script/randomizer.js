@@ -4,9 +4,10 @@ let uiHandler = new RandomizerUiHandler(uiTranslator);
 let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer, uiHandler);
 
 function init() {
-    RandomizerUiGenerator.generateAllElements(ROLES[1]);
-    uiHandler.init(slotMachineEngine);
-    slotMachineEngine.init();
+    let defaultRole = ROLES[0];
+    RandomizerUiGenerator.generateAllElements(defaultRole);
+    uiHandler.init(defaultRole, slotMachineEngine);
+    slotMachineEngine.init(defaultRole);
 }
 
 $(function() {

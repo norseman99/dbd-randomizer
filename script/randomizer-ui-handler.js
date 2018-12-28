@@ -3,12 +3,14 @@ class RandomizerUiHandler {
         this.uiTranslator = uiTranslator;
     }
 
-    init(slotMachineEngine) {
-        this._initTranslations()
+    init(defaultRole, slotMachineEngine) {
+        this.updateUI(defaultRole);
+        this._initTranslations();
         this._registerRandomizeEvent(slotMachineEngine);
     }
 
     updateUI(role) {
+        this._clearElements(role)
         this._enableRole(role);
     }
 
@@ -77,6 +79,14 @@ class RandomizerUiHandler {
         $('#survivor').css('display', survivorsDisplay);
     }
 
+    _clearElements(role) {
+        switch(role) {
+            case ROLES[0]:
+                $('#killer .item-image').html('');
+                break;
+        }
+    }
+
     _registerPerkLock() {
         $('.perk').on('click',function () {
             let lockElement = this.children[0];
@@ -90,9 +100,6 @@ class RandomizerUiHandler {
         $('#perk-randomize-all').attr('value', uiTranslator.getTranslation('UI_ANY'));
         $('#perk-randomize-killer').attr('value', uiTranslator.getTranslation('UI_KILLER'));
         $('#perk-randomize-survivor').attr('value', uiTranslator.getTranslation('UI_SURVIVOR'));
-        $('#perkless-randomize-all').attr('value', uiTranslator.getTranslation('UI_ANY'));
-        $('#perkless-randomize-killer').attr('value', uiTranslator.getTranslation('UI_KILLER'));
-        $('#perkless-randomize-survivor').attr('value', uiTranslator.getTranslation('UI_SURVIVOR'));
         $('#overlay-text-1').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT1'));
         $('#overlay-text-2').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT2'));
     }
@@ -102,7 +109,12 @@ class RandomizerUiHandler {
 
         $('.randomizer').on("click", function () {
             self.disableControls();
-            slotMachineEngine.randomize($(this).attr('data-character'), $(this).attr('data-perkless'));
+            slotMachineEngine.randomize($(this).attr('data-character'), $('#randomize-with-perks').is(':checked'));
+        });
+
+        $('#randomize-perks').on("click", function () {
+            self.disableControls();
+            slotMachineEngine.randomizePerks();
         });
     }
 }
