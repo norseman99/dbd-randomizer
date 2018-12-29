@@ -171,7 +171,6 @@ body {
 }
 
 .item-addon-image {
-    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 125px 125px;
@@ -182,10 +181,14 @@ body {
     overflow: hidden;
 }
 
+.item-addon-image.blank {
+    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
+}
+
 .item-addon {
-    background-size: inherit;
+    background-size: 125px 125px;
     width: inherit;
-    height: inherit;
+    height: 125px;
 }
 
 .offer-result {

@@ -43,6 +43,16 @@ class Engine {
         return { ids: ids, perks: perks };
     }
 
+    pickRandomAddons(character) {
+        let ids;
+
+        if ($.inArray(character, KILLERS)) {
+            ids = this._getRandomNumbersBetween(2, 0, KILLER_POWERS[character].addons.length - 1);
+        }
+
+        return { ids: ids };
+    }
+
     _pickRandomNumber(array) {
         return this._getRandomNumberBetween(0, array.length);
     }

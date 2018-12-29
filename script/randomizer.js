@@ -5,9 +5,10 @@ let slotMachineEngine = new RandomizerSlotMachineEngine(randomizer, uiHandler);
 
 function init() {
     let defaultRole = ROLES[0];
+    let defaultCharacter = KILLERS[0];
     RandomizerUiGenerator.generateAllElements(defaultRole);
     uiHandler.init(defaultRole, slotMachineEngine);
-    slotMachineEngine.init(defaultRole);
+    slotMachineEngine.init(defaultRole, defaultCharacter);
 }
 
 $(function() {

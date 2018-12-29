@@ -49,6 +49,14 @@ class RandomizerUiHandler {
         $('.perk-slot-overlay').css('display', show ? 'block' : 'none');
     }
 
+    toggleAddonsBlankBackground(show) {
+        if (show) {
+            $('.item-addon-image').addClass('blank');
+        } else {
+            $('.item-addon-image').removeClass('blank');
+        }
+    }
+
     enableControls() {
         $('#controls').css('visibility', '');
         $('#randomize-all').attr('disabled', false);
@@ -84,6 +92,7 @@ class RandomizerUiHandler {
         switch(role) {
             case ROLES[0]:
                 $('#killer .item-image').html('');
+                $('#killer .item-addon-image').html('');
                 break;
         }
     }
@@ -119,6 +128,11 @@ class RandomizerUiHandler {
         $('#randomize-perks').on("click", function () {
             self.disableControls();
             slotMachineEngine.randomizePerks();
+        });
+
+        $('#randomize-items').on("click", function () {
+            self.disableControls();
+            slotMachineEngine.randomizeItems();
         });
     }
 }

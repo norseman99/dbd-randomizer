@@ -17,7 +17,7 @@ class RandomizerUiGenerator {
         switch(role) {
             case ROLES[0]:
                 RandomizerUiGenerator._generateKillerPowerElement(character);
-                //RandomizerUiGenerator._generateKillerPowerAddonsElements('trapper');
+                RandomizerUiGenerator._generateKillerPowerAddonsElements(character);
                 break;
             case ROLES[1]:
                 break;
@@ -42,7 +42,7 @@ class RandomizerUiGenerator {
                $(this).append(RandomizerUiGenerator._createDivElement('item-addon', [
                    RandomizerUrlBuilder.buildCssKillerAddonPath(killer, addon.image),
                    RandomizerUrlBuilder.buildCssAddonBackPath(addon.rarity)
-               ]));
+               ], { title: addon.name }));
            }
         });
     }
@@ -108,9 +108,14 @@ class RandomizerUiGenerator {
         })
     }
 
-    static _createDivElement(className, backgroundImages) {
+    static _createDivElement(className, backgroundImages, options) {
         let div = document.createElement('div');
         $(div).addClass(className).css('backgroundImage', this._buildBackgroundImages(backgroundImages));
+
+        if (options && options.title) {
+            $(div).attr('title', options.title);
+        }
+
         return div;
     }
 

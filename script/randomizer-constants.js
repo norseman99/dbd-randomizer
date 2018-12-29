@@ -1,9 +1,10 @@
 const SLOT_MACHINE_DELAY = 500;
-const DELAY_BEFORE_CHARACTER_ROLE = 1500;
-const SHOW_ROLE_RESULT_TIME = 2000;
-const ROLE_SLOT_SHUFFLE_TIME = 5000; // the duration of the role shuffle in ms
-const PERK_SLOT_SHUFFLE_TIME = 5000; // the duration of the perk shuffle in ms
-const CHARACTER_SLOT_SHUFFLE_TIME = 5000; // the duration of the character shuffle in ms
+const DELAY_BEFORE_CHARACTER_ROLE = 150;
+const SHOW_ROLE_RESULT_TIME = 200;
+const ROLE_SLOT_SHUFFLE_TIME = 500; // the duration of the role shuffle in ms
+const PERK_SLOT_SHUFFLE_TIME = 500; // the duration of the perk shuffle in ms
+const CHARACTER_SLOT_SHUFFLE_TIME = 500; // the duration of the character shuffle in ms
+const ADDONS_SLOT_SHUFFLE_TIME = 5000; // the duration of the addons shuffle in ms
 
 const ROLES = [
     'killer',
@@ -219,7 +220,27 @@ const KILLER_POWERS = {
     },
     'hillbilly': {
         image: 'chainsaw',
-        addons: []
+        addons: [
+            { name: 'Vegetable Oil', image: 'vegetableOil', rarity: 'common' },
+            { name: 'Spark Plug', image: 'sparkPlug', rarity: 'common' },
+            { name: 'Chainsaw File', image: 'chainsawFile', rarity: 'common' },
+            { name: 'Spiked Boots', image: 'spikedBoots', rarity: 'uncommon' },
+            { name: 'Speed Limiter', image: 'speedLimiter', rarity: 'uncommon' },
+            { name: 'Shop Lubricant', image: 'shopLubricant', rarity: 'uncommon' },
+            { name: 'Primer Bulb', image: 'primerBulb', rarity: 'uncommon' },
+            { name: 'Long Guide Bar', image: 'longGuideBar', rarity: 'uncommon' },
+            { name: 'Homemade Muffler', image: 'homemadeMuffler', rarity: 'uncommon' },
+            { name: 'Grisly Chains', image: 'chainsGrisly', rarity: 'uncommon' },
+            { name: 'Depth Gauge Rake', image: 'depthGaugeRake', rarity: 'uncommon' },
+            { name: 'Death Engravings', image: 'deathEngravings', rarity: 'uncommon' },
+            { name: 'The Thompson\'s Mix', image: 'theThompsonsMix', rarity: 'rare' },
+            { name: 'Rusted Chains', image: 'chainsRusted', rarity: 'rare' },
+            { name: 'Light Chassis', image: 'lightChassis', rarity: 'rare' },
+            { name: 'Doom Engravings', image: 'doomEngravings', rarity: 'rare' },
+            { name: 'Carburettor Tuning Guide', image: 'carburetorTuningGuide', rarity: 'rare' },
+            { name: 'Thompson\'s Moonshine', image: 'thompsonsMoonshine', rarity: 'veryrare' },
+            { name: 'Begrimed Chains', image: 'chainsBloody2', rarity: 'veryrare' }
+        ]
     },
     'huntress': {
         image: 'huntingHatchets',
@@ -276,7 +297,29 @@ const KILLER_POWERS = {
     },
     'wraith': {
         image: 'bell',
-        addons: []
+        addons: [
+            { name: '"The Serpent" - Soot', image: 'sootTheSerpent', rarity: 'common' },
+            { name: '"The Hound" - Soot', image: 'sootTheHound', rarity: 'common' },
+            { name: '"The Ghost" - Soot', image: 'sootTheGhost', rarity: 'common' },
+            { name: '"The Beast" - Soot', image: 'sootTheBeast', rarity: 'common' },
+            { name: 'Bone Clapper', image: 'boneClapper', rarity: 'uncommon' },
+            { name: '"Blink" - Mud', image: 'mudBlink', rarity: 'uncommon' },
+            { name: '"Windstorm" - Mud', image: 'mudWindstorm', rarity: 'uncommon' },
+            { name: '"Swift Hunt" - Mud', image: 'mudSwiftHunt', rarity: 'uncommon' },
+            { name: '"Blind Warrior" - Mud', image: 'mudBaikraKaeug', rarity: 'uncommon' },
+            { name: '"Windstorm" - White', image: 'whiteWindstorm', rarity: 'rare' },
+            { name: '"Swift Hunt" - White', image: 'whiteKuntinTakkho', rarity: 'rare' },
+            { name: '"Shadow Dance" - White', image: 'whiteBlink', rarity: 'rare' },
+            { name: '"Blink" - White', image: 'whiteShadowDance', rarity: 'rare' },
+            { name: '"Blind Warrior" - White', image: 'whiteBlindWarrior', rarity: 'rare' },
+            { name: '"Windstorm" - Blood', image: 'bloodWindstorm', rarity: 'veryrare' },
+            { name: '"Swift Hunt" - Blood', image: 'bloodSwiftHunt', rarity: 'veryrare' },
+            { name: '"Shadow Dance" - Blood', image: 'bloodShadowDance', rarity: 'veryrare' },
+            { name: '"All Seeing" - Blood', image: 'bloodKraFabai', rarity: 'veryrare' },
+            { name: 'Coxcombed Clapper', image: 'coxcombedClapper', rarity: 'ultra' },
+            { name: '"All Seeing" - Spirit', image: 'spiritAllSeeing', rarity: 'ultra' },
+
+        ]
     }
 }
 
