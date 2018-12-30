@@ -56,7 +56,16 @@ class RandomizerSlotMachineEngine {
         return result.perks;
     }
 
-    _randomizeAddons(role, character) {
+    _randomizeSurvivorItem() {
+        this.survivorItemSlotMachineResult = this.engine.pickRandomSurvivorItem();
+    }
+
+    _randomizeAndGetSurvivorItem() {
+        this._randomizeSurvivorItem();
+        return this.survivorItemSlotMachineResult.item;
+    }
+
+    _randomizeItemAddons(role, character) {
         let result = this.engine.pickRandomAddons(character);
         this.characterAddonSlotMachineResult = result.ids;
     }
@@ -87,12 +96,17 @@ class RandomizerSlotMachineEngine {
         }
     }
 
+    shuffleSurvivorItems() {
+        this._shuffleSlotMachine(this.survivorItemsSlotMachine, ITEMS_SLOT_SHUFFLE_TIME);
+    }
+
     shuffleAddons(role) {
         switch (role) {
             case ROLES[0]:
                 this._shuffleSlotMachines(this.killerAddonsSlotMachines, ADDONS_SLOT_SHUFFLE_TIME);
                 break;
             case ROLES[1]:
+                this._shuffleSlotMachines(this.survivorItemAddonsSlotMachines, ADDONS_SLOT_SHUFFLE_TIME);
                 break;
         }
     }
@@ -162,10 +176,32 @@ class RandomizerSlotMachineEngine {
         this.survivorSlotMachine = this._registerSlotMachine('#survivor .portrait-image', 0, 'character', 0);
     }
 
+    _registerAddonsSlotMachine(role) {
+        switch(role) {
+            case ROLES[0]:
+                this._registerKillerAddonsSlotMachine();
+                break;
+            case ROLES[1]:
+                this._registerSurvivorItemAddonsSlotMachine();
+                break;
+        }
+    }
+
+
     _registerKillerAddonsSlotMachine() {
         this.killerAddonsSlotMachines = [];
         this.killerAddonsSlotMachines.push(this._registerSlotMachine('#power-addon1', 1, 'addon', 0));
         this.killerAddonsSlotMachines.push(this._registerSlotMachine('#power-addon2', 2, 'addon', 1));
+    }
+
+    _registerSurvivorItemsSlotMachine() {
+        this.survivorItemsSlotMachine = this._registerSlotMachine('#survivor-item', 1, 'item', 0);
+    }
+
+    _registerSurvivorItemAddonsSlotMachine() {
+        this.survivorItemAddonsSlotMachines = [];
+        this.survivorItemAddonsSlotMachines.push(this._registerSlotMachine('#item-addon1', 1, 'addon', 0));
+        this.survivorItemAddonsSlotMachines.push(this._registerSlotMachine('#item-addon2', 2, 'addon', 1));
     }
 
     _registerSlotMachine(selector, active, type, index) {
@@ -201,6 +237,8 @@ class RandomizerSlotMachineEngine {
                 return this.perkSlotMachinesResult[index];
             case 'character':
                 return this.characterSlotMachineResult.id;
+            case 'item':
+                return this.survivorItemSlotMachineResult.id;
             case 'addon':
                 return this.characterAddonSlotMachineResult[index];
         }
@@ -263,13 +301,39 @@ class RandomizerSlotMachineEngine {
 
     randomizeItems() {
         let role = this.getActiveRole();
-        let character = 'leatherface';
+        let character = this.getActiveCharacter();
 
+        switch(role) {
+            case ROLES[0]:
+                this._randomizeActiveItem(role, character);
+                break;
+            case ROLES[1]:
+                this._randomizeActiveSurvivorItem();
+                break;
+        }
+    }
+
+    _randomizeActiveSurvivorItem() {
+        this.uiHandler.toggleItemBlankBackground(false);
+        RandomizerUiGenerator.generateSurvivorItemElements();
+        this._registerSurvivorItemsSlotMachine();
+
+        let item = this._randomizeAndGetSurvivorItem()
+        this.shuffleSurvivorItems()
+
+        let self = this;
+        setTimeout(function () {
+            self._randomizeActiveItem(ROLES[1], item);
+            self.uiHandler.toggleItemBlankBackground(true);
+        }, ITEMS_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
+    }
+
+    _randomizeActiveItem(role, character) {
         this.uiHandler.toggleAddonsBlankBackground(false);
         RandomizerUiGenerator.generateCharacterSpecificElements(role, character);
-        this._registerKillerAddonsSlotMachine();
 
-        this._randomizeAddons(role, character)
+        this._registerAddonsSlotMachine(role);
+        this._randomizeItemAddons(role, character);
         this.shuffleAddons(role);
 
         let self = this;

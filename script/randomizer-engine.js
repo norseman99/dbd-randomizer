@@ -43,11 +43,19 @@ class Engine {
         return { ids: ids, perks: perks };
     }
 
+    pickRandomSurvivorItem() {
+        let id = this._pickRandomNumber(SURVIVOR_ITEMS);
+
+        return { id: id, item: SURVIVOR_ITEMS[id].item };
+    }
+
     pickRandomAddons(character) {
         let ids;
 
         if ($.inArray(character, KILLERS) !== -1) {
             ids = this._getRandomNumbersBetween(2, 0, KILLER_POWERS[character].addons.length - 1);
+        } else {
+            ids = this._getRandomNumbersBetween(2, 0, ITEMS_ADDONS[character].length - 1);
         }
 
         return { ids: ids };

@@ -143,7 +143,6 @@ body {
 }
 
 .item-image {
-    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 125px 125px;
@@ -151,12 +150,17 @@ body {
     width: 125px;
     height: 100%;
     float: left;
+    overflow: hidden;
+}
+
+.item-image.blank {
+    background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
 }
 
 .item {
-    background-size: inherit;
+    background-size: 125px 125px;
     width: inherit;
-    height: inherit;
+    height: 125px;
 }
 
 .item-plus {

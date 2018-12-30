@@ -49,6 +49,14 @@ class RandomizerUiHandler {
         $('.perk-slot-overlay').css('display', show ? 'block' : 'none');
     }
 
+    toggleItemBlankBackground(show) {
+        if (show) {
+            $('.item-image').addClass('blank');
+        } else {
+            $('.item-image').removeClass('blank');
+        }
+    }
+
     toggleAddonsBlankBackground(show) {
         if (show) {
             $('.item-addon-image').addClass('blank');
@@ -89,12 +97,10 @@ class RandomizerUiHandler {
     }
 
     _clearElements(role) {
-        switch(role) {
-            case ROLES[0]:
-                $('#killer .item-image').html('');
-                $('#killer .item-addon-image').html('');
-                break;
-        }
+        $('.item-image').html('');
+        $('.item-image').addClass('blank');
+        $('.item-addon-image').html('');
+        $('.item-addon-image').addClass('blank');
     }
 
     _registerPerkLock() {

@@ -20,6 +20,7 @@ class RandomizerUiGenerator {
                 RandomizerUiGenerator._generateKillerPowerAddonsElements(character);
                 break;
             case ROLES[1]:
+                RandomizerUiGenerator._generateSurvivorItemAddonsElements(character);
                 break;
         }
     }
@@ -47,12 +48,34 @@ class RandomizerUiGenerator {
         });
     }
 
-    static _generateSurvivorItemElemenmt() {
+    static generateSurvivorItemElements() {
+        $('#survivor .item-image').each(function () {
+            $(this).html('');
 
+            let self = this;
+            SURVIVOR_ITEMS.forEach(function (item) {
+                $(self).append(RandomizerUiGenerator._createDivElement('item', [
+                    RandomizerUrlBuilder.buildCssItemPath(item.image),
+                    RandomizerUrlBuilder.buildCssItemBackPath(item.rarity)
+                ], { title: item.name }));
+            });
+        });
     }
 
-    static _generateSurvivorItemAddonsElements() {
+    static _generateSurvivorItemAddonsElements(item) {
+        $('#survivor .item-addon-image').each(function () {
+            $(this).html('');
 
+            let addons = ITEMS_ADDONS[item];
+            for (let i = 0; i < addons.length; i++) {
+                let addon = addons[i];
+
+                $(this).append(RandomizerUiGenerator._createDivElement('item-addon', [
+                    RandomizerUrlBuilder.buildCssItemAddonPath(item, addon.image),
+                    RandomizerUrlBuilder.buildCssAddonBackPath(addon.rarity)
+                ], { title: addon.name }));
+            }
+        });
     }
 
     static _generatePerkElements(role) {

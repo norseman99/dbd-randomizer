@@ -1,10 +1,11 @@
 const SLOT_MACHINE_DELAY = 500;
 const DELAY_BEFORE_CHARACTER_ROLE = 150;
 const SHOW_ROLE_RESULT_TIME = 200;
-const ROLE_SLOT_SHUFFLE_TIME = 500; // the duration of the role shuffle in ms
-const PERK_SLOT_SHUFFLE_TIME = 500; // the duration of the perk shuffle in ms
-const CHARACTER_SLOT_SHUFFLE_TIME = 500; // the duration of the character shuffle in ms
-const ADDONS_SLOT_SHUFFLE_TIME = 500; // the duration of the addons shuffle in ms
+const ROLE_SLOT_SHUFFLE_TIME = 5000; // the duration of the role shuffle in ms
+const PERK_SLOT_SHUFFLE_TIME = 5000; // the duration of the perk shuffle in ms
+const CHARACTER_SLOT_SHUFFLE_TIME = 5000; // the duration of the character shuffle in ms
+const ITEMS_SLOT_SHUFFLE_TIME = 2000; // the duration of the items shuffle in ms
+const ADDONS_SLOT_SHUFFLE_TIME = 2000; // the duration of the addons shuffle in ms
 
 const ROLES = [
     'killer',
@@ -553,26 +554,26 @@ const KILLER_POWERS = {
 };
 
 const SURVIVOR_ITEMS = [
-    { name: '', image: 'brokenKey', type: 'key', rarity: 'common' },
-    { name: '', image: 'dullKey2', type: 'key', rarity: 'common' },
-    { name: '', image: 'key', type: 'key', rarity: 'common' },
-    { name: '', image: 'chineseFirecracker', type: 'firecracker', rarity: 'common' },
-    { name: '', image: 'winterEventFirecracker', type: 'firecracker', rarity: 'common' },
-    { name: '', image: 'firstAidKit', type: 'medkit', rarity: 'common' },
-    { name: '', image: 'medkit', type: 'medkit', rarity: 'common' },
-    { name: '', image: 'rangersAidKit', type: 'medkit', rarity: 'common' },
-    { name: '', image: 'rundownAidKit', type: 'medkit', rarity: 'common' },
-    { name: '', image: 'flashlight', type: 'flashlight', rarity: 'common' },
-    { name: '', image: 'flashlightSport', type: 'flashlight', rarity: 'common' },
-    { name: '', image: 'flashlightUtility', type: 'flashlight', rarity: 'common' },
-    { name: '', image: 'map', type: 'map', rarity: 'common' },
-    { name: '', image: 'rainbowMap', type: 'map', rarity: 'common' },
-    { name: '', image: 'toolbox', type: 'toolbox', rarity: 'common' },
-    { name: '', image: 'toolboxAlexs', type: 'toolbox', rarity: 'common' },
-    { name: '', image: 'toolboxCommodious', type: 'toolbox', rarity: 'common' },
-    { name: '', image: 'toolboxEnginners', type: 'toolbox', rarity: 'common' },
-    { name: '', image: 'toolboxMechanics', type: 'toolbox', rarity: 'common' },
-    { name: '', image: 'toolboxWornOut', type: 'toolbox', rarity: 'common' }
+    { name: 'Broken Key', image: 'brokenKey', item: 'key', rarity: 'rare' },
+    { name: 'Dull Key', image: 'dullKey2', item: 'key', rarity: 'veryrare' },
+    { name: 'Skeleton Key', image: 'key', item: 'key', rarity: 'ultra' },
+    //{ name: 'Chinese Firecracker', image: 'chineseFirecracker', item: 'firecracker', rarity: 'uncommon' },
+    //{ name: 'Winter Party Starter', image: 'winterEventFirecracker', item: 'firecracker', rarity: 'uncommon' },
+    { name: 'Camping Aid Kit', image: 'rundownAidKit', item: 'medkit', rarity: 'common' },
+    { name: 'First Aid Kit', image: 'firstAidKit', item: 'medkit', rarity: 'uncommon' },
+    { name: 'Emergency Med-Kit', image: 'medkit', item: 'medkit', rarity: 'rare' },
+    { name: 'Ranger Med-Kit', image: 'rangersAidKit', item: 'medkit', rarity: 'veryrare' },
+    { name: 'Flashlight ', image: 'flashlight', item: 'flashlight', rarity: 'uncommon' },
+    { name: 'Sport Flashlight', image: 'flashlightSport', item: 'flashlight', rarity: 'rare' },
+    { name: 'Utility Flashlight', image: 'flashlightUtility', item: 'flashlight', rarity: 'veryrare' },
+    { name: 'Map', image: 'map', item: 'map', rarity: 'rare' },
+    { name: 'Rainbow Map', image: 'rainbowMap', item: 'map', rarity: 'ultra' },
+    { name: 'Worn-Out Tools', image: 'toolboxWornOut', item: 'toolbox', rarity: 'common' },
+    { name: 'Toolbox', image: 'toolbox', item: 'toolbox', rarity: 'uncommon' },
+    { name: 'Mechanic\'s Toolbox', image: 'toolboxMechanics', item: 'toolbox', rarity: 'rare' },
+    { name: 'Commodious Toolbox', image: 'toolboxCommodious', item: 'toolbox', rarity: 'rare' },
+    { name: 'Engineer\'s Toolbox', image: 'toolboxEngineers', item: 'toolbox', rarity: 'veryrare' },
+    { name: 'Alex\'s Toolbox', image: 'toolboxAlexs', item: 'toolbox', rarity: 'veryrare' }
 ];
 
 const ITEMS_ADDONS =  {

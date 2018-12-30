@@ -20,6 +20,19 @@ class RandomizerUrlBuilder {
         return "url('img/addons/killers/" + killer + "/iconAddon_" + imageName + ".png')";
     }
 
+    static buildCssItemPath(item) {
+        return "url('img/items/iconItems_" +  item + ".png')";
+    }
+
+    static buildCssItemAddonPath(item, imageName) {
+        return "url('img/addons/survivors/" + item + "/iconAddon_" + imageName + ".png')";
+    }
+
+
+    static buildCssItemBackPath(rarity) {
+        return "url('img/addons/rarity/" + rarity + ".png')";
+    }
+
     static buildCssAddonBackPath(rarity) {
         return "url('img/addons/rarity/" + rarity + ".png')";
     }
