@@ -4,7 +4,7 @@ const SHOW_ROLE_RESULT_TIME = 200;
 const ROLE_SLOT_SHUFFLE_TIME = 500; // the duration of the role shuffle in ms
 const PERK_SLOT_SHUFFLE_TIME = 500; // the duration of the perk shuffle in ms
 const CHARACTER_SLOT_SHUFFLE_TIME = 500; // the duration of the character shuffle in ms
-const ADDONS_SLOT_SHUFFLE_TIME = 5000; // the duration of the addons shuffle in ms
+const ADDONS_SLOT_SHUFFLE_TIME = 500; // the duration of the addons shuffle in ms
 
 const ROLES = [
     'killer',
@@ -208,7 +208,28 @@ const KILLER_POWERS = {
     },
     'doctor': {
         image: 'cartersSpark',
-        addons: []
+        addons: [
+            { name: 'Mouldy Electrode', image: 'moldyElectrode', rarity: 'common' },
+            { name: 'Maple Knight', image: 'mapleKnight', rarity: 'common' },
+            { name: '"Order" - Class I', image: 'orderClassI', rarity: 'common' },
+            { name: '"Calm" - Class I', image: 'calmClassI', rarity: 'common' },
+            { name: 'Scrapped Tape', image: 'scrappedTape', rarity: 'uncommon' },
+            { name: 'Polished Electrode', image: 'polishedElectrode', rarity: 'uncommon' },
+            { name: 'Interview Tape', image: 'interviewTape', rarity: 'uncommon' },
+            { name: '"Restraint" - Class II', image: 'restraintClassII', rarity: 'uncommon' },
+            { name: '"Order" - Class II', image: 'diciplineClassII', rarity: 'uncommon' },
+            { name: '"Discipline" - Class II', image: 'orderClassII', rarity: 'uncommon' },
+            { name: '"Calm" - Class II', image: 'calmClassII', rarity: 'uncommon' },
+            { name: 'High Stimulus Electrode', image: 'highStimulusElectrode', rarity: 'rare' },
+            { name: '"Restraint" - Class III', image: 'restraintClassIII', rarity: 'rare' },
+            { name: '"Discipline" - Class III', image: 'diciplineClassIII', rarity: 'rare' },
+            { name: '"Restraint" - Carter\'s Notes', image: 'restraintCartersNotes', rarity: 'veryrare' },
+            { name: '"Order" - Carter\'s Notes', image: 'orderCartersNotes', rarity: 'veryrare' },
+            { name: '"Obedience" - Carter\'s Notes', image: 'obedienceCartersNotes', rarity: 'veryrare' },
+            { name: '"Discipline" - Carter\'s Notes', image: 'diciplineCartersNotes', rarity: 'veryrare' },
+            { name: '"Calm" - Carter\'s Notes', image: 'calmCartersNotes', rarity: 'veryrare' },
+            { name: 'Iridescent King', image: 'iridescentKing', rarity: 'ultra' }
+        ]
     },
     'freddy': {
         image: 'dreamMaster',
@@ -317,135 +338,9 @@ const KILLER_POWERS = {
             { name: '"Shadow Dance" - Blood', image: 'bloodShadowDance', rarity: 'veryrare' },
             { name: '"All Seeing" - Blood', image: 'bloodKraFabai', rarity: 'veryrare' },
             { name: 'Coxcombed Clapper', image: 'coxcombedClapper', rarity: 'ultra' },
-            { name: '"All Seeing" - Spirit', image: 'spiritAllSeeing', rarity: 'ultra' },
-
+            { name: '"All Seeing" - Spirit', image: 'spiritAllSeeing', rarity: 'ultra' }
         ]
     }
-}
-
-const POWER_ADDONS = {
-    'clown': [],
-    'doctor': [
-        'calmCartersNotes',
-        'calmClassI',
-        'calmClassII',
-        'diciplineCartersNote',
-        'diciplineClassII',
-        'diciplineClassIII',
-        'highStimulusElectrod',
-        'interviewTape',
-        'iridescentKing',
-        'mapleKnight',
-        'moldyElectrode',
-        'obedienceCartersNote',
-        'orderCartersNotes',
-        'orderClassI',
-        'orderClassII',
-        'polishedElectrode',
-        'restraintCartersNote',
-        'restraintClassII',
-        'restraintClassIII',
-        'scrappedTape',
-        'classPhoto',
-        'gardenRake',
-        'greenDress',
-        'jumpRope',
-        'kidsDrawing',
-        'nancysMasterpiece',
-        'nancysSketch',
-        'outdoorRope',
-        'paintThinner',
-        'pillBottle',
-        'prototypeClaw',
-        'redPaintBrush',
-        'sheepBlock',
-        'swingChains',
-        'unicornBlock',
-        'woolShirt',
-        'zBlock'
-    ],
-    'hag': [
-        'bloodiedMud',
-        'bloodiedWater',
-        'bogWater',
-        'crackedTurtleEgg',
-        'cypressNecklet',
-        'deadFlyMud',
-        'disfiguredEar',
-        'dragonflyWings',
-        'driedCicada',
-        'granmasHeart',
-        'halfEggshell',
-        'mintRag',
-        'powderedEggshell',
-        'pussyWillowCatkins',
-        'ropeNecklet',
-        'rustyShackles',
-        'scarredHand',
-        'swampOrchidNecklet',
-        'waterloggedShoe',
-        'willowWreath'
-    ],
-    'hillbilly': {},
-    'huntress': [
-        'amanitaToxin',
-        'bandagedHalf',
-        'begrimedHead',
-        'berusToxin',
-        'coarseStone',
-        'deerskinGloves',
-        'fineStone',
-        'flowerBabushka',
-        'glowingConcoction',
-        'infantryBelt',
-        'irisdescentHead',
-        'leatherLoop',
-        'mannaGrassBraid',
-        'oakHaft',
-        'pungenFiale',
-        'rustyHead',
-        'shinyPin',
-        'shinyPin2',
-        'venomousConcoction',
-        'yewSeedBrew',
-        'yewSeedConcoction'
-    ],
-    'leatherface': [
-        'awardwinningChili',
-        'chili',
-        'knifeScratches',
-        'theBeastsMark',
-        'theGrease'
-    ],
-    'myers': [
-        'blondeHair',
-        'boyfriendsMemo',
-        'deadRabbit',
-        'glassFragment',
-        'hairBow',
-        'hairBrush',
-        'jewelry',
-        'jewelryBox',
-        'jMyersMemorial',
-        'judithsJournal',
-        'judithsTombstone',
-        'lockOfHair',
-        'memorialFlower',
-        'memorialFlower2',
-        'mirrorShard',
-        'reflectiveFragment',
-        'scratchedMirror',
-        'tackyEarrings',
-        'tombstonePiece',
-        'tuftOfHair',
-        'vanityMirror'
-    ],
-    'nurse': [],
-    'pig': [],
-    'spirit': [],
-    'trapper': [
-    ],
-    'wraith': []
 };
 
 const SURVIVOR_ITEMS = {
