@@ -46,7 +46,7 @@ class Engine {
     pickRandomAddons(character) {
         let ids;
 
-        if ($.inArray(character, KILLERS)) {
+        if ($.inArray(character, KILLERS) !== -1) {
             ids = this._getRandomNumbersBetween(2, 0, KILLER_POWERS[character].addons.length - 1);
         }
 

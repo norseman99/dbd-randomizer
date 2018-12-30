@@ -204,7 +204,28 @@ const RARE_PERKS = [
 const KILLER_POWERS = {
     'clown': {
         image: 'gasBomb',
-        addons: []
+        addons: [
+            { name: 'Smelly Inner Soles', image: 'smellyInnerSoles', rarity: 'common' },
+            { name: 'Robin Feather', image: 'robinFeather', rarity: 'common' },
+            { name: 'Fingerless Parade Gloves', image: 'fingerlessParadeGloves', rarity: 'common' },
+            { name: 'Ether 5 Vol%', image: 'ether5', rarity: 'common' },
+            { name: 'Thick Cork Stopper', image: 'thickCorkStopper', rarity: 'uncommon' },
+            { name: 'Sticky Soda Bottle', image: 'stickySodaBottle', rarity: 'uncommon' },
+            { name: 'Starling Feather', image: 'starlingFeather', rarity: 'uncommon' },
+            { name: 'Solvent Jug', image: 'solventJug', rarity: 'uncommon' },
+            { name: 'Kerosene Can', image: 'keroseneCan', rarity: 'uncommon' },
+            { name: 'VHS Porn', image: 'vhsPorn', rarity: 'rare' },
+            { name: 'Sulphuric Acid Vial', image: 'sulfuricAcidVial', rarity: 'rare' },
+            { name: 'Flask Of Bleach', image: 'flaskOfBleach', rarity: 'rare' },
+            { name: 'Ether 10 Vol%', image: 'ether10', rarity: 'rare' },
+            { name: 'Bottle Of Chloroform', image: 'bottleOfChloroform', rarity: 'rare' },
+            { name: 'Garish Make-up Kit', image: 'garishMakeupKit', rarity: 'veryrare' },
+            { name: 'Ether 15 Vol%', image: 'ether15', rarity: 'veryrare' },
+            { name: 'Cigar Box', image: 'cigarBox', rarity: 'veryrare' },
+            { name: 'Cheap Gin Bottle', image: 'cheapGinBottle', rarity: 'veryrare' },
+            { name: 'Tattoo\'s Middle Finger', image: 'tattoosMiddleFinger', rarity: 'ultra' },
+            { name: 'Redhead\'s Pinky Finger', image: 'redheadsPinkyFinger', rarity: 'ultra' }
+        ]
     },
     'doctor': {
         image: 'cartersSpark',
@@ -390,7 +411,28 @@ const KILLER_POWERS = {
     },
     'pig': {
         image: 'reverseBearTrap',
-        addons: []
+        addons: [
+            { name: 'Workshop Grease', image: 'workshopGrease', rarity: 'common' },
+            { name: 'Shattered Syringe', image: 'shatteredSyringe', rarity: 'common' },
+            { name: 'John\'s Medical File', image: 'johnsMedicalFile', rarity: 'common' },
+            { name: 'Combat Straps', image: 'combatStraps', rarity: 'common' },
+            { name: 'Video Tape', image: 'videoTape', rarity: 'uncommon' },
+            { name: 'Utility Blades', image: 'utilityBlades', rarity: 'uncommon' },
+            { name: 'Razor Wires', image: 'razerWire', rarity: 'uncommon' },
+            { name: 'Last Will', image: 'lastWill', rarity: 'uncommon' },
+            { name: 'Face Mask', image: 'faceMask', rarity: 'uncommon' },
+            { name: 'Slow-Release Toxin', image: 'slowReleaseToxin', rarity: 'rare' },
+            { name: 'Rusty Attachments', image: 'rustyAttachments', rarity: 'rare' },
+            { name: 'Jigsaw\'s Annotated Plan', image: 'jigsawsAnnotatedPlan', rarity: 'rare' },
+            { name: 'Interlocking Razor', image: 'interlockingRazor', rarity: 'rare' },
+            { name: 'Bag Of Gears', image: 'bagOfGears', rarity: 'rare' },
+            { name: 'Tampered Timer', image: 'tamperedTimer', rarity: 'veryrare' },
+            { name: 'Jigsaw\'s Sketch', image: 'jigsawsSketch', rarity: 'veryrare' },
+            { name: 'Crate Of Gears', image: 'crateOfGears', rarity: 'veryrare' },
+            { name: 'Amanda\'s Secret', image: 'amandasSecret', rarity: 'veryrare' },
+            { name: 'Rules Set No.2', image: 'rulesSetN2', rarity: 'ultra' },
+            { name: 'Amanda\'s Letter', image: 'amandasLetter', rarity: 'ultra' }
+        ]
     },
     'spirit': {
         image: 'yamaokasHaunting',
