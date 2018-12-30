@@ -436,7 +436,28 @@ const KILLER_POWERS = {
     },
     'spirit': {
         image: 'yamaokasHaunting',
-        addons: []
+        addons: [
+            { name: 'Zori', image: 'zori', rarity: 'common' },
+            { name: 'Shiawase Amulet', image: 'ShiawaseAmulet', rarity: 'common' },
+            { name: 'Origami Crane', image: 'origamiCrane', rarity: 'common' },
+            { name: 'Gifted Bamboo Comb', image: 'giftedBambooComb', rarity: 'common' },
+            { name: 'White Hair Ribbon', image: 'whiteHairRibbon', rarity: 'uncommon' },
+            { name: 'Rin\'s Broken Watch', image: 'rinsBrokenWatch', rarity: 'uncommon' },
+            { name: 'Muddy Sports Day Cap', image: 'muddySportCap', rarity: 'uncommon' },
+            { name: 'Kaiun Talisman', image: 'kaiunTalisman', rarity: 'uncommon' },
+            { name: 'Juniper Bonsai', image: 'juniperBonzai', rarity: 'uncommon' },
+            { name: 'Rusty Flute', image: 'rustyFlute', rarity: 'rare' },
+            { name: 'Katsumori Talisman', image: 'katsumoriTalisman', rarity: 'rare' },
+            { name: 'Katana Tsuba', image: 'katanaTsuba', rarity: 'rare' },
+            { name: 'Dirty Uwabaki', image: 'dirtyUwabaki', rarity: 'rare' },
+            { name: 'Bloody Hair Brooch', image: 'bloodyHairBroochi', rarity: 'rare' },
+            { name: 'Yakuyoke Amulet', image: 'yakuyokeAmulet', rarity: 'veryrare' },
+            { name: 'Wakizashi Saya', image: 'wakizashiSaya', rarity: 'veryrare' },
+            { name: 'Prayer Beads Bracelet', image: 'prayersBeads', rarity: 'veryrare' },
+            { name: 'Dried Cherry Blossom', image: 'driedCherryBlossom', rarity: 'veryrare' },
+            { name: 'Mother-Daughter Ring', image: 'motherDaughterRing', rarity: 'ultra' },
+            { name: 'Father\'s Glasses', image: 'fathersGlasses', rarity: 'ultra' }
+        ]
     },
     'trapper': {
         image: 'trap',
