@@ -552,44 +552,94 @@ const KILLER_POWERS = {
     }
 };
 
-const SURVIVOR_ITEMS = {
-    'brokenKey': 'key',
-    'dullKey2': 'key',
-    'key': 'key',
-    'chineseFirecracker': 'firecracker',
-    'winterEventFirecracker': 'firecracker',
-    'firstAidKit': 'medkit',
-    'medkit': 'medkit',
-    'rangersAidKit': 'medkit',
-    'rundownAidKit': 'medkit',
-    'flashlight': 'flashlight',
-    'flashlightSport': 'flashlight',
-    'flashlightUtility': 'flashlight',
-    'map': 'map',
-    'rainbowMap': 'map',
-    'toolbox': 'toolbox',
-    'toolboxAlexs': 'toolbox',
-    'toolboxCommodious': 'toolbox',
-    'toolboxEnginners': 'toolbox',
-    'toolboxMechanics': 'toolbox',
-    'toolboxWornOut': 'toolbox'
-};
+const SURVIVOR_ITEMS = [
+    { name: '', image: 'brokenKey', type: 'key', rarity: 'common' },
+    { name: '', image: 'dullKey2', type: 'key', rarity: 'common' },
+    { name: '', image: 'key', type: 'key', rarity: 'common' },
+    { name: '', image: 'chineseFirecracker', type: 'firecracker', rarity: 'common' },
+    { name: '', image: 'winterEventFirecracker', type: 'firecracker', rarity: 'common' },
+    { name: '', image: 'firstAidKit', type: 'medkit', rarity: 'common' },
+    { name: '', image: 'medkit', type: 'medkit', rarity: 'common' },
+    { name: '', image: 'rangersAidKit', type: 'medkit', rarity: 'common' },
+    { name: '', image: 'rundownAidKit', type: 'medkit', rarity: 'common' },
+    { name: '', image: 'flashlight', type: 'flashlight', rarity: 'common' },
+    { name: '', image: 'flashlightSport', type: 'flashlight', rarity: 'common' },
+    { name: '', image: 'flashlightUtility', type: 'flashlight', rarity: 'common' },
+    { name: '', image: 'map', type: 'map', rarity: 'common' },
+    { name: '', image: 'rainbowMap', type: 'map', rarity: 'common' },
+    { name: '', image: 'toolbox', type: 'toolbox', rarity: 'common' },
+    { name: '', image: 'toolboxAlexs', type: 'toolbox', rarity: 'common' },
+    { name: '', image: 'toolboxCommodious', type: 'toolbox', rarity: 'common' },
+    { name: '', image: 'toolboxEnginners', type: 'toolbox', rarity: 'common' },
+    { name: '', image: 'toolboxMechanics', type: 'toolbox', rarity: 'common' },
+    { name: '', image: 'toolboxWornOut', type: 'toolbox', rarity: 'common' }
+];
 
 const ITEMS_ADDONS =  {
     'key': [
-        'bloodAmber',
-        'milkyGlass',
-        'prayerBeads',
-        'prayerRope',
-        'scratchedPearl',
-        'tokenErroded',
-        'tokenGold',
-        'weavedRing'
+        { name: 'Prayer Rope', image: 'prayerRope', rarity: 'common' },
+        { name: 'Scratched Pearl', image: 'scratchedPearl', rarity: 'uncommon' },
+        { name: 'Prayer Beads', image: 'prayerBeads', rarity: 'uncommon' },
+        { name: 'Eroded Token', image: 'tokenErroded', rarity: 'uncommon' },
+        { name: 'Gold Token', image: 'tokenGold', rarity: 'rare' },
+        { name: 'Weaved Ring', image: 'weavedRing', rarity: 'veryrare' },
+        { name: 'Milky Glass', image: 'milkyGlass', rarity: 'veryrare' },
+        { name: 'Blood Amber', image: 'bloodAmber', rarity: 'veryrare' }
     ],
-    'medkit': [],
-    'flashlight': [],
-    'map': [],
-    'toolbox': []
+    'medkit': [
+        { name: 'Rubber Gloves', image: 'gloves', rarity: 'common' },
+        { name: 'Butterfly Tape', image: 'butterflyTape', rarity: 'common' },
+        { name: 'Bandages', image: 'bandages', rarity: 'common' },
+        { name: 'Sponge', image: 'sponge', rarity: 'uncommon' },
+        { name: 'Self Adherent Wrap', image: 'selfAdherentWrap', rarity: 'uncommon' },
+        { name: 'Needle & Thread', image: 'needAndThread', rarity: 'uncommon' },
+        { name: 'Medical Scissors', image: 'scissors', rarity: 'uncommon' },
+        { name: 'Gauze Roll', image: 'gauseRoll', rarity: 'uncommon' },
+        { name: 'Surgical Suture', image: 'surgicalSuture', rarity: 'rare' },
+        { name: 'Gel Dressings', image: 'gelDressings', rarity: 'rare' },
+        { name: 'Abdominal Dressing', image: 'abdominalDressing', rarity: 'rare' },
+        { name: 'Styptic Agent', image: 'stypticAgent', rarity: 'veryrare' },
+        { name: 'Anti-Hemorrhagic Syringe', image: 'syringe', rarity: 'ultra' }
+    ],
+    'flashlight': [
+        { name: 'Wide Lens', image: 'wideLens', rarity: 'common' },
+        { name: 'Power Bulb', image: 'powerBulb', rarity: 'common' },
+        { name: 'Leather Grip', image: 'leatherGrip', rarity: 'common' },
+        { name: 'Battery', image: 'battery', rarity: 'common' },
+        { name: 'Tir Optic', image: 'tirOptic', rarity: 'uncommon' },
+        { name: 'Rubber Grip', image: 'rubberGrip', rarity: 'uncommon' },
+        { name: 'Low Amp Filament', image: 'threadedFilament', rarity: 'uncommon' },
+        { name: 'Heavy Duty Battery', image: 'focusLens', rarity: 'uncommon' },
+        { name: 'Focus Lens', image: 'heavyDutyBattery', rarity: 'uncommon' },
+        { name: 'Long Life Battery', image: 'longLifeBattery', rarity: 'rare' },
+        { name: 'Intense Halogen', image: 'intenseHalogen', rarity: 'rare' },
+        { name: 'High-End Sapphire Lens', image: 'highEndSapphireLens', rarity: 'veryrare' },
+        { name: 'Odd Bulb', image: 'oddBulb', rarity: 'ultra' }
+    ],
+    'map': [
+        { name: 'Map Addendum', image: 'mapAddendum', rarity: 'common' },
+        { name: 'Yellow Wire', image: 'ropeYellow', rarity: 'uncommon' },
+        { name: 'Unusual Stamp', image: 'stampUnusual', rarity: 'uncommon' },
+        { name: 'Retardant Jelly', image: 'retardantJelly', rarity: 'uncommon' },
+        { name: 'Red Twine', image: 'ropeRed', rarity: 'uncommon' },
+        { name: 'Glass Bead', image: 'beadGlass', rarity: 'uncommon' },
+        { name: 'Odd Stamp', image: 'stampOdd', rarity: 'rare' },
+        { name: 'Black Silk Cord', image: 'ropeBlack', rarity: 'rare' },
+        { name: 'Crystal Bead', image: 'beadCrystal', rarity: 'veryrare' }
+    ],
+    'toolbox': [
+        { name: 'Spring Clamp', image: 'springClamp', rarity: 'common' },
+        { name: 'Scraps', image: 'scraps', rarity: 'common' },
+        { name: 'Clean Rag', image: 'cleanRag', rarity: 'common' },
+        { name: 'Wire Spool', image: 'spoolOfWire', rarity: 'uncommon' },
+        { name: 'Socket Swivels', image: 'socketSwivels', rarity: 'uncommon' },
+        { name: 'Protective Gloves', image: 'protectiveGloves', rarity: 'uncommon' },
+        { name: 'Instructions', image: 'instructions', rarity: 'uncommon' },
+        { name: 'Grip Wrench', image: 'gripWrench', rarity: 'uncommon' },
+        { name: 'Cutting Wire', image: 'cuttingWire', rarity: 'uncommon' },
+        { name: 'Hacksaw', image: 'metalSaw', rarity: 'rare' },
+        { name: 'Brand New Part', image: 'brandNewPart', rarity: 'ultra' },
+    ]
 };
 
 const KILLER_OFFERS = [
