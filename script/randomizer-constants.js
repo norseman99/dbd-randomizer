@@ -353,7 +353,27 @@ const KILLER_POWERS = {
     },
     'leatherface': {
         image: 'bubbasChainsaw',
-        addons: []
+        addons: [
+            { name: 'Vegetable Oil', image: 'vegetableOil', rarity: 'common' },
+            { name: 'Spark Plug', image: 'sparkPlug', rarity: 'common' },
+            { name: 'Chainsaw File', image: 'chainsawFile', rarity: 'common' },
+            { namee: 'Speed Limiter', image: 'speedLimiter', rarity: 'uncommon' },
+            { namee: 'Shop Lubricant', image: 'shopLubricant', rarity: 'uncommon' },
+            { namee: 'Primer Bulb', image: 'primerBulb', rarity: 'uncommon' },
+            { namee: 'Long Guide Bar', image: 'longGuideBar', rarity: 'uncommon' },
+            { namee: 'Knife Scratches', image: 'knifeScratches', rarity: 'uncommon' },
+            { namee: 'Homemade Muffler', image: 'homemadeMuffler', rarity: 'uncommon' },
+            { namee: 'Grisly Chains', image: 'chainsGrisly', rarity: 'uncommon' },
+            { namee: 'Depth Gauge Rake', image: 'depthGaugeRake', rarity: 'uncommon' },
+            { name: 'Chilli', image: 'chili', rarity: 'uncommon' },
+            { name: 'The Grease', image: 'theGrease', rarity: 'rare' },
+            { name: 'The Beast\'s Marks', image: 'theBeastsMark', rarity: 'rare' },
+            { name: 'Rusted Chains', image: 'chainsRusted', rarity: 'rare' },
+            { name: 'Light Chassis', image: 'lightChassis', rarity: 'rare' },
+            { name: 'Carburettor Tuning Guide', image: 'carburetorTuningGuide', rarity: 'rare' },
+            { name: 'Begrimed Chains', image: 'chainsBloody2', rarity: 'ultra' },
+            { name: 'Award-winning Chilli', image: 'awardwinningChili', rarity: 'ultra' }
+        ]
     },
     'legion': {
         image: 'feralFrenzy',
