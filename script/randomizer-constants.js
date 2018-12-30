@@ -357,7 +357,28 @@ const KILLER_POWERS = {
     },
     'legion': {
         image: 'feralFrenzy',
-        addons: []
+        addons: [
+            { name: 'Smiley Face Pin', image: 'smileyFaceButton', rarity: 'common' },
+            { name: 'Scratched Ruler', image: 'scratchedRuler', rarity: 'common' },
+            { name: 'Mischief List', image: 'mischiefList', rarity: 'common' },
+            { name: 'Friendship Bracelet', image: 'friendshipBracelet', rarity: 'common' },
+            { name: 'Never-Sleep Pills', image: 'neverSleepPills', rarity: 'uncommon' },
+            { name: 'Mural Sketch', image: 'muralSketch', rarity: 'uncommon' },
+            { name: 'Julie\'s Mix Tape', image: 'juliesMixtape', rarity: 'uncommon' },
+            { name: 'Etched Ruler', image: 'etchedRuler', rarity: 'uncommon' },
+            { name: 'Defaced Smiley Pin', image: 'defacedSmileyButton', rarity: 'uncommon' },
+            { name: 'The Legion Pin', image: 'theLegionButton', rarity: 'rare' },
+            { name: 'Susie\'s Mix Tape', image: 'suziesMixtape', rarity: 'rare' },
+            { name: 'Stolen Sketch Book', image: 'stolenSketchbook', rarity: 'rare' },
+            { name: 'Nasty Blade', image: 'nastyBlade', rarity: 'rare' },
+            { name: 'Joey\'s Mix Tape', image: 'joeysMixtape', rarity: 'rare' },
+            { name: 'Stab Wounds Study', image: 'stabWoundsStudy', rarity: 'veryrare' },
+            { name: 'Frank\'s Mix Tape', image: 'franksMixtape', rarity: 'veryrare' },
+            { name: 'Filthy Blade', image: 'filthyBlade', rarity: 'veryrare' },
+            { name: 'Cold Dirt', image: 'coldDirt', rarity: 'veryrare' },
+            { name: 'Iridescent Button', image: 'iridescentButton', rarity: 'ultra' },
+            { name: 'Fuming Mix Tape', image: 'fumingMixtape', rarity: 'ultra' }
+        ]
     },
     'myers': {
         image: 'stalker3',
