@@ -233,7 +233,28 @@ const KILLER_POWERS = {
     },
     'freddy': {
         image: 'dreamMaster',
-        addons: []
+        addons: [
+            { name: 'Wool Shirt', image: 'woolShirt', rarity: 'common' },
+            { name: 'Sheep Block', image: 'sheepBlock', rarity: 'common' },
+            { name: 'Kid\'s Drawing', image: 'kidsDrawing', rarity: 'common' },
+            { name: 'Garden Rake', image: 'gardenRake', rarity: 'common' },
+            { name: 'Prototype Claws', image: 'prototypeClaw', rarity: 'uncommon' },
+            { name: 'Outdoor Rope', image: 'outdoorRope', rarity: 'uncommon' },
+            { name: 'Nancy\'s Sketch', image: 'nancysSketch', rarity: 'uncommon' },
+            { name: 'Green Dress', image: 'greenDress', rarity: 'uncommon' },
+            { name: 'Cat Block', image: 'catBlock', rarity: 'uncommon' },
+            { name: 'Unicorn Block', image: 'unicornBlock', rarity: 'rare' },
+            { name: 'Swing Chains', image: 'swingChains', rarity: 'rare' },
+            { name: 'Nancy\'s Masterpiece', image: 'nancysMasterpiece', rarity: 'rare' },
+            { name: 'Jump Rope', image: 'jumpRope', rarity: 'rare' },
+            { name: 'Blue Dress', image: 'blueDress', rarity: 'rare' },
+            { name: 'Pill Bottle', image: 'pillBottle', rarity: 'veryrare' },
+            { name: 'Paint Thinner', image: 'paintThinner', rarity: 'veryrare' },
+            { name: 'Class Photo', image: 'classPhoto', rarity: 'veryrare' },
+            { name: '"Z" Block', image: 'zBlock', rarity: 'veryrare' },
+            { name: 'Red Paint Brush', image: 'redPaintBrush', rarity: 'ultra' },
+            { name: 'Black Box', image: 'blackBox', rarity: 'ultra' }
+        ]
     },
     'hag': {
         image: 'blackenedCatalyst',

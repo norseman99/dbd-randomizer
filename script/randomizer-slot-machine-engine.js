@@ -263,7 +263,7 @@ class RandomizerSlotMachineEngine {
 
     randomizeItems() {
         let role = this.getActiveRole();
-        let character = 'doctor';
+        let character = 'freddy';
 
         this.uiHandler.toggleAddonsBlankBackground(false);
         RandomizerUiGenerator.generateCharacterSpecificElements(role, character);
