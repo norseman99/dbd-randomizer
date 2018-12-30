@@ -258,7 +258,28 @@ const KILLER_POWERS = {
     },
     'hag': {
         image: 'blackenedCatalyst',
-        addons: []
+        addons: [
+            { name: 'Rope Necklet', image: 'ropeNecklet', rarity: 'common' },
+            { name: 'Powdered Eggshell', image: 'powderedEggshell', rarity: 'common' },
+            { name: 'Dead Fly Mud', image: 'deadFlyMud', rarity: 'common' },
+            { name: 'Bog Water', image: 'bogWater', rarity: 'common' },
+            { name: 'Pussy Willow Catkins', image: 'pussyWillowCatkins', rarity: 'uncommon' },
+            { name: 'Half Eggshell', image: 'halfEggshell', rarity: 'uncommon' },
+            { name: 'Dragonfly Wings', image: 'dragonflyWings', rarity: 'uncommon' },
+            { name: 'Cypress Necklet', image: 'cypressNecklet', rarity: 'uncommon' },
+            { name: 'Bloodied Water', image: 'bloodiedWater', rarity: 'uncommon' },
+            { name: 'Willow Wreath', image: 'willowWreath', rarity: 'rare' },
+            { name: 'Swamp Orchid Necklet', image: 'swampOrchidNecklet', rarity: 'rare' },
+            { name: 'Dried Cicada', image: 'driedCicada', rarity: 'rare' },
+            { name: 'Cracked Turtle Egg', image: 'crackedTurtleEgg', rarity: 'rare' },
+            { name: 'Bloodied Mud', image: 'bloodiedMud', rarity: 'rare' },
+            { name: 'Scarred Hand', image: 'scarredHand', rarity: 'veryrare' },
+            { name: 'Rusty Shackles', image: 'rustyShackles', rarity: 'veryrare' },
+            { name: 'Granma\'s Heart', image: 'granmasHeart', rarity: 'veryrare' },
+            { name: 'Disfigured Ear', image: 'disfiguredEar', rarity: 'veryrare' },
+            { name: 'Waterlogged Shoe', image: 'waterloggedShoe', rarity: 'ultra' },
+            { name: 'Mint Rag', image: 'mintRag', rarity: 'ultra' }
+        ]
     },
     'hillbilly': {
         image: 'chainsaw',
@@ -286,7 +307,29 @@ const KILLER_POWERS = {
     },
     'huntress': {
         image: 'huntingHatchets',
-        addons: []
+        addons: [
+            { name: '', image: 'amanitaToxin', rarity: 'common' },
+            { name: '', image: 'bandagedHaft', rarity: 'common' },
+            { name: '', image: 'begrimedHead', rarity: 'common' },
+            { name: '', image: 'berusToxin', rarity: 'common' },
+            { name: '', image: 'coarseStone', rarity: 'common' },
+            { name: '', image: 'deerskinGloves', rarity: 'common' },
+            { name: '', image: 'fineStone', rarity: 'common' },
+            { name: '', image: 'flowerBabushka', rarity: 'common' },
+            { name: '', image: 'glowingConcoction', rarity: 'common' },
+            { name: '', image: 'infantryBelt', rarity: 'common' },
+            { name: '', image: 'iridescentHead', rarity: 'common' },
+            { name: '', image: 'leatherLoop', rarity: 'common' },
+            { name: '', image: 'mannaGrassBraid', rarity: 'common' },
+            { name: '', image: 'oakHaft', rarity: 'common' },
+            { name: '', image: 'pungentFiale', rarity: 'common' },
+            { name: '', image: 'rustyHead', rarity: 'common' },
+            { name: '', image: 'shinyPin', rarity: 'common' },
+            { name: '', image: 'shinyPin2', rarity: 'common' },
+            { name: '', image: 'venomousConcoction', rarity: 'common' },
+            { name: '', image: 'yewSeedBrew', rarity: 'common' },
+            { name: '', image: 'yewSeedConcoction', rarity: 'common' }
+        ]
     },
     'leatherface': {
         image: 'bubbasChainsaw',
@@ -298,11 +341,54 @@ const KILLER_POWERS = {
     },
     'myers': {
         image: 'stalker3',
-        addons: []
+        addons: [
+            { name: '', image: 'blondeHair', rarity: 'common' },
+            { name: '', image: 'boyfriendsMemo', rarity: 'common' },
+            { name: '', image: 'deadRabbit', rarity: 'common' },
+            { name: '', image: 'glassFragment', rarity: 'common' },
+            { name: '', image: 'hairBow', rarity: 'common' },
+            { name: '', image: 'hairBrush', rarity: 'common' },
+            { name: '', image: 'jewelry', rarity: 'common' },
+            { name: '', image: 'jewelryBox', rarity: 'common' },
+            { name: '', image: 'jMyersMemorial', rarity: 'common' },
+            { name: '', image: 'judithsJournal', rarity: 'common' },
+            { name: '', image: 'judithsTombstone', rarity: 'common' },
+            { name: '', image: 'lockOfHair', rarity: 'common' },
+            { name: '', image: 'memorialFlower', rarity: 'common' },
+            { name: '', image: 'memorialFlower2', rarity: 'common' },
+            { name: '', image: 'mirrorShard', rarity: 'common' },
+            { name: '', image: 'reflectiveFragment', rarity: 'common' },
+            { name: '', image: 'scratchedMirror', rarity: 'common' },
+            { name: '', image: 'tackyEarrings', rarity: 'common' },
+            { name: '', image: 'tombstonePiece', rarity: 'common' },
+            { name: '', image: 'tuftOfHair', rarity: 'common' },
+            { name: '', image: 'vanityMirror', rarity: 'common' }
+        ]
     },
     'nurse': {
         image: 'breath',
-        addons: []
+        addons: [
+            { name: '', image: 'anxiousGasp', rarity: 'common' },
+            { name: '', image: 'ataxicRespiration', rarity: 'common' },
+            { name: '', image: 'badManKeepsake', rarity: 'common' },
+            { name: '', image: 'badMansLastBreath', rarity: 'common' },
+            { name: '', image: 'campbellsLastBreath', rarity: 'common' },
+            { name: '', image: 'catatonicTreasure', rarity: 'common' },
+            { name: '', image: 'darkCincture', rarity: 'common' },
+            { name: '', image: 'dullBracelet', rarity: 'common' },
+            { name: '', image: 'fragileWheeze', rarity: 'common' },
+            { name: '', image: 'heavyPanting', rarity: 'common' },
+            { name: '', image: 'jennersLastBreath', rarity: 'common' },
+            { name: '', image: 'kavanaghsLastBreath', rarity: 'common' },
+            { name: '', image: 'matchBox', rarity: 'common' },
+            { name: '', image: 'metalSpoon', rarity: 'common' },
+            { name: '', image: 'plaidFlannel', rarity: 'common' },
+            { name: '', image: 'pocketWatch', rarity: 'common' },
+            { name: '', image: 'spasmodicBreath', rarity: 'common' },
+            { name: '', image: 'tornBookmark', rarity: 'common' },
+            { name: '', image: 'whiteNitComb', rarity: 'common' },
+            { name: '', image: 'woodenHorse', rarity: 'common' }
+        ]
     },
     'pig': {
         image: 'reverseBearTrap',
