@@ -643,10 +643,80 @@ const ITEMS_ADDONS =  {
     ]
 };
 
-const KILLER_OFFERS = [
+const COMMON_OFFERS = [
+    { name: 'Azarov\'s Key', image:'azarovsKey', type: 'common', rarity: 'rare' },
+    { name: 'Charred Wedding Photograph', image:'charredWeddingPhotograph', type: 'common', rarity: 'rare' },
+    { name: 'Damaged Photo', image:'damagedPhoto', type: 'common', rarity: 'rare' },
+    { name: 'Granma\'s Cookbook', image:'granmasCookbook', type: 'common', rarity: 'rare' },
+    { name: 'Heart Locket', image:'heartLocket', type: 'common', rarity: 'rare' },
+    { name: 'Jigsaw Piece', image:'jigsawPiece', type: 'common', rarity: 'rare' },
+    { name: 'MacMillan\'s Phalanx Bone', image:'macmilliansPhalanxBone', type: 'common', rarity: 'rare' },
+    { name: 'Shattered Glasses', image:'shatteredGlasses', type: 'common', rarity: 'rare' },
+    { name: 'Strode Realty Key', image:'strodeRealtyKey', type: 'common', rarity: 'rare' },
+    { name: 'The Last Mask', image:'theLastMask', type: 'common', rarity: 'rare' },
+    { name: 'The Pied Piper', image:'thePiedPiper', type: 'common', rarity: 'rare' },
+    { name: 'Yamaoka Family Crest', image:'yamaokasCrest', type: 'common', rarity: 'rare' },
+    { name: 'Clear Reagent', image:'clearReagent', type: 'common', rarity: 'common' },
+    { name: 'Faint Reagent', image:'faintReagent', type: 'common', rarity: 'common' },
+    { name: 'Hazy Reagent', image:'hazyReagent', type: 'common', rarity: 'uncommon' },
+    { name: 'Hazy Reagent', image:'murkyReagent', type: 'common', rarity: 'veryrare' },
+    { name: 'Bloody Party Streamers', image:'bloodyPartyStreamers', type: 'common', rarity: 'rare' }
+]
 
-];
+const KILLER_OFFERS = $.merge(COMMON_OFFERS, [
+    { name: 'Raven Wreath', image: 'ravenWreath', type: 'killer', rarity: 'common' },
+    { name: 'Shrike Wreath', image: 'shrikeWreath', type: 'killer', rarity: 'common' },
+    { name: 'Spotted Owl Wreath', image: 'spottedOwlWreath', type: 'killer', rarity: 'common' },
+    { name: 'Tanager Wreath', image: 'tanagerWreath', type: 'killer', rarity: 'common' },
+    { name: 'Devout Raven Wreath', image: 'devoutRavenWreath', type: 'killer', rarity: 'uncommon' },
+    { name: 'Devout Shrike Wreath', image: 'devoutShrikeWreath', type: 'killer', rarity: 'uncommon' },
+    { name: 'Devout Spotted Owl Wreath', image: 'devoutSpottedOwlWreath', type: 'killer', rarity: 'uncommon' },
+    { name: 'Devout Tanager Wreath', image: 'devoutTanagerWreath', type: 'killer', rarity: 'uncommon' },
+    { name: 'Hollow Shell', image: 'hollowShell', type: 'killer', rarity: 'uncommon' },
+    { name: 'Survivor Pudding', image: 'survivorPudding', type: 'killer', rarity: 'uncommon' },
+    { name: 'Ardent Raven Wreath', image: 'ardentRavenWreath', type: 'killer', rarity: 'rare' },
+    { name: 'Ardent Shrike Wreath', image: 'ardentShrikeWreath', type: 'killer', rarity: 'rare' },
+    { name: 'Ardent Spotted Owl Wreath', image: 'ardentSpottedOwlWreath', type: 'killer', rarity: 'rare' },
+    { name: 'Ardent Tanager Wreath', image: 'ardentTanagerWreath', type: 'killer', rarity: 'rare' },
+    { name: 'Cut Coin', image: 'cutCoin', type: 'killer', rarity: 'veryrare' },
+    { name: 'Scratched Coin', image: 'scratchedCoin', type: 'killer', rarity: 'uncommon' },
+    { name: 'Mouldy Oak', image: 'moldyOak', type: 'killer', rarity: 'uncommon' },
+    { name: 'Rotten Oak', image: 'rottenOak', type: 'killer', rarity: 'rare' },
+    { name: 'Putrid Oak', image: 'putridOak', type: 'killer', rarity: 'veryrare' },
+    { name: 'Cypress Memento Mori', image: 'momentoMoriCypress', type: 'killer', rarity: 'uncommon' },
+    { name: 'Ivory Memento Mori', image: 'momentoMoriIvory', type: 'killer', rarity: 'rare' },
+    { name: 'Ebony Memento Mori', image: 'momentoMoriEbony', type: 'killer', rarity: 'ultra8' },
+    { name: 'Shroud of Separation', image: 'shroudOfSeparation', type: 'killer', rarity: 'uncommon' },
+    { name: 'Black Ward', image: 'wardBlack', type: 'killer', rarity: 'veryrare' }
+]);
 
-const SURVIVOR_OFFERS = [
-
-];
+const SURVIVOR_OFFERS = $.merge(COMMON_OFFERS, [
+    { name: 'Bog Laurel Sachet', image: 'bogLaurelSachet', type: 'survivor', rarity: 'common' },
+    { name: 'Crispleaf Amaranth Sachet', image: 'crispleafAmaranthSachet', type: 'survivor', rarity: 'common' },
+    { name: 'Primrose Blossom Sachet', image: 'primroseBlossomSachet', type: 'survivor', rarity: 'common' },
+    { name: 'Sweet William Sachet ', image: 'sweetWilliamSachet', type: 'survivor', rarity: 'common' },
+    { name: 'Fresh Bog Laurel', image: 'freshBogLaurel', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Fresh Crispleaf Amaranth', image: 'freshCrispleafAmaranth', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Fresh Primrose Blossom', image: 'freshPrimroseBlossom', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Fresh Sweet William', image: 'freshSweetWilliam', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Escape! Cake', image: 'escapeCake', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Sealed Envelope', image: 'sealedEnvelope', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Fragrant Bog Laurel', image: 'fragrantBogLaurel', type: 'survivor', rarity: 'rare' },
+    { name: 'Fragrant Crispleaf Amaranth', image: 'fragrantCrispleafAmaranth', type: 'survivor', rarity: 'rare' },
+    { name: 'Fragrant Primrose Blossom', image: 'fragrantPrimroseBlossom', type: 'survivor', rarity: 'rare' },
+    { name: 'Fragrant Sweet William', image: 'fragrantSweetWilliam', type: 'survivor', rarity: 'rare' },
+    { name: 'Bound Envelope', image: 'boundEnvelope', type: 'survivor', rarity: 'rare' },
+    { name: 'Chalk Pouch', image: 'chalkPouch', type: 'survivor', rarity: 'common' },
+    { name: 'Cream Chalk Pouch', image: 'creamChalkPouch', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Salt Pouch', image: 'saltPouch', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Black Salt Statuette', image: 'blackSaltStatuette', type: 'survivor', rarity: 'rare' },
+    { name: 'Ivory Chalk Pouch', image: 'ivoryChalkPouch', type: 'survivor', rarity: 'rare' },
+    { name: 'Vigo\'s Jar Of Salty Lips', image: 'jarOfSaltyLips', type: 'survivor', rarity: 'veryrare' },
+    { name: 'Petrified Oak', image: 'petrifiedOak', type: 'survivor', rarity: 'veryrare' },
+    { name: 'Tarnished Coin', image: 'tarnishedCoin', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Shiny Coin', image: 'shinyCoin', type: 'survivor', rarity: 'veryrare' },
+    { name: 'Shroud of Union', image: 'shroudOfUnion', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Vigo\'s Shroud', image: 'vigosShroud', type: 'survivor', rarity: 'uncommon' },
+    { name: 'Shroud of Binding', image: 'shroudOfBinding', type: 'survivor', rarity: 'veryrare' },
+    { name: 'White Ward', image: 'wardWhite', type: 'survivor', rarity: 'veryrare' }
+]);
