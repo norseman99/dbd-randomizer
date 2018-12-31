@@ -4,9 +4,9 @@ const SHOW_ROLE_RESULT_TIME = 200;
 const ROLE_SLOT_SHUFFLE_TIME = 5000; // the duration of the role shuffle in ms
 const PERK_SLOT_SHUFFLE_TIME = 5000; // the duration of the perk shuffle in ms
 const CHARACTER_SLOT_SHUFFLE_TIME = 5000; // the duration of the character shuffle in ms
-const ITEMS_SLOT_SHUFFLE_TIME = 2000; // the duration of the items shuffle in ms
-const ADDONS_SLOT_SHUFFLE_TIME = 2000; // the duration of the addons shuffle in ms
-const OFFERING_SLOT_SHUFFLE_TIME = 2000; // the duration of the offerings shuffle in ms
+const ITEMS_SLOT_SHUFFLE_TIME = 3000; // the duration of the items shuffle in ms
+const ADDONS_SLOT_SHUFFLE_TIME = 3000; // the duration of the addons shuffle in ms
+const OFFERING_SLOT_SHUFFLE_TIME = 3000; // the duration of the offerings shuffle in ms
 
 const ROLES = [
     'killer',
