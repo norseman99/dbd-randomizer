@@ -6,6 +6,7 @@ const PERK_SLOT_SHUFFLE_TIME = 5000; // the duration of the perk shuffle in ms
 const CHARACTER_SLOT_SHUFFLE_TIME = 5000; // the duration of the character shuffle in ms
 const ITEMS_SLOT_SHUFFLE_TIME = 2000; // the duration of the items shuffle in ms
 const ADDONS_SLOT_SHUFFLE_TIME = 2000; // the duration of the addons shuffle in ms
+const OFFERING_SLOT_SHUFFLE_TIME = 2000; // the duration of the offerings shuffle in ms
 
 const ROLES = [
     'killer',
@@ -661,9 +662,9 @@ const COMMON_OFFERS = [
     { name: 'Hazy Reagent', image:'hazyReagent', type: 'common', rarity: 'uncommon' },
     { name: 'Hazy Reagent', image:'murkyReagent', type: 'common', rarity: 'veryrare' },
     { name: 'Bloody Party Streamers', image:'bloodyPartyStreamers', type: 'common', rarity: 'rare' }
-]
+];
 
-const KILLER_OFFERS = $.merge(COMMON_OFFERS, [
+const KILLER_OFFERS = $.merge([
     { name: 'Raven Wreath', image: 'ravenWreath', type: 'killer', rarity: 'common' },
     { name: 'Shrike Wreath', image: 'shrikeWreath', type: 'killer', rarity: 'common' },
     { name: 'Spotted Owl Wreath', image: 'spottedOwlWreath', type: 'killer', rarity: 'common' },
@@ -685,12 +686,12 @@ const KILLER_OFFERS = $.merge(COMMON_OFFERS, [
     { name: 'Putrid Oak', image: 'putridOak', type: 'killer', rarity: 'veryrare' },
     { name: 'Cypress Memento Mori', image: 'momentoMoriCypress', type: 'killer', rarity: 'uncommon' },
     { name: 'Ivory Memento Mori', image: 'momentoMoriIvory', type: 'killer', rarity: 'rare' },
-    { name: 'Ebony Memento Mori', image: 'momentoMoriEbony', type: 'killer', rarity: 'ultra8' },
+    { name: 'Ebony Memento Mori', image: 'momentoMoriEbony', type: 'killer', rarity: 'ultra' },
     { name: 'Shroud of Separation', image: 'shroudOfSeparation', type: 'killer', rarity: 'uncommon' },
     { name: 'Black Ward', image: 'wardBlack', type: 'killer', rarity: 'veryrare' }
-]);
+], COMMON_OFFERS);
 
-const SURVIVOR_OFFERS = $.merge(COMMON_OFFERS, [
+const SURVIVOR_OFFERS = $.merge([
     { name: 'Bog Laurel Sachet', image: 'bogLaurelSachet', type: 'survivor', rarity: 'common' },
     { name: 'Crispleaf Amaranth Sachet', image: 'crispleafAmaranthSachet', type: 'survivor', rarity: 'common' },
     { name: 'Primrose Blossom Sachet', image: 'primroseBlossomSachet', type: 'survivor', rarity: 'common' },
@@ -719,4 +720,4 @@ const SURVIVOR_OFFERS = $.merge(COMMON_OFFERS, [
     { name: 'Vigo\'s Shroud', image: 'vigosShroud', type: 'survivor', rarity: 'uncommon' },
     { name: 'Shroud of Binding', image: 'shroudOfBinding', type: 'survivor', rarity: 'veryrare' },
     { name: 'White Ward', image: 'wardWhite', type: 'survivor', rarity: 'veryrare' }
-]);
+], COMMON_OFFERS);

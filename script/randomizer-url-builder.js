@@ -28,13 +28,20 @@ class RandomizerUrlBuilder {
         return "url('img/addons/survivors/" + item + "/iconAddon_" + imageName + ".png')";
     }
 
-
     static buildCssItemBackPath(rarity) {
         return "url('img/addons/rarity/" + rarity + ".png')";
     }
 
     static buildCssAddonBackPath(rarity) {
         return "url('img/addons/rarity/" + rarity + ".png')";
+    }
+
+    static buildCssOfferingPath(type, image) {
+        return "url('img/offers/" + type + "/iconFavors_" + image + ".png')";
+    }
+
+    static buildCssOfferingBackPath(rarity) {
+        return "url('img/offers/rarity/" + rarity + ".png')";
     }
 
     static buildCssPerkPath(role, perk) {

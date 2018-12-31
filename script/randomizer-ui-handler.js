@@ -65,6 +65,14 @@ class RandomizerUiHandler {
         }
     }
 
+    toggleOfferingBlankBackground(show) {
+        if (show) {
+            $('.offer-image').addClass('blank');
+        } else {
+            $('.offer-image').removeClass('blank');
+        }
+    }
+
     enableControls() {
         $('#controls').css('visibility', '');
         $('#randomize-all').attr('disabled', false);
@@ -101,6 +109,8 @@ class RandomizerUiHandler {
         $('.item-image').addClass('blank');
         $('.item-addon-image').html('');
         $('.item-addon-image').addClass('blank');
+        $('.offer-image').html('');
+        $('.offer-image').addClass('blank');
     }
 
     _registerPerkLock() {
@@ -139,6 +149,11 @@ class RandomizerUiHandler {
         $('#randomize-items').on("click", function () {
             self.disableControls();
             slotMachineEngine.randomizeItems();
+        });
+
+        $('#randomize-offers').on('click', function () {
+           self.disableControls();
+           slotMachineEngine.randomizeOfferings();
         });
     }
 }

@@ -202,13 +202,23 @@ body {
 }
 
 .offer-image {
-    background-image: url('../img/misc/dbd-icon.png'), url('../img/offers/rarity/blank.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 125px 125px;
     width: 125px;
     height: inherit;
     margin: 0 auto;
+    overflow: hidden;
+}
+
+.offer-image.blank {
+    background-image: url('../img/misc/dbd-icon.png'), url('../img/offers/rarity/blank.png');
+}
+
+.offer {
+    background-size: 125px 125px;
+    width: inherit;
+    height: 125px;
 }
 
 .perks {

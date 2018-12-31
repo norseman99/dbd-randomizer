@@ -78,6 +78,21 @@ class RandomizerUiGenerator {
         });
     }
 
+    static _generateOfferingsElements(role) {
+        $('#' + role + ' .offer-image').each(function () {
+            $(this).html('');
+
+            let self = this;
+            let offers = (role == ROLES[0] ? KILLER_OFFERS : SURVIVOR_OFFERS);
+            offers.forEach(function (offering) {
+                $(self).append(RandomizerUiGenerator._createDivElement('offer', [
+                    RandomizerUrlBuilder.buildCssOfferingPath(offering.type, offering.image),
+                    RandomizerUrlBuilder.buildCssOfferingBackPath(offering.rarity)
+                ], { title: offering.name }));
+            });
+        });
+    }
+
     static _generatePerkElements(role) {
         switch(role) {
             case ROLES[0]:

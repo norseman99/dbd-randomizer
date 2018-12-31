@@ -61,6 +61,21 @@ class Engine {
         return { ids: ids };
     }
 
+    pickRandomOffering(role) {
+        let id, name;
+        switch(role) {
+            case ROLES[0]:
+                id = this._pickRandomNumber(KILLER_OFFERS);
+                name = KILLER_OFFERS[id];
+                break;
+            case ROLES[1]:
+                id = this._pickRandomNumber(SURVIVOR_OFFERS);
+                break;
+        }
+
+        return { id: id, name: name };
+    }
+
     _pickRandomNumber(array) {
         return this._getRandomNumberBetween(0, array.length);
     }

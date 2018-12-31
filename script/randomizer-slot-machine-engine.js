@@ -70,6 +70,15 @@ class RandomizerSlotMachineEngine {
         this.characterAddonSlotMachineResult = result.ids;
     }
 
+    _randomizeOffering(role) {
+        this.offeringSlotMachineResult = this.engine.pickRandomOffering(role);
+    }
+
+    _randomizeAndGetOffering(role) {
+        this._randomizeOffering(role);
+        return this.offeringSlotMachineResult.name;
+    }
+
     shuffleRole() {
         this._shuffleSlotMachine(this.roleSlotMachine, ROLE_SLOT_SHUFFLE_TIME);
     }
@@ -109,6 +118,10 @@ class RandomizerSlotMachineEngine {
                 this._shuffleSlotMachines(this.survivorItemAddonsSlotMachines, ADDONS_SLOT_SHUFFLE_TIME);
                 break;
         }
+    }
+
+    shuffleOfferings() {
+        this._shuffleSlotMachine(this.offeringSlotMachine, OFFERING_SLOT_SHUFFLE_TIME);
     }
 
     registerSlotMachinesForRole(role) {
@@ -204,6 +217,10 @@ class RandomizerSlotMachineEngine {
         this.survivorItemAddonsSlotMachines.push(this._registerSlotMachine('#item-addon2', 2, 'addon', 1));
     }
 
+    _registerOfferingSlotMachine(role) {
+        this.offeringSlotMachine = this._registerSlotMachine("#" + role + " .offer-image", 1, 'offering', 0);
+    }
+
     _registerSlotMachine(selector, active, type, index) {
         let self = this;
         let options = {
@@ -224,7 +241,7 @@ class RandomizerSlotMachineEngine {
         if (this.controlsOnCharacterComplete && type === 'character') {
             this.controlsOnCharacterComplete = false;
             this.uiHandler.enableControls();
-        } else if ((type === 'perk' && index === 3) || (type == 'addon' && index == 1)) {
+        } else if ((type === 'perk' && index === 3) || (type === 'addon' && index == 1) || type === 'offering') {
             this.uiHandler.enableControls();
         }
     }
@@ -241,6 +258,8 @@ class RandomizerSlotMachineEngine {
                 return this.survivorItemSlotMachineResult.id;
             case 'addon':
                 return this.characterAddonSlotMachineResult[index];
+            case 'offering':
+                return this.offeringSlotMachineResult.id;
         }
     }
 
@@ -313,10 +332,26 @@ class RandomizerSlotMachineEngine {
         }
     }
 
+    randomizeOfferings() {
+        let role = this.getActiveRole();
+
+        RandomizerUiGenerator._generateOfferingsElements(role);
+        this._registerOfferingSlotMachine(role);
+        this.uiHandler.toggleOfferingBlankBackground(false);
+
+        let offering = this._randomizeAndGetOffering(role)
+        this.shuffleOfferings()
+
+        let self = this;
+        setTimeout(function () {
+            self.uiHandler.toggleItemBlankBackground(true);
+        }, OFFERING_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
+    }
+
     _randomizeActiveSurvivorItem() {
-        this.uiHandler.toggleItemBlankBackground(false);
         RandomizerUiGenerator.generateSurvivorItemElements();
         this._registerSurvivorItemsSlotMachine();
+        this.uiHandler.toggleItemBlankBackground(false);
 
         let item = this._randomizeAndGetSurvivorItem()
         this.shuffleSurvivorItems()
@@ -329,9 +364,9 @@ class RandomizerSlotMachineEngine {
     }
 
     _randomizeActiveItem(role, character) {
-        this.uiHandler.toggleAddonsBlankBackground(false);
         RandomizerUiGenerator.generateCharacterSpecificElements(role, character);
 
+        this.uiHandler.toggleAddonsBlankBackground(false);
         this._registerAddonsSlotMachine(role);
         this._randomizeItemAddons(role, character);
         this.shuffleAddons(role);
