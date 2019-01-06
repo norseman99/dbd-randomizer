@@ -43,7 +43,7 @@ class RandomizerUiGenerator {
                $(this).append(RandomizerUiGenerator._createDivElement('item-addon', [
                    RandomizerUrlBuilder.buildCssKillerAddonPath(killer, addon.image),
                    RandomizerUrlBuilder.buildCssAddonBackPath(addon.rarity)
-               ], { title: addon.name }));
+               ]));
            }
         });
     }
@@ -57,7 +57,7 @@ class RandomizerUiGenerator {
                 $(self).append(RandomizerUiGenerator._createDivElement('item', [
                     RandomizerUrlBuilder.buildCssItemPath(item.image),
                     RandomizerUrlBuilder.buildCssItemBackPath(item.rarity)
-                ], { title: item.name }));
+                ]));
             });
         });
     }
@@ -73,7 +73,7 @@ class RandomizerUiGenerator {
                 $(this).append(RandomizerUiGenerator._createDivElement('item-addon', [
                     RandomizerUrlBuilder.buildCssItemAddonPath(item, addon.image),
                     RandomizerUrlBuilder.buildCssAddonBackPath(addon.rarity)
-                ], { title: addon.name }));
+                ]));
             }
         });
     }
@@ -88,7 +88,7 @@ class RandomizerUiGenerator {
                 $(self).append(RandomizerUiGenerator._createDivElement('offer', [
                     RandomizerUrlBuilder.buildCssOfferingPath(offering.type, offering.image),
                     RandomizerUrlBuilder.buildCssOfferingBackPath(offering.rarity)
-                ], { title: offering.name }));
+                ]));
             });
         });
     }
@@ -146,14 +146,9 @@ class RandomizerUiGenerator {
         })
     }
 
-    static _createDivElement(className, backgroundImages, options) {
+    static _createDivElement(className, backgroundImages) {
         let div = document.createElement('div');
         $(div).addClass(className).css('backgroundImage', this._buildBackgroundImages(backgroundImages));
-
-        if (options && options.title) {
-            $(div).attr('title', options.title);
-        }
-
         return div;
     }
 
