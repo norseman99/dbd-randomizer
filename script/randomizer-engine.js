@@ -45,20 +45,27 @@ class Engine {
 
     pickRandomSurvivorItem() {
         let id = this._pickRandomNumber(SURVIVOR_ITEMS);
+        let item = SURVIVOR_ITEMS[id];
 
-        return { id: id, item: SURVIVOR_ITEMS[id].item };
+        return { id: id, type: item.type, name: item.name };
     }
 
     pickRandomAddons(character) {
-        let ids;
+        let ids, names;
 
         if ($.inArray(character, KILLERS) !== -1) {
             ids = this._getRandomNumbersBetween(2, 0, KILLER_POWERS[character].addons.length - 1);
+            names =  ids.map(function (id) {
+                return KILLER_POWERS[character].addons[id].name;
+            });
         } else {
             ids = this._getRandomNumbersBetween(2, 0, ITEMS_ADDONS[character].length - 1);
+            names =  ids.map(function (id) {
+                return ITEMS_ADDONS[character][id].name;
+            });
         }
 
-        return { ids: ids };
+        return { ids: ids, names: names };
     }
 
     pickRandomOffering(role) {
@@ -66,10 +73,11 @@ class Engine {
         switch(role) {
             case ROLES[0]:
                 id = this._pickRandomNumber(KILLER_OFFERS);
-                name = KILLER_OFFERS[id];
+                name = KILLER_OFFERS[id].name;
                 break;
             case ROLES[1]:
                 id = this._pickRandomNumber(SURVIVOR_OFFERS);
+                name = SURVIVOR_OFFERS[id].name;
                 break;
         }
 

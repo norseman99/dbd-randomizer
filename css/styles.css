@@ -1,10 +1,13 @@
 :root {
     --main-bg-color: black;
-    --portrait-bg-color: black;
+    --portrait-bg-color: transparent;
     --misc-result-bg-color: transparent;
-    --item-bg-color: #101010;
-    --item-addon-bg-color: #101010;
+    --item-bg-color: transparent;
+    --item-name-bg-color: transparent;
+    --item-addon-bg-color: transparent;
+    --item-addon-name-bg-color: transparent;
     --offer-bg-color: transparent;
+    --offer-name-bg-color: transparent;
     --perk-bg-color: #101010;
     --controls-bg-color: black;
 }
@@ -21,10 +24,10 @@ body {
     font-size: 50px;
     z-index: 99;
     width: 1200px;
-    height: 380px;
+    height: 450px;
     margin: 0 auto;
     position: absolute;
-    top: 450px;
+    top: 360px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -42,13 +45,13 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     vertical-align: middle;
-    height: 450px;
+    height: 350px;
 }
 
 #role {
     border-radius: 25px;
     background-color: var(--main-bg-color);
-    margin: 125px 475px;
+    margin: 100px 475px;
     position: absolute;
     width: 200px;
     height: 180px;
@@ -77,15 +80,16 @@ body {
 
 .portrait {
     width: 300px;
-    height: 370px;
+    height: 450px;
     float: left;
 }
 
 .portrait-image {
     background-color: var(--portrait-bg-color);
+    background-repeat: no-repeat;
     background-position: center;
     width: inherit;
-    height: 350px;
+    height: 430px;
     overflow: hidden;
 }
 
@@ -98,58 +102,46 @@ body {
 .portrait .killer {
     background-position: center;
     background-repeat: no-repeat;
-    height: 350px;
+    background-size: 150%;
+    height: 430px;
 }
 
 .portrait-image .survivor {
     background-position: center;
     background-repeat: no-repeat;
-    height: 350px;
+    background-size: 150%;
+    height: 430px;
 }
 
 .results {
     width: 900px;
-    height: 370px;
+    height: 450px;
     overflow: auto;
 }
 
 .misc-result {
     background-color: var(--misc-result-bg-color);
-    height: 125px;
+    height: 205px;
 }
 
 .item-result {
-    width: 420px;
-    height: 100%;
+    width: 665px;
+    height: inherit;
     float: left;
 }
 
-.role-result {
+.item-slot {
+    height: 205px;
     float: left;
-    width: 180px;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 200px 200px;
-    background-position-y: -30px;
-}
-
-#killer .role-result {
-    background-image: url('../img/role/killer.png');
-}
-
-#survivor .role-result {
-    background-image: url('../img/role/survivor.png');
 }
 
 .item-image {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 125px 125px;
+    background-size: 200px 185px;
     background-color: var(--item-bg-color);
-    width: 125px;
-    height: 100%;
-    float: left;
+    width: 200px;
+    height: 185px;
     overflow: hidden;
 }
 
@@ -157,31 +149,44 @@ body {
     background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
 }
 
+.item-name {
+    height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 .item {
-    background-size: 125px 125px;
+    background-size: 200px 185px;
     width: inherit;
-    height: 125px;
+    height: 185px;
 }
 
 .item-plus {
     float: left;
-    font-size: 60px;
+    font-size: 100px;
     font-weight: bold;
     color: gray;
     text-align: center;
-    padding-top: 35px;
-    width: 45px;
+    padding-top: 50px;
+    width: 65px;
     height: inherit;
 }
 
-.item-addon-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 125px 125px;
-    background-color: var(--item-addon-bg-color);
-    width: 125px;
-    height: 100%;
+.item-addon-slot {
+    width: 200px;
+    height: 205px;
     float: left;
+}
+
+.item-addon-image {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 200px 185px;
+    background-color: var(--item-addon-bg-color);
+    width: 200px;
+    height: 185px;
     overflow: hidden;
 }
 
@@ -189,26 +194,54 @@ body {
     background-image: url('../img/misc/dbd-icon.png'), url('../img/addons/rarity/blank.png');
 }
 
+.item-addon-name {
+    height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .item-addon {
-    background-size: 125px 125px;
+    background-size: 200px 185px;
     width: inherit;
-    height: 125px;
+    height: 185px;
 }
 
 .offer-result {
-    width: 300px;
-    height: inherit;
+    width: 235px;
+    height: 200px;
     float: left;
+}
+
+.offer-slot {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
 }
 
 .offer-image {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 125px 125px;
-    width: 125px;
-    height: inherit;
+    background-size: 180px 175px;
+    width: inherit;
+    height: 185px;
     margin: 0 auto;
     overflow: hidden;
+}
+
+.offer-name {
+    height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .offer-image.blank {
@@ -216,9 +249,11 @@ body {
 }
 
 .offer {
-    background-size: 125px 125px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 180px 175px;
     width: inherit;
-    height: 125px;
+    height: 185px;
 }
 
 .perks {

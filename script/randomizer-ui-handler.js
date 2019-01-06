@@ -24,6 +24,20 @@ class RandomizerUiHandler {
         $('#' + role + " .portrait-name").html(this.uiTranslator.getTranslation('CHARACTER_' + character.toUpperCase()));
     }
 
+    updateItemName(role, item) {
+        $('#' + role + " .item-name").html(item);
+    }
+
+    updateAddonNames(role, addons) {
+        $('#' + role + " .item-addon-name").each(function (index, element) {
+            $(element).html(addons[index]);
+        });
+    }
+
+    updateOfferingName(role, offering) {
+        $('#' + role + " .offer-name").html(offering);
+    }
+
     updatePerkNames(role, perks) {
         let self = this;
         $('#' + role + " .perk-slot-name").each(function (index, element) {
@@ -53,6 +67,7 @@ class RandomizerUiHandler {
         if (show) {
             $('.item-image').addClass('blank');
         } else {
+            $('.item-name').html('');
             $('.item-image').removeClass('blank');
         }
     }
@@ -61,6 +76,7 @@ class RandomizerUiHandler {
         if (show) {
             $('.item-addon-image').addClass('blank');
         } else {
+            $('.item-addon-name').html('');
             $('.item-addon-image').removeClass('blank');
         }
     }
@@ -69,6 +85,7 @@ class RandomizerUiHandler {
         if (show) {
             $('.offer-image').addClass('blank');
         } else {
+            $('.offer-name').html('');
             $('.offer-image').removeClass('blank');
         }
     }
@@ -106,10 +123,13 @@ class RandomizerUiHandler {
 
     _clearElements(role) {
         $('.item-image').html('');
+        $('.item-name').html('');
         $('.item-image').addClass('blank');
         $('.item-addon-image').html('');
+        $('.item-addon-name').html('');
         $('.item-addon-image').addClass('blank');
         $('.offer-image').html('');
+        $('.offer-name').html('');
         $('.offer-image').addClass('blank');
     }
 

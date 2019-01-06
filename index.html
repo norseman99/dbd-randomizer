@@ -39,16 +39,26 @@
             </div>
             <div class="results">
                 <div class="misc-result">
-                    <div class="role-result"></div>
                     <div class="item-result">
-                        <div class="item-image">
+                        <div class="item-slot">
+                            <div class="item-image"></div>
+                            <div class="item-name"></div>
                         </div>
                         <div class="item-plus">+</div>
-                        <div id="power-addon1" class="item-addon-image blank"></div>
-                        <div id="power-addon2" class="item-addon-image blank"></div>
+                        <div class="item-addon-slot">
+                            <div id="power-addon1" class="item-addon-image blank"></div>
+                            <div class="item-addon-name"></div>
+                        </div>
+                        <div class="item-addon-slot">
+                            <div id="power-addon2" class="item-addon-image blank"></div>
+                            <div class="item-addon-name"></div>
+                        </div>
                     </div>
                     <div class="offer-result">
-                        <div class="offer-image blank"></div>
+                        <div class="offer-slot">
+                            <div class="offer-image blank"></div>
+                            <div class="offer-name"></div>
+                        </div>
                     </div>
                 </div>
                 <div id="killer-perks" class="perks">
@@ -82,15 +92,26 @@
             </div>
             <div class="results">
                 <div class="misc-result">
-                    <div class="role-result"></div>
                     <div class="item-result">
-                        <div id="survivor-item" class="item-image blank"></div>
+                        <div class="item-slot">
+                            <div id="survivor-item" class="item-image blank"></div>
+                            <div class="item-name"></div>
+                        </div>
                         <div class="item-plus">+</div>
-                        <div id="item-addon1" class="item-addon-image blank"></div>
-                        <div id="item-addon2" class="item-addon-image blank"></div>
+                        <div class="item-addon-slot">
+                            <div id="item-addon1" class="item-addon-image blank"></div>
+                            <div class="item-addon-name"></div>
+                        </div>
+                        <div class="item-addon-slot">
+                            <div id="item-addon2" class="item-addon-image blank"></div>
+                            <div class="item-addon-name"></div>
+                        </div>
                     </div>
                     <div class="offer-result">
-                        <div class="offer-image blank"></div>
+                        <div class="offer-slot">
+                            <div class="offer-image blank"></div>
+                            <div class="offer-name"></div>
+                        </div>
                     </div>
                 </div>
                 <div id="survivor-perks" class="perks">
@@ -124,7 +145,8 @@
             <button id="randomize-all" class="button randomizer">Ay</button>
             <button id="randomize-killer" data-character="killer" class="button randomizer">Killer</button>
             <button id="randomize-survivor" data-character="survivor" class="button randomizer">Survivor</button>
-            <span class="randomize-with-perks-label">with perks</span>: <input id="randomize-with-perks" type="checkbox" checked="checked">
+            <span class="randomize-with-perks-label">with perks</span>: <input id="randomize-with-perks" type="checkbox"
+                                                                               checked="checked">
         </div>
         <div class="controls-panel">
             <span class="randomize-label">Randomize</span>:
@@ -135,7 +157,8 @@
     </div>
 </div>
 <div id="credits">
-    <a href="http://www.deadbydaylight.com/" target="_blank">Dead by Daylight</a> content and materials are the intellectual property of their respective owners.
+    <a href="http://www.deadbydaylight.com/" target="_blank">Dead by Daylight</a> content and materials are the
+    intellectual property of their respective owners.
 
     Specials thanks to <a href="http://www.twitch.tv/werewolfjester" target="_blank">Happy Clown</a>
     (<a href="https://steamcommunity.com/profiles/76561198307075794" target="_blank">Steam</a>) for his colored perks.

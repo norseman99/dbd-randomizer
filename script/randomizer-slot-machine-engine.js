@@ -13,6 +13,7 @@ class RandomizerSlotMachineEngine {
         this.setActiveCharacter(defaultCharacter);
         this._registerRoleSlotMachine();
         this.registerSlotMachinesForRole(defaultRole);
+        this.uiHandler.updateCharacterName(defaultRole, defaultCharacter);
     }
 
     _randomizeRole() {
@@ -62,12 +63,16 @@ class RandomizerSlotMachineEngine {
 
     _randomizeAndGetSurvivorItem() {
         this._randomizeSurvivorItem();
-        return this.survivorItemSlotMachineResult.item;
+        return this.survivorItemSlotMachineResult;
     }
 
     _randomizeItemAddons(role, character) {
-        let result = this.engine.pickRandomAddons(character);
-        this.characterAddonSlotMachineResult = result.ids;
+        this.characterAddonSlotMachineResult = this.engine.pickRandomAddons(character);
+    }
+
+    _randomizeAndGetItemAddons(role, character) {
+        this._randomizeItemAddons(role, character);
+        return this.characterAddonSlotMachineResult.names;
     }
 
     _randomizeOffering(role) {
@@ -257,7 +262,7 @@ class RandomizerSlotMachineEngine {
             case 'item':
                 return this.survivorItemSlotMachineResult.id;
             case 'addon':
-                return this.characterAddonSlotMachineResult[index];
+                return this.characterAddonSlotMachineResult.ids[index];
             case 'offering':
                 return this.offeringSlotMachineResult.id;
         }
@@ -324,7 +329,7 @@ class RandomizerSlotMachineEngine {
 
         switch(role) {
             case ROLES[0]:
-                this._randomizeActiveItem(role, character);
+                this._randomizeActiveItemAddons(role, character);
                 break;
             case ROLES[1]:
                 this._randomizeActiveSurvivorItem();
@@ -344,7 +349,8 @@ class RandomizerSlotMachineEngine {
 
         let self = this;
         setTimeout(function () {
-            self.uiHandler.toggleItemBlankBackground(true);
+            self.uiHandler.toggleOfferingBlankBackground(true);
+            self.uiHandler.updateOfferingName(role, offering);
         }, OFFERING_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
     }
 
@@ -358,21 +364,23 @@ class RandomizerSlotMachineEngine {
 
         let self = this;
         setTimeout(function () {
-            self._randomizeActiveItem(ROLES[1], item);
+            self._randomizeActiveItemAddons(ROLES[1], item.type);
+            self.uiHandler.updateItemName(ROLES[1], item.name);
             self.uiHandler.toggleItemBlankBackground(true);
         }, ITEMS_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
     }
 
-    _randomizeActiveItem(role, character) {
-        RandomizerUiGenerator.generateCharacterSpecificElements(role, character);
+    _randomizeActiveItemAddons(role, item) {
+        RandomizerUiGenerator.generateCharacterSpecificElements(role, item);
 
         this.uiHandler.toggleAddonsBlankBackground(false);
         this._registerAddonsSlotMachine(role);
-        this._randomizeItemAddons(role, character);
+        let addons = this._randomizeAndGetItemAddons(role, item);
         this.shuffleAddons(role);
 
         let self = this;
         setTimeout(function () {
+            self.uiHandler.updateAddonNames(role, addons);
             self.uiHandler.toggleAddonsBlankBackground(true);
         }, ADDONS_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
     }
