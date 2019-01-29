@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>DBD Randomizer</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/herkule.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/jquery.slotmachine.min.css">
+    <script src="lib/js/jquery-3.3.1.min.js"></script>
+    <script src="lib/js/slotmachine.js"></script>
+    <script src="lib/js/jquery.slotmachine.min.js"></script>
+    <script src="script/randomizer-constants.js"></script>
+    <script src="script/randomizer-engine.js"></script>
+    <script src="script/randomizer-slot-machine-engine.js"></script>
+    <script src="script/randomizer-ui-handler.js"></script>
+    <script src="script/randomizer-ui-generator.js"></script>
+    <script src="script/randomizer-ui-translator.js"></script>
+    <script src="script/randomizer-url-builder.js"></script>
+    <script src="script/randomizer.js"></script>
+</head>
+<body>
+<div id="randomizer">
+    <div id="top">
+        <div id="screen">
+            <div id="screen-top">
+                <div id="role">
+                    <div class="role-option role-killer"></div>
+                    <div class="role-option role-survivor"></div>
+                </div>
+            </div>
+            <div id="main">
+                <div id="overlay">
+                    <p id="overlay-text-1">THE WHEELS ARE TURNING!</p>
+                    <p id="overlay-text-2">LET'S GO!</p>
+                    <p id="role-result"></p>
+                </div>
+                <div id="killer">
+                    <div class="portrait">
+                        <div class="portrait-image"></div>
+                    </div>
+                    <div id="killer-perks" class="perks">
+                        <div id="killer-perk-slot1" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                        <div id="killer-perk-slot2" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                        <div id="killer-perk-slot3" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                        <div id="killer-perk-slot4" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="survivor">
+                    <div class="portrait">
+                        <div class="portrait-image"></div>
+                    </div>
+                    <div id="survivor-perks" class="perks">
+                        <div id="survivor-perk-slot1" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                        <div id="survivor-perk-slot2" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                        <div id="survivor-perk-slot3" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                        <div id="survivor-perk-slot4" class="perk-slot">
+                            <div class="perk-slot-overlay"></div>
+                            <div class="perk-slot-image"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="controls">
+        <div class="controls-panel">
+            <span class="randomize-label">Randomize</span>:
+            <button id="randomize-all" class="button randomizer">Ay</button>
+            <button id="randomize-killer" data-character="killer" class="button randomizer">Killer</button>
+            <button id="randomize-survivor" data-character="survivor" class="button randomizer">Survivor</button>
+            <span class="randomize-with-perks-label">with perks</span>: <input id="randomize-with-perks" type="checkbox" checked="checked">
+        </div>
+        <div class="controls-panel">
+            <span class="randomize-label">Randomize</span>:
+            <button id="randomize-perks" class="button">Perks Only</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

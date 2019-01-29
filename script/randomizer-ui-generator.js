@@ -1,38 +1,46 @@
 class RandomizerUiGenerator {
 
-    static generateAllElements(role) {
+    constructor(uiTranslator) {
+        this.uiTranslator = uiTranslator;
+    }
+
+    generateAllElements(role) {
         switch(role) {
             case ROLES[0]:
-                RandomizerUiGenerator._generateKillerPortraitElements();
+                this._generateKillerPortraitElements();
                 break;
             case ROLES[1]:
-                RandomizerUiGenerator._generateSurvivorPortraitElements();
+                this._generateSurvivorPortraitElements();
                 break;
         }
 
-        RandomizerUiGenerator._generatePerkElements(role);
+        this._generatePerkElements(role);
     }
 
-    static generateCharacterSpecificElements(role, character) {
+    generateCharacterSpecificElements(role, character) {
         switch(role) {
             case ROLES[0]:
-                RandomizerUiGenerator._generateKillerPowerElement(character);
-                RandomizerUiGenerator._generateKillerPowerAddonsElements(character);
+                this._generateKillerPowerElement(character);
+                this._generateKillerPowerAddonsElements(character);
                 break;
             case ROLES[1]:
-                RandomizerUiGenerator._generateSurvivorItemAddonsElements(character);
+                this._generateSurvivorItemAddonsElements(character);
                 break;
         }
     }
 
-    static _generateKillerPowerElement(killer) {
-        $('#killer .item-image').html(RandomizerUiGenerator._createDivElement('item', [
+    _generateKillerPowerElement(killer) {
+        let self = this;
+
+        $('#killer .item-image').html(self._createDivElement('item', [
             RandomizerUrlBuilder.buildCssKillerPowerPath(KILLER_POWERS[killer].image),
             RandomizerUrlBuilder.buildCssAddonBackPath('common')
         ]))
     }
 
-    static _generateKillerPowerAddonsElements(killer) {
+    _generateKillerPowerAddonsElements(killer) {
+        let self = this;
+
         $('#killer .item-addon-image').each(function () {
            $(this).html('');
 
@@ -40,7 +48,7 @@ class RandomizerUiGenerator {
            for (let i = 0; i < addons.length; i++) {
                let addon = addons[i];
 
-               $(this).append(RandomizerUiGenerator._createDivElement('item-addon', [
+               $(this).append(self._createDivElement('item-addon', [
                    RandomizerUrlBuilder.buildCssKillerAddonPath(killer, addon.image),
                    RandomizerUrlBuilder.buildCssAddonBackPath(addon.rarity)
                ]));
@@ -48,13 +56,15 @@ class RandomizerUiGenerator {
         });
     }
 
-    static generateSurvivorItemElements() {
+    generateSurvivorItemElements() {
+        let self = this;
+
         $('#survivor .item-image').each(function () {
             $(this).html('');
 
-            let self = this;
+            let itemImage = this;
             SURVIVOR_ITEMS.forEach(function (item) {
-                $(self).append(RandomizerUiGenerator._createDivElement('item', [
+                $(itemImage).append(self._createDivElement('item', [
                     RandomizerUrlBuilder.buildCssItemPath(item.image),
                     RandomizerUrlBuilder.buildCssItemBackPath(item.rarity)
                 ]));
@@ -62,7 +72,9 @@ class RandomizerUiGenerator {
         });
     }
 
-    static _generateSurvivorItemAddonsElements(item) {
+    _generateSurvivorItemAddonsElements(item) {
+        let self = this;
+
         $('#survivor .item-addon-image').each(function () {
             $(this).html('');
 
@@ -70,7 +82,7 @@ class RandomizerUiGenerator {
             for (let i = 0; i < addons.length; i++) {
                 let addon = addons[i];
 
-                $(this).append(RandomizerUiGenerator._createDivElement('item-addon', [
+                $(this).append(self._createDivElement('item-addon', [
                     RandomizerUrlBuilder.buildCssItemAddonPath(item, addon.image),
                     RandomizerUrlBuilder.buildCssAddonBackPath(addon.rarity)
                 ]));
@@ -78,14 +90,16 @@ class RandomizerUiGenerator {
         });
     }
 
-    static _generateOfferingsElements(role) {
+    _generateOfferingsElements(role) {
+        let self = this;
+
         $('#' + role + ' .offer-image').each(function () {
             $(this).html('');
 
-            let self = this;
+            let offerImage = this;
             let offers = (role == ROLES[0] ? KILLER_OFFERS : SURVIVOR_OFFERS);
             offers.forEach(function (offering) {
-                $(self).append(RandomizerUiGenerator._createDivElement('offer', [
+                $(offerImage).append(self._createDivElement('offer', [
                     RandomizerUrlBuilder.buildCssOfferingPath(offering.type, offering.image),
                     RandomizerUrlBuilder.buildCssOfferingBackPath(offering.rarity)
                 ]));
@@ -93,66 +107,81 @@ class RandomizerUiGenerator {
         });
     }
 
-    static _generatePerkElements(role) {
+    _generatePerkElements(role) {
         switch(role) {
             case ROLES[0]:
-                RandomizerUiGenerator._generateKillerPerkElements();
+                this._generateKillerPerkElements();
                 break;
             case ROLES[1]:
-                RandomizerUiGenerator._generateSurvivorPerkElements();
+                this._generateSurvivorPerkElements();
                 break;
         }
     }
 
-    static _generateKillerPerkElements() {
+    _generateKillerPerkElements() {
+        let self = this;
+
         $('#killer .perk-slot-image').each(function () {
             $(this).html('');
             for (let i = 0; i < KILLER_PERKS.length; i++) {
-                $(this).append(RandomizerUiGenerator._createDivElement('perk', [
+                $(this).append(self._createDivElement('perk', [
                     RandomizerUrlBuilder.buildCssPerkPath(ROLES[0], KILLER_PERKS[i]),
                     RandomizerUrlBuilder.buildCssPerkBackPath(RARE_PERKS.includes(KILLER_PERKS[i]))
-                ]));
+                ], {
+                    title : self.uiTranslator.getTranslation('PERK_' + KILLER_PERKS[i].toUpperCase())
+                }));
             }
         });
     }
 
-    static _generateSurvivorPerkElements() {
+    _generateSurvivorPerkElements() {
+        let self = this;
+
         $('#survivor .perk-slot-image').each(function () {
             $(this).html('');
             for (let i = 0; i < SURVIVOR_PERKS.length; i++) {
-                $(this).append(RandomizerUiGenerator._createDivElement('perk', [
+                $(this).append(self._createDivElement('perk', [
                     RandomizerUrlBuilder.buildCssPerkPath(ROLES[1], SURVIVOR_PERKS[i]),
                     RandomizerUrlBuilder.buildCssPerkBackPath(RARE_PERKS.includes(SURVIVOR_PERKS[i]))
-                ]));
+                ], {
+                    title : self.uiTranslator.getTranslation('PERK_' + SURVIVOR_PERKS[i].toUpperCase())
+                }));
             }
         });
     }
 
-    static _generateKillerPortraitElements() {
-        RandomizerUiGenerator._generatePortraitElements('#killer .portrait-image', 'killer', ROLES[0], KILLERS);
+    _generateKillerPortraitElements() {
+        this._generatePortraitElements('#killer .portrait-image', 'killer', ROLES[0], KILLERS);
     }
 
-    static _generateSurvivorPortraitElements() {
-        RandomizerUiGenerator._generatePortraitElements('#survivor .portrait-image', 'survivor', ROLES[1], SURVIVORS);
+    _generateSurvivorPortraitElements() {
+        this._generatePortraitElements('#survivor .portrait-image', 'survivor', ROLES[1], SURVIVORS);
     }
 
-    static _generatePortraitElements(selector, className, role, characters) {
+    _generatePortraitElements(selector, className, role, characters) {
+        let self = this;
+
         $(selector).html('');
         $(selector).each(function () {
             let portrait = this;
             characters.forEach(function (character) {
-                $(portrait).append(RandomizerUiGenerator._createDivElement(className, [RandomizerUrlBuilder.buildCssCharacterPortraitPath(role, character)]));
+                $(portrait).append(self._createDivElement(className, [RandomizerUrlBuilder.buildCssCharacterPortraitPath(role, character)]));
             });
         })
     }
 
-    static _createDivElement(className, backgroundImages) {
+    _createDivElement(className, backgroundImages, options) {
         let div = document.createElement('div');
         $(div).addClass(className).css('backgroundImage', this._buildBackgroundImages(backgroundImages));
+
+        if (options && options.title) {
+            $(div).attr('title', options.title);
+        }
+
         return div;
     }
 
-    static _buildBackgroundImages(backgroundImages) {
+    _buildBackgroundImages(backgroundImages) {
         let result = '';
 
         backgroundImages.forEach(function (backgroundImage) {

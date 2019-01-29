@@ -1,11 +1,12 @@
 class RandomizerSlotMachineEngine {
 
-    constructor(engine, uiHandler) {
+    constructor(engine, uiHandler, uiGenerator) {
         this.killerPerksSlotMachines = [];
         this.survivorPerksSlotMachines = [];
         this.controlsOnCharacterComplete = false;
         this.engine = engine;
         this.uiHandler = uiHandler;
+        this.uiGenerator = uiGenerator;
     }
 
     init(defaultRole, defaultCharacter) {
@@ -284,7 +285,7 @@ class RandomizerSlotMachineEngine {
             self.uiHandler.updateRoleResult(role)
             self.uiHandler.updateUI(role);
 
-            RandomizerUiGenerator.generateAllElements(role);
+            self.uiGenerator.generateAllElements(role);
             self.registerSlotMachinesForRole(role);
 
             setTimeout(function () {
@@ -340,7 +341,7 @@ class RandomizerSlotMachineEngine {
     randomizeOfferings() {
         let role = this.getActiveRole();
 
-        RandomizerUiGenerator._generateOfferingsElements(role);
+        this.uiGenerator._generateOfferingsElements(role);
         this._registerOfferingSlotMachine(role);
         this.uiHandler.toggleOfferingBlankBackground(false);
 
@@ -355,7 +356,7 @@ class RandomizerSlotMachineEngine {
     }
 
     _randomizeActiveSurvivorItem() {
-        RandomizerUiGenerator.generateSurvivorItemElements();
+        this.uiGenerator.generateSurvivorItemElements();
         this._registerSurvivorItemsSlotMachine();
         this.uiHandler.toggleItemBlankBackground(false);
 
@@ -371,7 +372,7 @@ class RandomizerSlotMachineEngine {
     }
 
     _randomizeActiveItemAddons(role, item) {
-        RandomizerUiGenerator.generateCharacterSpecificElements(role, item);
+        this.uiGenerator.generateCharacterSpecificElements(role, item);
 
         this.uiHandler.toggleAddonsBlankBackground(false);
         this._registerAddonsSlotMachine(role);
