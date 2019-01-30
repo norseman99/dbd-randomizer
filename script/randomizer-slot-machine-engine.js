@@ -269,7 +269,9 @@ class RandomizerSlotMachineEngine {
         }
     }
 
-    randomize(role, withPerks) {
+    randomize(role, withPerks, roleDelay) {
+        roleDelay = (roleDelay === undefined ? ROLE_SLOT_SHUFFLE_TIME + SLOT_MACHINE_DELAY : roleDelay);
+
         this.uiHandler.showResultsOverlay();
         this.uiHandler.togglePerksOverlay(true);
 
@@ -309,7 +311,7 @@ class RandomizerSlotMachineEngine {
 
             }, SHOW_ROLE_RESULT_TIME); // setup time
 
-        }, ROLE_SLOT_SHUFFLE_TIME + SLOT_MACHINE_DELAY);
+        }, roleDelay);
     }
 
     randomizePerks() {

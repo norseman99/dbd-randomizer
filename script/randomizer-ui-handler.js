@@ -158,7 +158,7 @@ class RandomizerUiHandler {
 
         $('.randomizer').on("click", function () {
             self.disableControls();
-            slotMachineEngine.randomize($(this).attr('data-character'), $('#randomize-with-perks').is(':checked'));
+            slotMachineEngine.randomize($(this).attr('data-character'), $('#randomize-with-perks').is(':checked'), $(this).attr('data-role-delay'));
         });
 
         $('#randomize-perks').on("click", function () {
