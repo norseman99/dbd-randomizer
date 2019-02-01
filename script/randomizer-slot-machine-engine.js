@@ -1,12 +1,13 @@
 class RandomizerSlotMachineEngine {
 
-    constructor(engine, uiHandler, uiGenerator) {
+    constructor(engine, uiHandler, uiGenerator, soundManager) {
         this.killerPerksSlotMachines = [];
         this.survivorPerksSlotMachines = [];
         this.controlsOnCharacterComplete = false;
         this.engine = engine;
         this.uiHandler = uiHandler;
         this.uiGenerator = uiGenerator;
+        this.soundManager = soundManager;
     }
 
     init(defaultRole, defaultCharacter) {
@@ -276,6 +277,7 @@ class RandomizerSlotMachineEngine {
         this.uiHandler.togglePerksOverlay(true);
 
         if (role === undefined) {
+            this.soundManager.playRoleSound();
             role = this._randomizeAndGetActiveRole();
             this.shuffleRole();
         } else {
@@ -286,6 +288,7 @@ class RandomizerSlotMachineEngine {
         setTimeout(function () {
             self.uiHandler.updateRoleResult(role)
             self.uiHandler.updateUI(role);
+            self.soundManager.pauseRoleSound();
 
             self.uiGenerator.generateAllElements(role);
             self.registerSlotMachinesForRole(role);
@@ -295,11 +298,13 @@ class RandomizerSlotMachineEngine {
 
                 setTimeout(function () {
                     let character = self._randomizeAndGetActiveCharacter(role);
+                    self.soundManager.playCharacterSound();
                     self._toggleEnableControlsOnCharacterComplete(!withPerks);
                     self.shuffleCharacter(role);
 
                     setTimeout(function () {
                         self.uiHandler.updateCharacterName(role, character);
+                        self.soundManager.pauseCharacterSound();
 
                         if (withPerks) {
                             self.randomizePerks();
@@ -316,6 +321,8 @@ class RandomizerSlotMachineEngine {
 
     randomizePerks() {
         this.uiHandler.togglePerksOverlay(false);
+        this.soundManager.playPerksSound();
+
         let role = this.getActiveRole();
         let perks = this._randomizePerks(role);
         this.shufflePerks(role);
@@ -323,6 +330,7 @@ class RandomizerSlotMachineEngine {
         let self = this;
         setTimeout(function () {
             self.uiHandler.updatePerkNames(role, perks);
+            self.soundManager.pausePerksSound();
         }, PERK_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
     }
 
