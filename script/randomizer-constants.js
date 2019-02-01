@@ -7,6 +7,7 @@ const CHARACTER_SLOT_SHUFFLE_TIME = 5000; // the duration of the character shuff
 const ITEMS_SLOT_SHUFFLE_TIME = 3000; // the duration of the items shuffle in ms
 const ADDONS_SLOT_SHUFFLE_TIME = 3000; // the duration of the addons shuffle in ms
 const OFFERING_SLOT_SHUFFLE_TIME = 3000; // the duration of the offerings shuffle in ms
+const AUDIO_VOLUME = 0.5; // audio volume from 0 to 1.
 
 const ROLES = [
     'killer',

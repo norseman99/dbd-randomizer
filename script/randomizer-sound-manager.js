@@ -5,14 +5,17 @@ class RandomizerSoundManager {
 
         this.roleSound = new Audio('sound/tick.mp3');
         this.roleSound.loop = true;
+        this.roleSound.volume = AUDIO_VOLUME;
 
         this.characterSound = new Audio('sound/tick.mp3');
         this.characterSound.loop = true;
+        this.characterSound.volume = AUDIO_VOLUME;
 
         this.perksSound = [];
         for (let i = 0; i < 4; i++) {
             this.perksSound[i] = new Audio('sound/tick.mp3');
             this.perksSound[i].loop = true;
+            this.perksSound[i].volume = AUDIO_VOLUME;
         }
     }
 
