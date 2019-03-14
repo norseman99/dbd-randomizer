@@ -27,13 +27,13 @@ class Engine {
         let ids, perks;
         switch(role) {
             case ROLES[0]:
-                ids = this._getRandomNumbersBetween(4, 0, KILLER_PERKS.length - 1);
+                ids = this._getRandomNumbersBetween(4, 0, KILLER_PERKS.length);
                 perks =  ids.map(function (id) {
                    return KILLER_PERKS[id];
                 });
                 break;
             case ROLES[1]:
-                ids = this._getRandomNumbersBetween(4, 0, SURVIVOR_PERKS.length -1);
+                ids = this._getRandomNumbersBetween(4, 0, SURVIVOR_PERKS.length);
                 perks =  ids.map(function (id) {
                     return SURVIVOR_PERKS[id];
                 });

@@ -39,6 +39,7 @@ const TRANSLATIONS = {
         "CHARACTER_TAPP": "David Tapp",
         "CHARACTER_KATE": "Kate Denson",
         "CHARACTER_FRANCIS": "Adam Francis",
+        "CHARACTER_JANE": "Jane Romero",
         "CHARACTER_CLOWN": "Jeffrey Hawk (Clown)",
         "CHARACTER_DOCTOR": "Herman Carter (Doctor)",
         "CHARACTER_FREDDY": "Freddy Krueger",
@@ -53,6 +54,7 @@ const TRANSLATIONS = {
         "CHARACTER_SPIRIT": "Rin Yamaoka (Spirit)",
         "CHARACTER_TRAPPER": "Evan MacMillan (Trapper)",
         "CHARACTER_WRAITH": "Philip Ojomo (Wraith)",
+        "CHARACTER_PLAGUE": "Adiris (Plague)",
         "PERK_AGITATION": "Agitation",
         "PERK_ANURSESCALLING": "A Nurse's Calling",
         "PERK_BAMBOOZLE": "Bamboozle",
@@ -107,6 +109,9 @@ const TRANSLATIONS = {
         "PERK_UNNERVINGPRESENCE": "Unnerving Presence",
         "PERK_UNRELENTING": "Unrelenting",
         "PERK_WHISPERS": "Whispers",
+        "PERK_CORRUPTINTERVENTION": "Corrupt Intervention",
+        "PERK_DARKDEVOTION": "Dark Devotion",
+        "PERK_INFECTIOUSFRIGHT": "Infectious Fright",
         "PERK_ACEINTHEHOLE": "Ace In The Hole",
         "PERK_ADRENALINE": "Adrenaline",
         "PERK_AFTERCARE": "Aftercare",
@@ -165,6 +170,9 @@ const TRANSLATIONS = {
         "PERK_WAKEUP": "Wake Up",
         "PERK_WELLMAKEIT": "We'll Make It",
         "PERK_WEREGONNALIVEFOREVER": "We're Gonna Live Forever",
-        "PERK_WINDOWSOFOPPORTUNITY": "Windows Of Opportunity"
+        "PERK_WINDOWSOFOPPORTUNITY": "Windows Of Opportunity",
+        "PERK_HEADON": "Head On",
+        "PERK_POISED": "Poised",
+        "PERK_SOLIDARITY": "Solidarity",
     }
 }

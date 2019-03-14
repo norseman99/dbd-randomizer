@@ -29,7 +29,8 @@ const SURVIVORS = [
     'quentin',
     'tapp',
     'kate',
-    'francis'
+    'francis',
+    'jane'
 ]; // list of all available survivors
 
 const KILLERS = [
@@ -46,7 +47,8 @@ const KILLERS = [
     'pig',
     'spirit',
     'trapper',
-    'wraith'
+    'wraith',
+    'plague'
 ]; // list of all available killers
 
 const KILLER_PERKS = [
@@ -103,7 +105,10 @@ const KILLER_PERKS = [
     'tinkerer',
     'unnervingPresence',
     'unrelenting',
-    'whispers'
+    'whispers',
+    'corruptIntervention',
+    'infectiousFright',
+    'darkDevotion'
 ]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
@@ -165,7 +170,10 @@ const SURVIVOR_PERKS = [
     'wakeUp',
     'wellMakeIt',
     'WereGonnaLiveForever',
-    'windowsOfOpportunity'
+    'windowsOfOpportunity',
+    'headOn',
+    'poised',
+    'solidarity'
 ]; // list of all survivor perks
 
 const RARE_PERKS = [
@@ -201,7 +209,9 @@ const RARE_PERKS = [
     'tenacity',
     'wakeUp',
     'WereGonnaLiveForever',
-    'windowsOfOpportunity'
+    'windowsOfOpportunity',
+    'corruptIntervention',
+    'solidarity'
 ];
 
 const KILLER_POWERS = {
@@ -551,6 +561,31 @@ const KILLER_POWERS = {
             { name: '"All Seeing" - Blood', image: 'bloodKraFabai', rarity: 'veryrare' },
             { name: 'Coxcombed Clapper', image: 'coxcombedClapper', rarity: 'ultra' },
             { name: '"All Seeing" - Spirit', image: 'spiritAllSeeing', rarity: 'ultra' }
+        ]
+    },
+    'plague': {
+        image: 'vilePurge',
+        addons: [
+            {name: 'Prayer Tablet Fragment', image: 'prayerTabletFragment', rarity: 'common'},
+            {name: 'Olibanum Incense', image: 'olibanumIncense', rarity: 'common'},
+            {name: 'Limestone Seal', image: 'limestoneSeal', rarity: 'common'},
+            {name: 'Healing Salve', image: 'healingSalve', rarity: 'common'},
+            {name: 'Prophylactic Amulet', image: 'prophylacticAmulet', rarity: 'uncommon'},
+            {name: 'Potent Tincture', image: 'potentTincture', rarity: 'uncommon'},
+            {name: 'Haematite Seal', image: 'hematiteSeal', rarity: 'uncommon'},
+            {name: 'Emetic Potion', image: 'emeticPotion', rarity: 'uncommon'},
+            {name: 'Blessed Apple', image: 'prayerApple', rarity: 'uncommon'},
+            {name: 'Rubbing Oil', image: 'rubbingOil', rarity: 'rare'},
+            {name: 'Infected Emetic', image: 'infectedEmetic', rarity: 'rare'},
+            {name: 'Incensed Ointment', image: 'incensedOintment', rarity: 'rare'},
+            {name: 'Exorcism Amulet', image: 'exorcismAmulet', rarity: 'rare'},
+            {name: 'Ashen Apple', image: 'ashenApple', rarity: 'rare'},
+            {name: 'Worship Tablet', image: 'worshipTablet', rarity: 'veryrare'},
+            {name: 'Vile Emetic', image: 'vileEmetic', rarity: 'veryrare'},
+            {name: 'Severed Toe', image: 'severedToe', rarity: 'veryrare'},
+            {name: 'Devotee\'s Amulet', image: 'devoteesAmulet', rarity: 'veryrare'},
+            {name: 'Iridescent Seal', image: 'IridescentSeal', rarity: 'ultra'},
+            {name: 'Black Incense', image: 'blackIncense', rarity: 'ultra'}
         ]
     }
 };
