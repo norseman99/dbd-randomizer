@@ -30,7 +30,8 @@ const SURVIVORS = [
     'tapp',
     'kate',
     'francis',
-    'jane'
+    'jane',
+    'ash'
 ]; // list of all available survivors
 
 const KILLERS = [
@@ -173,7 +174,10 @@ const SURVIVOR_PERKS = [
     'windowsOfOpportunity',
     'headOn',
     'poised',
-    'solidarity'
+    'solidarity',
+    'buckleUp',
+    'flipFlop',
+    'mettleOfMan'
 ]; // list of all survivor perks
 
 const RARE_PERKS = [
@@ -211,7 +215,8 @@ const RARE_PERKS = [
     'WereGonnaLiveForever',
     'windowsOfOpportunity',
     'corruptIntervention',
-    'solidarity'
+    'solidarity',
+    'flipFlop',
 ];
 
 const KILLER_POWERS = {

@@ -40,6 +40,7 @@ const TRANSLATIONS = {
         "CHARACTER_KATE": "Kate Denson",
         "CHARACTER_FRANCIS": "Adam Francis",
         "CHARACTER_JANE": "Jane Romero",
+        "CHARACTER_ASH": "Ashley \"Ash\" Joanna Williams",
         "CHARACTER_CLOWN": "Jeffrey Hawk (Clown)",
         "CHARACTER_DOCTOR": "Herman Carter (Doctor)",
         "CHARACTER_FREDDY": "Freddy Krueger",
@@ -174,5 +175,8 @@ const TRANSLATIONS = {
         "PERK_HEADON": "Head On",
         "PERK_POISED": "Poised",
         "PERK_SOLIDARITY": "Solidarity",
+        'PERK_BUCKLEUP' : "Buckle Up",
+        'PERK_FLIPFLOP' : "Flip Flop",
+        'PERK_METTLEOFMAN' : "Mettle Of Man"
     }
 }
