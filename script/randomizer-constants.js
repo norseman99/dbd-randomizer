@@ -49,7 +49,8 @@ const KILLERS = [
     'spirit',
     'trapper',
     'wraith',
-    'plague'
+    'plague',
+    'ghostface'
 ]; // list of all available killers
 
 const KILLER_PERKS = [
@@ -109,7 +110,10 @@ const KILLER_PERKS = [
     'whispers',
     'corruptIntervention',
     'infectiousFright',
-    'darkDevotion'
+    'darkDevotion',
+    'furtiveChase',
+    'imAllEars',
+    'thrillingTremors'
 ]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
@@ -217,6 +221,7 @@ const RARE_PERKS = [
     'corruptIntervention',
     'solidarity',
     'flipFlop',
+    'imAllEars'
 ];
 
 const KILLER_POWERS = {
@@ -591,6 +596,31 @@ const KILLER_POWERS = {
             {name: 'Devotee\'s Amulet', image: 'devoteesAmulet', rarity: 'veryrare'},
             {name: 'Iridescent Seal', image: 'IridescentSeal', rarity: 'ultra'},
             {name: 'Black Incense', image: 'blackIncense', rarity: 'ultra'}
+        ]
+    },
+    'ghostface': {
+        image: 'ghostPower',
+        addons: [
+            { name: '"Philly"', image: 'philly', rarity: 'common' },
+            { name: 'Walleyes Matchbook', image: 'walleyesMatchbook', rarity: 'common' },
+            { name: 'Headlines Cut-outs', image: 'headlinesCutouts', rarity: 'common' },
+            { name: 'Cheap Cologne', image: 'cheapCologne', rarity: 'common' },
+            { name: 'Telephoto Lens', image: 'telephotoLens', rarity: 'uncommon' },
+            { name: 'Reusable Cinch Strap', image: 'reusuableCinchStraps', rarity: 'uncommon' },
+            { name: 'Olsen\'s Journal', image: 'olsensJournal', rarity: 'uncommon' },
+            { name: 'Olsen\'s Address Book', image: 'olsensAddressBook', rarity: 'uncommon' },
+            { name: 'Marked Map', image: 'markedMap', rarity: 'uncommon' },
+            { name: 'Olsen\'s Wallet', image: 'olsensWallet', rarity: 'rare' },
+            { name: 'Leather Knife Sheath', image: 'leatherKnifeSheath', rarity: 'rare' },
+            { name: 'Lasting Perfume', image: 'lastingPerfume', rarity: 'rare' },
+            { name: 'Knife Belt Clip', image: 'knifeBeltClip', rarity: 'rare' },
+            { name: 'Chewed Pen', image: 'chewedPen', rarity: 'rare' },
+            { name: 'Victim\'s Detailed Routine', image: 'victimsDetailedRoutine', rarity: 'veryrare' },
+            { name: 'Night Vision Monocular', image: 'nightvisionMoncular', rarity: 'veryrare' },
+            { name: 'Drop-Leg Knife Sheath', image: 'dropLegKnifeSheath', rarity: 'veryrare' },
+            { name: 'Driver\'s License', image: 'driversLicense', rarity: 'veryrare' },
+            { name: '"Ghost Face Caught on Tape"', image: 'caughtOnTape', rarity: 'ultra' },
+            { name: 'Outdoor Security Camera', image: 'outdoorSecurityCamera', rarity: 'ultra' }
         ]
     }
 };

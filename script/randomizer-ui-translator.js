@@ -56,6 +56,7 @@ const TRANSLATIONS = {
         "CHARACTER_TRAPPER": "Evan MacMillan (Trapper)",
         "CHARACTER_WRAITH": "Philip Ojomo (Wraith)",
         "CHARACTER_PLAGUE": "Adiris (Plague)",
+        "CHARACTER_GHOSTFACE": "Jed Olsen (Ghost Face)",
         "PERK_AGITATION": "Agitation",
         "PERK_ANURSESCALLING": "A Nurse's Calling",
         "PERK_BAMBOOZLE": "Bamboozle",
@@ -177,6 +178,9 @@ const TRANSLATIONS = {
         "PERK_SOLIDARITY": "Solidarity",
         'PERK_BUCKLEUP' : "Buckle Up",
         'PERK_FLIPFLOP' : "Flip Flop",
-        'PERK_METTLEOFMAN' : "Mettle Of Man"
+        'PERK_METTLEOFMAN' : "Mettle Of Man",
+        'PERK_FURTIVECHASE': "Furtive Chase",
+        'PERK_IMALLEARS': "I'm All Ears",
+        'PERK_THRILLINGTREMORS' : "Thrilling Tremors"
     }
 }
