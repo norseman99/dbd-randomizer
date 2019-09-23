@@ -1,12 +1,12 @@
-const SLOT_MACHINE_DELAY = 500;
-const DELAY_BEFORE_CHARACTER_ROLE = 1500;
-const SHOW_ROLE_RESULT_TIME = 2500;
-const ROLE_SLOT_SHUFFLE_TIME = 5000; // the duration of the role shuffle in ms
-const PERK_SLOT_SHUFFLE_TIME = 5000; // the duration of the perk shuffle in ms
-const CHARACTER_SLOT_SHUFFLE_TIME = 5000; // the duration of the character shuffle in ms
-const ITEMS_SLOT_SHUFFLE_TIME = 3000; // the duration of the items shuffle in ms
-const ADDONS_SLOT_SHUFFLE_TIME = 3000; // the duration of the addons shuffle in ms
-const OFFERING_SLOT_SHUFFLE_TIME = 3000; // the duration of the offerings shuffle in ms
+const SLOT_MACHINE_DELAY = 50;
+const DELAY_BEFORE_CHARACTER_ROLE = 150;
+const SHOW_ROLE_RESULT_TIME = 250;
+const ROLE_SLOT_SHUFFLE_TIME = 500; // the duration of the role shuffle in ms
+const PERK_SLOT_SHUFFLE_TIME = 500; // the duration of the perk shuffle in ms
+const CHARACTER_SLOT_SHUFFLE_TIME = 500; // the duration of the character shuffle in ms
+const ITEMS_SLOT_SHUFFLE_TIME = 300; // the duration of the items shuffle in ms
+const ADDONS_SLOT_SHUFFLE_TIME = 300; // the duration of the addons shuffle in ms
+const OFFERING_SLOT_SHUFFLE_TIME = 300; // the duration of the offerings shuffle in ms
 const AUDIO_VOLUME = 0.5; // audio volume from 0 to 1.
 
 const ROLES = [
@@ -31,7 +31,9 @@ const SURVIVORS = [
     'kate',
     'francis',
     'jane',
-    'ash'
+    'ash',
+    'nancy',
+    'steve'
 ]; // list of all available survivors
 
 const KILLERS = [
@@ -50,7 +52,8 @@ const KILLERS = [
     'trapper',
     'wraith',
     'plague',
-    'ghostface'
+    'ghostface',
+    'demogorgon'
 ]; // list of all available killers
 
 const KILLER_PERKS = [
@@ -113,7 +116,10 @@ const KILLER_PERKS = [
     'darkDevotion',
     'furtiveChase',
     'imAllEars',
-    'thrillingTremors'
+    'thrillingTremors',
+    'cruelConfinement',
+    'mindBreaker',
+    'surge'
 ]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
@@ -181,7 +187,13 @@ const SURVIVOR_PERKS = [
     'solidarity',
     'buckleUp',
     'flipFlop',
-    'mettleOfMan'
+    'mettleOfMan',
+    'babySitter',
+    'betterTogether',
+    'camaraderie',
+    'fixated',
+    'innerStrength',
+    'secondWind'
 ]; // list of all survivor perks
 
 const RARE_PERKS = [
@@ -221,7 +233,10 @@ const RARE_PERKS = [
     'corruptIntervention',
     'solidarity',
     'flipFlop',
-    'imAllEars'
+    'imAllEars',
+    'surge',
+    'betterTogether',
+    'babySitter'
 ];
 
 const KILLER_POWERS = {
@@ -622,6 +637,31 @@ const KILLER_POWERS = {
             { name: '"Ghost Face Caught on Tape"', image: 'caughtOnTape', rarity: 'ultra' },
             { name: 'Outdoor Security Camera', image: 'outdoorSecurityCamera', rarity: 'ultra' }
         ]
+    },
+    'demogorgon': {
+        image: 'ofTheAbyss',
+        addons: [
+            { name: 'Rotten Pumpkin', image: 'rottenPumpkin', rarity: 'common' },
+            { name: 'Black Heart', image: 'blackHeart', rarity: 'common' },
+            { name: 'Rat Liver', image: 'ratLiver', rarity: 'common' },
+            { name: 'Rat Tail', image: 'ratTail', rarity: 'common' },
+            { name: 'Sticky Lining', image: 'stickyLining', rarity: 'uncommon' },
+            { name: 'Viscous Webbing', image: 'viscousWebbing', rarity: 'uncommon' },
+            { name: 'Rotten Green Tripe', image: 'rottenGreenTripe', rarity: 'uncommon' },
+            { name: 'Mew\'s Guts', image: 'mewsGuts', rarity: 'uncommon' },
+            { name: 'Barb\'s Glasses', image: 'barbsGlasses', rarity: 'uncommon' },
+            { name: 'Eleven\'s Soda', image: 'elevensSoda', rarity: 'rare' },
+            { name: 'Thorny Vines', image: 'thornyVines', rarity: 'rare' },
+            { name: 'Brass Case Lighter', image: 'brassCaseLighter', rarity: 'rare' },
+            { name: 'Violet Waxcap', image: 'violetWaxcap', rarity: 'rare' },
+            { name: 'Deer Lung', image: 'deerLung', rarity: 'rare' },
+            { name: 'Lifeguard Whistle', image: 'lifeguardWhistle', rarity: 'veryrare' },
+            { name: 'Vermilion Webcap', image: 'vermillionWebcap', rarity: 'veryrare' },
+            { name: 'Upside Down Resin', image: 'upsidedownResin', rarity: 'veryrare' },
+            { name: 'Unknown Egg', image: 'unknownEgg', rarity: 'veryrare' },            
+            { name: 'Leprose Lichen', image: 'leproseLichen', rarity: 'ultra' },
+            { name: 'Red Moss', image: 'redMoss', rarity: 'ultra' }
+        ]
     }
 };
 
@@ -718,6 +758,7 @@ const COMMON_OFFERS = [
     { name: 'Charred Wedding Photograph', image:'charredWeddingPhotograph', type: 'common', rarity: 'rare' },
     { name: 'Damaged Photo', image:'damagedPhoto', type: 'common', rarity: 'rare' },
     { name: 'Granma\'s Cookbook', image:'granmasCookbook', type: 'common', rarity: 'rare' },
+    { name: 'Hawkins National Laboratory', image:'hawkinsNationalLaboratory', type: 'common', rarity: 'rare' },
     { name: 'Heart Locket', image:'heartLocket', type: 'common', rarity: 'rare' },
     { name: 'Jigsaw Piece', image:'jigsawPiece', type: 'common', rarity: 'rare' },
     { name: 'MacMillan\'s Phalanx Bone', image:'macmilliansPhalanxBone', type: 'common', rarity: 'rare' },

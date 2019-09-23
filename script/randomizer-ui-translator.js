@@ -41,6 +41,8 @@ const TRANSLATIONS = {
         "CHARACTER_FRANCIS": "Adam Francis",
         "CHARACTER_JANE": "Jane Romero",
         "CHARACTER_ASH": "Ashley \"Ash\" Joanna Williams",
+        "CHARACTER_NANCY": "Nancy Wheeler",
+        "CHARACTER_STEVE": "Steve Harrington",
         "CHARACTER_CLOWN": "Jeffrey Hawk (Clown)",
         "CHARACTER_DOCTOR": "Herman Carter (Doctor)",
         "CHARACTER_FREDDY": "Freddy Krueger",
@@ -57,6 +59,7 @@ const TRANSLATIONS = {
         "CHARACTER_WRAITH": "Philip Ojomo (Wraith)",
         "CHARACTER_PLAGUE": "Adiris (Plague)",
         "CHARACTER_GHOSTFACE": "Jed Olsen (Ghost Face)",
+        "CHARACTER_DEMOGORGON": "The Demogorgon",
         "PERK_AGITATION": "Agitation",
         "PERK_ANURSESCALLING": "A Nurse's Calling",
         "PERK_BAMBOOZLE": "Bamboozle",
@@ -181,6 +184,15 @@ const TRANSLATIONS = {
         'PERK_METTLEOFMAN' : "Mettle Of Man",
         'PERK_FURTIVECHASE': "Furtive Chase",
         'PERK_IMALLEARS': "I'm All Ears",
-        'PERK_THRILLINGTREMORS' : "Thrilling Tremors"
+        'PERK_THRILLINGTREMORS' : "Thrilling Tremors",
+        'PERK_SURGE' : "Surge",
+        'PERK_CRUELLIMITS' : "Cruel Limits",
+        'PERK_MINDBREAKER' : "Mindbreaker",
+        'PERK_BETTERTOGETHER' : "Better Together",
+        'PERK_FIXATED' : "Fixated",
+        'PERK_INNERSTRENGTH' : "Inner Strength",
+        'PERK_BABYSITTER' : "Babysitter",
+        'PERK_CAMARADERIE' : "Camaraderie",
+        'PERK_SECONDWIND' : "Second Wind"
     }
 }
