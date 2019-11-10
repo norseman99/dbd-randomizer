@@ -117,7 +117,7 @@ const KILLER_PERKS = [
     'furtiveChase',
     'imAllEars',
     'thrillingTremors',
-    'cruelConfinement',
+    'cruelLimits',
     'mindBreaker',
     'surge'
 ]; // list of all killers perks
