@@ -33,7 +33,8 @@ const SURVIVORS = [
     'jane',
     'ash',
     'nancy',
-    'steve'
+    'steve',
+    'kimura'
 ]; // list of all available survivors
 
 const KILLERS = [
@@ -53,7 +54,8 @@ const KILLERS = [
     'wraith',
     'plague',
     'ghostface',
-    'demogorgon'
+    'demogorgon',
+    'oni'
 ]; // list of all available killers
 
 const KILLER_PERKS = [
@@ -119,7 +121,10 @@ const KILLER_PERKS = [
     'thrillingTremors',
     'cruelLimits',
     'mindBreaker',
-    'surge'
+    'surge',
+    'bloodEcho',
+    'nemesis',
+    'zanshinTactics'
 ]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
@@ -193,7 +198,10 @@ const SURVIVOR_PERKS = [
     'camaraderie',
     'fixated',
     'innerStrength',
-    'secondWind'
+    'secondWind',
+    'anyMeansNecessary',
+    'breakout',
+    'luckyBreak'
 ]; // list of all survivor perks
 
 const RARE_PERKS = [
@@ -236,7 +244,9 @@ const RARE_PERKS = [
     'imAllEars',
     'surge',
     'betterTogether',
-    'babySitter'
+    'babySitter',
+    'zanshinTactics',
+    'anyMeansNecessary'
 ];
 
 const KILLER_POWERS = {
@@ -661,6 +671,31 @@ const KILLER_POWERS = {
             { name: 'Unknown Egg', image: 'unknownEgg', rarity: 'veryrare' },            
             { name: 'Leprose Lichen', image: 'leproseLichen', rarity: 'ultra' },
             { name: 'Red Moss', image: 'redMoss', rarity: 'ultra' }
+        ]
+    },
+    'oni' : {
+        image: 'yamaokasWrath',
+        addons: [
+            { name: 'Yakuyoke Talisman', image: 'paperLantern', rarity: 'common' },
+            { name: 'Rotting Rope', image: 'rottingRope', rarity: 'common' },
+            { name: 'Cracked Sakazuki', image: 'crackedSakazuki', rarity: 'common' },
+            { name: 'Blackened Toenail', image: 'blackenedToenail', rarity: 'common' },
+            { name: 'Polished Maedate', image: 'polishedMaedate', rarity: 'uncommon' },
+            { name: 'Ink Lion', image: 'inkLion', rarity: 'uncommon' },
+            { name: 'Chipped Saihai', image: 'chippedSaihai', rarity: 'uncommon' },
+            { name: 'Child\'s Wooden Sword', image: 'childsWoodenSword', rarity: 'uncommon' },
+            { name: 'Bloody Sash', image: 'bloodySash', rarity: 'uncommon' },
+            { name: 'Yamaoka Sashimono', image: 'yamaokaSashimono', rarity: 'rare' },
+            { name: 'Wooden Oni Mask', image: 'woodenOniMask', rarity: 'rare' },
+            { name: 'Shattered Wakizashi', image: 'shatteredWakizashi', rarity: 'rare' },
+            { name: 'Scalped Topknot', image: 'scalpedTopknot', rarity: 'rare' },
+            { name: 'Kanai-Anzen Talisman', image: 'kanaianzenTalisman', rarity: 'rare' },
+            { name: 'Tear Soaked Tenugui', image: 'tearSoakedTenugui', rarity: 'veryrare' },
+            { name: 'Splintered Hull', image: 'splinteredHull', rarity: 'veryrare' },
+            { name: 'Lion Fang', image: 'lionFang', rarity: 'veryrare' },
+            { name: 'Akito\'s Crutch', image: 'akitosCrutch', rarity: 'veryrare' },
+            { name: 'Renjiro\'s Bloody Glove', image: 'IridescentFamilyCrest', rarity: 'ultra' },
+            { name: 'Iridescent Family Crest', image: 'renirosBloodyGlove', rarity: 'ultra' },
         ]
     }
 };
