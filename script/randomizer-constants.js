@@ -34,7 +34,9 @@ const SURVIVORS = [
     'ash',
     'nancy',
     'steve',
-    'kimura'
+    'kimura',
+    'zarina',
+    'cheryl'
 ]; // list of all available survivors
 
 const KILLERS = [
@@ -55,7 +57,9 @@ const KILLERS = [
     'plague',
     'ghostface',
     'demogorgon',
-    'oni'
+    'oni',
+    'deathslinger',
+    'executioner'
 ]; // list of all available killers
 
 const KILLER_PERKS = [
@@ -124,7 +128,13 @@ const KILLER_PERKS = [
     'surge',
     'bloodEcho',
     'nemesis',
-    'zanshinTactics'
+    'zanshinTactics',
+    'deadManSwitch',
+    'gearHead',
+    'hexRetribution',
+    'deathbound',
+    'forcedPenance',
+    'trailOfTorment'
 ]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
@@ -201,7 +211,13 @@ const SURVIVOR_PERKS = [
     'secondWind',
     'anyMeansNecessary',
     'breakout',
-    'luckyBreak'
+    'luckyBreak',
+    'forThePeople',
+    'offTheRecord',
+    'redHerring',
+    'bloodPact',
+    'repressedAlliance',
+    'soulGuard'
 ]; // list of all survivor perks
 
 const RARE_PERKS = [
@@ -246,7 +262,11 @@ const RARE_PERKS = [
     'betterTogether',
     'babySitter',
     'zanshinTactics',
-    'anyMeansNecessary'
+    'anyMeansNecessary',
+    'redHerring',
+    'bloodPact',
+    'gearHead',
+    'forcedPenance'
 ];
 
 const KILLER_POWERS = {
@@ -697,6 +717,56 @@ const KILLER_POWERS = {
             { name: 'Renjiro\'s Bloody Glove', image: 'IridescentFamilyCrest', rarity: 'ultra' },
             { name: 'Iridescent Family Crest', image: 'renirosBloodyGlove', rarity: 'ultra' },
         ]
+    },
+    'deathslinger' : {
+        image: 'redeemer',
+        addons: [
+            { name: 'Spit Polish Rag', image: 'spitPolishRag', rarity: 'common' },
+            { name: 'Snake Oil', image: 'snakeOil', rarity: 'common' },
+            { name: 'Rickety Chain', image: 'ricketyChain', rarity: 'common' },
+            { name: 'Modified Ammo Belt', image: 'modifiedAmmoBelt', rarity: 'common' },
+            { name: 'Rusted Spike', image: 'rustedSpike', rarity: 'uncommon' },
+            { name: 'Poison Oak Leaves', image: 'poisonOakLeaves', rarity: 'uncommon' },
+            { name: 'Marshal\'s Badge', image: 'marshalsBadge', rarity: 'uncommon' },
+            { name: 'Jaw Smasher', image: 'jawSmasher', rarity: 'uncommon' },
+            { name: 'Chewing Tobacco', image: 'chewingTobacco', rarity: 'uncommon' },
+            { name: 'Warden\'s Keys', image: 'wardensKeys', rarity: 'rare' },
+            { name: 'Wanted Poster', image: 'wantedPoster', rarity: 'rare' },
+            { name: 'Tin Oil Can', image: 'tinOilCan', rarity: 'rare' },
+            { name: 'Honey Locust Thorn', image: 'honeyLocustThorns', rarity: 'rare' },
+            { name: 'Bayshore\'s Gold Tooth', image: 'bayshoresGoldTooth', rarity: 'rare' },
+            { name: 'Barbed Wire', image: 'barbedWire', rarity: 'veryrare' },
+            { name: 'Bayshore\'s Cigar', image: 'bayshoresCigar', rarity: 'veryrare' },
+            { name: 'Gold Creek Whiskey', image: 'clearCreekWhiskey', rarity: 'veryrare' },
+            { name: 'Prison Chain', image: 'prisonChain', rarity: 'veryrare' },
+            { name: 'Hellshire Iron', image: 'hellshireIron', rarity: 'ultra' },
+            { name: 'Iridescent Coin', image: 'iridescentCoin', rarity: 'ultra' }
+        ]
+    },
+    'executioner' : {
+        image: 'ritesOfJudgement',
+        addons: [
+            { name: 'Black Strap', image: 'blackStrap', rarity: 'common' },
+            { name: 'Copper Ring', image: 'copperRing', rarity: 'common' },
+            { name: 'Dead Butterfly', image: 'deadButterfly', rarity: 'common' },
+            { name: 'Lead Ring', image: 'leadRing', rarity: 'common' },
+            { name: 'Cinderella Music Box', image: 'cinderellaMusicBox', rarity: 'uncommon' },
+            { name: 'Forgotten Videotape', image: 'forgottenVideoTape', rarity: 'uncommon' },
+            { name: 'Leopard-Print Fabric', image: 'leopardPrintFabric', rarity: 'uncommon' },
+            { name: 'Wax Doll', image: 'waxDoll', rarity: 'uncommon' },
+            { name: 'Spearhead', image: 'spearhead', rarity: 'uncommon' },
+            { name: 'Burning Man Painting', image: 'burningManPainting', rarity: 'rare' },
+            { name: 'Mannequin Foot', image: 'mannequinFoot', rarity: 'rare' },
+            { name: 'Misty Day, Remains of Judgement', image: 'mistyDay', rarity: 'rare' },
+            { name: 'Tablet of the Oppressor', image: 'tabletOfTheOppressor', rarity: 'rare' },
+            { name: 'Valtiel Sect Photograph', image: 'valtielSectPhotograph', rarity: 'rare' },
+            { name: 'Crimson Ceremony Book', image: 'crimsonCeremonyBook', rarity: 'veryrare' },
+            { name: 'Lost Memories Book', image: 'lostMemoriesBook', rarity: 'veryrare' },
+            { name: 'Rust-Coloured Egg', image: 'rustColoredEgg', rarity: 'veryrare' },
+            { name: 'Scarlet Egg', image: 'scarletEgg', rarity: 'veryrare' },
+            { name: 'Iridescent Seal of Metatron', image: 'iridescentSeal', rarity: 'ultra' },
+            { name: 'Obsidian Goblet', image: 'obsidianGoblet', rarity: 'ultra' }
+        ]
     }
 };
 
@@ -805,8 +875,10 @@ const COMMON_OFFERS = [
     { name: 'Clear Reagent', image:'clearReagent', type: 'common', rarity: 'common' },
     { name: 'Faint Reagent', image:'faintReagent', type: 'common', rarity: 'common' },
     { name: 'Hazy Reagent', image:'hazyReagent', type: 'common', rarity: 'uncommon' },
-    { name: 'Hazy Reagent', image:'murkyReagent', type: 'common', rarity: 'veryrare' },
-    { name: 'Bloody Party Streamers', image:'bloodyPartyStreamers', type: 'common', rarity: 'rare' }
+    { name: 'Murky Reagent', image:'murkyReagent', type: 'common', rarity: 'veryrare' },
+    { name: 'Bloody Party Streamers', image:'bloodyPartyStreamers', type: 'common', rarity: 'rare' },
+    { name: 'Dusty Noose', image:'dustyNoose', type: 'common', rarity: 'rare' },
+    { name: 'Mary\'s Letter', image:'marysLetter', type: 'common', rarity: 'rare' }
 ];
 
 const KILLER_OFFERS = $.merge([
