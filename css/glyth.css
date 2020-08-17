@@ -52,8 +52,8 @@
     #border: 1px solid red;
     width: 90px;
     height: 65px;
-    top: 32px;
-    left: 243px;
+    top: 34px;
+    left: 245px;
 }
 
 .role-option {
@@ -74,10 +74,10 @@
 .portrait {
     position: relative;
     #border: 1px solid green;
-    top: 18px;
+    top: 16px;
     left: 60px;
     width: 85px;
-    height: 95px;
+    height: 97px;
     float: left;
 }
 
@@ -106,21 +106,21 @@
 
 .perks {
     position: relative;
-    top: 32px;
-    left: 116px;
-    #border: 1px solid red;
+    top: 33px;
+    left: 110px;
+    #border: 0px solid red;
     width: 270px;
-    height: 60px;
+    height: 59px;
     overflow: hidden;
 }
 
 .perk-slot {
     background-color: var(--perk-bg-color);
-    #border: 1px solid red;
-    width: 61px;
-    height: 60px;
+    #border: 0px solid red;
+    width: 64px;
+    height: 59px;
     float: left;
-    margin: 2px;
+    margin: 1px;
 }
 
 .perk-slot-overlay {
@@ -128,17 +128,17 @@
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     background-size: 100%;
-    height: 60px;
+    height: 59px;
 }
 
 .perk-slot-image {
-    height: 60px;
+    height: 59px;
     overflow: hidden;
 }
 
 .perk {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 60px 60px;
-    height: 60px;
+    background-size: 59px 59px;
+    height: 59px;
 }
