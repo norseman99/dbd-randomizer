@@ -36,7 +36,8 @@ const SURVIVORS = [
     'steve',
     'kimura',
     'zarina',
-    'cheryl'
+    'cheryl',
+    'felix'
 ]; // list of all available survivors
 
 const KILLERS = [
@@ -59,7 +60,8 @@ const KILLERS = [
     'demogorgon',
     'oni',
     'deathslinger',
-    'executioner'
+    'executioner',
+    'blight'
 ]; // list of all available killers
 
 const KILLER_PERKS = [
@@ -134,7 +136,10 @@ const KILLER_PERKS = [
     'hexRetribution',
     'deathbound',
     'forcedPenance',
-    'trailOfTorment'
+    'trailOfTorment',
+    'dragonsGrip',
+    'hexBloodFavor',
+    'hexUndying'
 ]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
@@ -217,7 +222,10 @@ const SURVIVOR_PERKS = [
     'redHerring',
     'bloodPact',
     'repressedAlliance',
-    'soulGuard'
+    'soulGuard',
+    'visionary',
+    'builtToLast',
+    'desperateMeasures'
 ]; // list of all survivor perks
 
 const RARE_PERKS = [
@@ -266,7 +274,9 @@ const RARE_PERKS = [
     'redHerring',
     'bloodPact',
     'gearHead',
-    'forcedPenance'
+    'forcedPenance',
+    'dragonsGrip',
+    'visionary',
 ];
 
 const KILLER_POWERS = {
@@ -767,6 +777,31 @@ const KILLER_POWERS = {
             { name: 'Iridescent Seal of Metatron', image: 'iridescentSeal', rarity: 'ultra' },
             { name: 'Obsidian Goblet', image: 'obsidianGoblet', rarity: 'ultra' }
         ]
+    },
+    'blight' : {
+        image: 'K21',
+        addons: [
+            { name: 'Placebo Tablet', image: 'placeboTablet', rarity: 'common' },
+            { name: 'Foxglove', image: 'foxglove', rarity: 'common' },
+            { name: 'Compound Seven', image: 'compoundSeven', rarity: 'common' },
+            { name: 'Chipped Monocle', image: 'chippedMonocle', rarity: 'common' },
+            { name: 'Shredded Notes', image: 'shreddedNotes', rarity: 'uncommon' },
+            { name: 'Pustula Dust', image: 'pustulaDust', rarity: 'uncommon' },
+            { name: 'Plague Bile', image: 'plagueBile', rarity: 'uncommon' },
+            { name: 'Canker Thorn', image: 'cankerThorn', rarity: 'uncommon' },
+            { name: 'Blighted Rat', image: 'blightedRat', rarity: 'uncommon' },
+            { name: 'Umbra Salts', image: 'umbraSalts', rarity: 'rare' },
+            { name: 'Rose Tonic', image: 'roseTonic', rarity: 'rare' },
+            { name: 'Compound Twenty-One', image: 'compoundTwentyOne', rarity: 'rare' },
+            { name: 'Blighted Crow', image: 'blightedCrow', rarity: 'rare' },
+            { name: 'Adrenaline Vial', image: 'adrenalineVial', rarity: 'rare' },
+            { name: 'Vigo\'s Journal', image: 'vigosJournal', rarity: 'veryrare' },
+            { name: 'Summoning Stone', image: 'summoningStone', rarity: 'veryrare' },
+            { name: 'Soul Chemical', image: 'soulChemical', rarity: 'veryrare' },
+            { name: 'Alchemist\'s Ring', image: 'alchemistsRing', rarity: 'veryrare' },
+            { name: 'Iridescent Blight Tag', image: 'iridescentBlightTag', rarity: 'rare' },
+            { name: 'Compound Thirty-Three', image: 'compoundThirtyThree', rarity: 'rare' }
+        ]
     }
 };
 
@@ -878,7 +913,12 @@ const COMMON_OFFERS = [
     { name: 'Murky Reagent', image:'murkyReagent', type: 'common', rarity: 'veryrare' },
     { name: 'Bloody Party Streamers', image:'bloodyPartyStreamers', type: 'common', rarity: 'rare' },
     { name: 'Dusty Noose', image:'dustyNoose', type: 'common', rarity: 'rare' },
-    { name: 'Mary\'s Letter', image:'marysLetter', type: 'common', rarity: 'rare' }
+    { name: 'Mary\'s Letter', image:'marysLetter', type: 'common', rarity: 'rare' },
+    { name: 'Annotated Blueprint', image: 'annotatedBlueprint', type: 'common', rarity: 'common' },
+    { name: 'Bloodied Blueprint', image: 'bloodiedBlueprint', type: 'common', rarity: 'common' },
+    { name: 'Torn Blueprint', image: 'tornBlueprint', type: 'common', rarity: 'common' },
+    { name: 'Vigo\'s Blueprint', image: 'vigosBlueprint', type: 'common', rarity: 'common' },
+    { name: 'Sacrificial Ward', image: 'wardSacrificial', type: 'common', rarity: 'rare' }
 ];
 
 const KILLER_OFFERS = $.merge([

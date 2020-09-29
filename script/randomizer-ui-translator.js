@@ -46,6 +46,7 @@ const TRANSLATIONS = {
         "CHARACTER_KIMURA": "Yui Kimura",
         "CHARACTER_ZARINA": "Zarina Kassir",
         "CHARACTER_CHERYL": "Cheryl Mason",
+        "CHARACTER_FELIX": "Felix Richter",
         "CHARACTER_CLOWN": "Jeffrey Hawk (Clown)",
         "CHARACTER_DOCTOR": "Herman Carter (Doctor)",
         "CHARACTER_FREDDY": "Freddy Krueger",
@@ -66,6 +67,7 @@ const TRANSLATIONS = {
         "CHARACTER_ONI": "Kazan Yamaoka (Oni)",
         "CHARACTER_DEATHSLINGER": "Caleb Quinn (Deathslinger)",
         "CHARACTER_EXECUTIONER": "Pyramid Head (Executioner)",
+        "CHARACTER_BLIGHT": "Talbot Grimes (Blight)",
         "PERK_AGITATION": "Agitation",
         "PERK_ANURSESCALLING": "A Nurse's Calling",
         "PERK_BAMBOOZLE": "Bamboozle",
@@ -123,6 +125,9 @@ const TRANSLATIONS = {
         "PERK_CORRUPTINTERVENTION": "Corrupt Intervention",
         "PERK_DARKDEVOTION": "Dark Devotion",
         "PERK_INFECTIOUSFRIGHT": "Infectious Fright",
+        "PERK_DRAGONSGRIP" : "Dragon's Grip",
+        "PERK_HEXBLOODFAVOR" : "Hex: Blood Favour",
+        "PERK_HEXUNDYING" : "Hex: Undying",
         "PERK_ACEINTHEHOLE": "Ace In The Hole",
         "PERK_ADRENALINE": "Adrenaline",
         "PERK_AFTERCARE": "Aftercare",
@@ -218,5 +223,8 @@ const TRANSLATIONS = {
         "PERK_REPRESSEDALLIANCE" : "Repressed Alliance",
         "PERK_SOULGUARD" : "Soul Guard",
         "PERK_TRAILOFTORMENT" : "Trail Of Torment",
+        "PERK_BUILTTOLAST" : "Built to Last",
+        "PERK_DESPERATEMEASURES" : "Desperate Measures",
+        "PERK_VISIONARY" : "Visionary"
     }
 }
