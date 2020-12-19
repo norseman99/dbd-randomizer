@@ -47,6 +47,7 @@ const TRANSLATIONS = {
         "CHARACTER_ZARINA": "Zarina Kassir",
         "CHARACTER_CHERYL": "Cheryl Mason",
         "CHARACTER_FELIX": "Felix Richter",
+        "CHARACTER_ELODIE": "Élodie Rakoto",
         "CHARACTER_CLOWN": "Jeffrey Hawk (Clown)",
         "CHARACTER_DOCTOR": "Herman Carter (Doctor)",
         "CHARACTER_FREDDY": "Freddy Krueger",
@@ -68,6 +69,7 @@ const TRANSLATIONS = {
         "CHARACTER_DEATHSLINGER": "Caleb Quinn (Deathslinger)",
         "CHARACTER_EXECUTIONER": "Pyramid Head (Executioner)",
         "CHARACTER_BLIGHT": "Talbot Grimes (Blight)",
+        "CHARACTER_TWINS": "Victor & Charlotte Deshayes",
         "PERK_AGITATION": "Agitation",
         "PERK_ANURSESCALLING": "A Nurse's Calling",
         "PERK_BAMBOOZLE": "Bamboozle",
@@ -225,6 +227,12 @@ const TRANSLATIONS = {
         "PERK_TRAILOFTORMENT" : "Trail Of Torment",
         "PERK_BUILTTOLAST" : "Built to Last",
         "PERK_DESPERATEMEASURES" : "Desperate Measures",
-        "PERK_VISIONARY" : "Visionary"
+        "PERK_VISIONARY" : "Visionary",
+        "PERK_APPRAISAL" : "Appraisal",
+        "PERK_COUPDEGRACE" : "Coup de Grâce",
+        "PERK_DECEPTION" : "Deception",
+        "PERK_HOARDER" : "Hoarder",
+        "PERK_OPPRESSION" : "Oppression",
+        "PERK_POWERSTRUGGLE" : "Power Struggle"
     }
 }
