@@ -1,5 +1,7 @@
 # DBD Randomizer
 
+[Click here for the online site](https://norseman99.github.io/dbd-randomizer/dist/index.html)
+
 ## Features
 * Randomize character role
 * Randomize killers or survivors
