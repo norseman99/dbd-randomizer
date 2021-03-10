@@ -20,8 +20,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run lint && webpack --mode production",
-    "build:watch": "npm run lint && webpack --watch --mode production",
+    "build": "webpack --mode production",
+    "build:watch": "webpack --watch --mode production",
     "lint": "eslint ."
   },
   "repository": {
