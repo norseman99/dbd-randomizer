@@ -2,13 +2,16 @@
 
 ## Features
 * Randomize character role
-* Randomize killer or survivor
-* Randomize perks for killer or survivor
+* Randomize killers or survivors
+* Randomize perks for killers or survivors
+* Randomize addons for killers powers
+* Randomize items and addons for survivors
+* Randomize offers for killers or survivors
 
 ## Usage
 1. Download this project as a zip file.
 2. Unzip it into a folder.
-3. Open `index.html` on chrome. 
+3. Open `dist/index.html` on chrome. 
 
 # Copyrights
 Dead by Daylight content and materials are the intellectual property of their respective owners.

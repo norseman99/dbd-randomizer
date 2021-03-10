@@ -1,2 +1,4 @@
-/*.iml
-.idea/*.xml
+.idea/**
+.DS_Store
+*.iml
+/node_modules/

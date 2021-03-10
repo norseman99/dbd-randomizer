@@ -1,3 +1,8 @@
+import $ from 'jquery';
+
+const CONSTANTS = require('./conf/configurations.json');
+const AUDIO_VOLUME = CONSTANTS.AUDIO_VOLUME;
+
 class RandomizerSoundManager {
 
     constructor() {
@@ -63,3 +68,5 @@ class RandomizerSoundManager {
         this.enabled = $("#randomizer").attr('data-sound-enabled') === "true";
     }
 }
+
+export default RandomizerSoundManager;

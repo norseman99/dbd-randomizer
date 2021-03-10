@@ -1,3 +1,19 @@
+import $ from 'jquery';
+import RandomizerUrlBuilder from './randomizer-url-builder.js';
+
+const DATA = require('./conf/data.json');
+const ROLES = DATA.ROLES;
+const SURVIVORS = DATA.SURVIVORS;
+const KILLERS = DATA.KILLERS;
+const SURVIVOR_PERKS = DATA.SURVIVOR_PERKS;
+const KILLER_PERKS = DATA.KILLER_PERKS;
+const RARE_PERKS = DATA.RARE_PERKS;
+const KILLER_POWERS = DATA.KILLER_POWERS;
+const SURVIVOR_ITEMS = DATA.SURVIVOR_ITEMS;
+const ITEMS_ADDONS = DATA.ITEMS_ADDONS;
+const SURVIVOR_OFFERS = $.merge(DATA.SURVIVOR_OFFERS, DATA.COMMON_OFFERS);
+const KILLER_OFFERS = $.merge(DATA.KILLER_OFFERS, DATA.COMMON_OFFERS);
+
 class RandomizerUiGenerator {
 
     constructor(uiTranslator) {
@@ -192,3 +208,5 @@ class RandomizerUiGenerator {
         return result;
     }
 }
+
+export default RandomizerUiGenerator;

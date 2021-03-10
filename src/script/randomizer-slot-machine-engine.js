@@ -1,3 +1,21 @@
+import SlotMachine from 'jquery-slotmachine/lib/slot-machine.js';
+
+const CONSTANTS = require('./conf/configurations.json');
+const SLOT_MACHINE_DELAY = CONSTANTS.SLOT_MACHINE_DELAY;
+const ADDONS_SLOT_SHUFFLE_TIME = CONSTANTS.ADDONS_SLOT_SHUFFLE_TIME;
+const ROLE_SLOT_SHUFFLE_TIME = CONSTANTS.ROLE_SLOT_SHUFFLE_TIME;
+const PERK_SLOT_SHUFFLE_TIME = CONSTANTS.PERK_SLOT_SHUFFLE_TIME;
+const CHARACTER_SLOT_SHUFFLE_TIME = CONSTANTS.CHARACTER_SLOT_SHUFFLE_TIME;
+const SHOW_ROLE_RESULT_TIME = CONSTANTS.SHOW_ROLE_RESULT_TIME;
+const DELAY_BEFORE_CHARACTER_ROLE = CONSTANTS.DELAY_BEFORE_CHARACTER_ROLE;
+const ITEMS_SLOT_SHUFFLE_TIME = CONSTANTS.ITEMS_SLOT_SHUFFLE_TIME;
+const OFFERING_SLOT_SHUFFLE_TIME = CONSTANTS.OFFERING_SLOT_SHUFFLE_TIME;
+
+const DATA = require('./conf/data.json');
+const ROLES = DATA.ROLES;
+const SURVIVORS = DATA.SURVIVORS;
+const KILLERS = DATA.KILLERS;
+
 class RandomizerSlotMachineEngine {
 
     constructor(engine, uiHandler, uiGenerator, soundManager) {
@@ -396,3 +414,5 @@ class RandomizerSlotMachineEngine {
         }, ADDONS_SLOT_SHUFFLE_TIME + (SLOT_MACHINE_DELAY * 3));
     }
 }
+
+export default RandomizerSlotMachineEngine;

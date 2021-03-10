@@ -1,3 +1,17 @@
+import $ from 'jquery';
+
+const DATA = require('./conf/data.json');
+const ROLES = DATA.ROLES;
+const SURVIVORS = DATA.SURVIVORS;
+const KILLERS = DATA.KILLERS;
+const SURVIVOR_PERKS = DATA.SURVIVOR_PERKS;
+const KILLER_PERKS = DATA.KILLER_PERKS;
+const SURVIVOR_ITEMS = DATA.SURVIVOR_ITEMS;
+const KILLER_POWERS = DATA.KILLER_POWERS;
+const ITEMS_ADDONS = DATA.ITEMS_ADDONS;
+const SURVIVOR_OFFERS = $.merge(DATA.SURVIVOR_OFFERS, DATA.COMMON_OFFERS);
+const KILLER_OFFERS = $.merge(DATA.KILLER_OFFERS, DATA.COMMON_OFFERS);
+
 class Engine {
 
     pickRandomRole() {
@@ -106,3 +120,5 @@ class Engine {
         return Math.floor(Math.random() * (max - min) + min);
     }
 }
+
+export default Engine;

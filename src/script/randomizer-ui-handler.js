@@ -1,3 +1,8 @@
+import $ from 'jquery';
+
+const DATA = require('./conf/data.json');
+const ROLES = DATA.ROLES;
+
 class RandomizerUiHandler {
     constructor(uiTranslator) {
         this.uiTranslator = uiTranslator;
@@ -10,14 +15,14 @@ class RandomizerUiHandler {
     }
 
     updateUI(role) {
-        this._clearElements(role)
+        this._clearElements()
         this._enableRole(role);
     }
 
     updateRoleResult(role) {
         this.showResultsOverlay();
 
-        $('#overlay #role-result').html(uiTranslator.getTranslation('UI_OVERLAY_RESULT_' + role.toUpperCase()));
+        $('#overlay #role-result').html(this.uiTranslator.getTranslation('UI_OVERLAY_RESULT_' + role.toUpperCase()));
     }
 
     updateCharacterName(role, character) {
@@ -121,7 +126,7 @@ class RandomizerUiHandler {
         $('#survivor').css('display', survivorsDisplay);
     }
 
-    _clearElements(role) {
+    _clearElements() {
         $('.item-image').html('');
         $('.item-name').html('');
         $('.item-image').addClass('blank');
@@ -141,16 +146,16 @@ class RandomizerUiHandler {
     }
 
     _initTranslations() {
-        $('.randomize-label').html(uiTranslator.getTranslation('UI_RANDOMIZE_LABEL'));
-        $('.randomize-with-perks-label').html(uiTranslator.getTranslation('UI_RANDOMIZE_WITH_PERKS_LABEL'));
-        $('#randomize-all').html(uiTranslator.getTranslation('UI_ANY'));
-        $('#randomize-killer').html(uiTranslator.getTranslation('UI_KILLER'));
-        $('#randomize-survivor').html(uiTranslator.getTranslation('UI_SURVIVOR'));
-        $('#randomize-perks').html(uiTranslator.getTranslation('UI_PERKS_ONLY'));
-        $('#randomize-items').html(uiTranslator.getTranslation('UI_ITEMS_ONLY'));
-        $('#randomize-offers').html(uiTranslator.getTranslation('UI_OFFERS_ONLY'));
-        $('#overlay-text-1').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT1'));
-        $('#overlay-text-2').html(uiTranslator.getTranslation('UI_OVERLAY_TEXT2'));
+        $('.randomize-label').html(this.uiTranslator.getTranslation('UI_RANDOMIZE_LABEL'));
+        $('.randomize-with-perks-label').html(this.uiTranslator.getTranslation('UI_RANDOMIZE_WITH_PERKS_LABEL'));
+        $('#randomize-all').html(this.uiTranslator.getTranslation('UI_ANY'));
+        $('#randomize-killer').html(this.uiTranslator.getTranslation('UI_KILLER'));
+        $('#randomize-survivor').html(this.uiTranslator.getTranslation('UI_SURVIVOR'));
+        $('#randomize-perks').html(this.uiTranslator.getTranslation('UI_PERKS_ONLY'));
+        $('#randomize-items').html(this.uiTranslator.getTranslation('UI_ITEMS_ONLY'));
+        $('#randomize-offers').html(this.uiTranslator.getTranslation('UI_OFFERS_ONLY'));
+        $('#overlay-text-1').html(this.uiTranslator.getTranslation('UI_OVERLAY_TEXT1'));
+        $('#overlay-text-2').html(this.uiTranslator.getTranslation('UI_OVERLAY_TEXT2'));
     }
 
     _registerRandomizeEvent(slotMachineEngine) {
@@ -177,3 +182,5 @@ class RandomizerUiHandler {
         });
     }
 }
+
+export default RandomizerUiHandler;

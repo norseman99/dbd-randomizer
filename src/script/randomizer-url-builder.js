@@ -52,3 +52,5 @@ class RandomizerUrlBuilder {
         return "url(" + this.buildPerkBackPath(rare) + ")";
     }
 }
+
+export default RandomizerUrlBuilder;
