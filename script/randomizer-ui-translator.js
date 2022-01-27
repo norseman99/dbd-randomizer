@@ -50,7 +50,7 @@ const TRANSLATIONS = {
         "CHARACTER_ELODIE": "Élodie Rakoto",
         "CHARACTER_YUN-JIN": "Yun-Jin Lee",
         "CHARACTER_JILL": "Jill Valentine",
-        "CHARACTER_LEON": "Leon Sctott Kennedy",
+        "CHARACTER_LEON": "Leon Scott Kennedy",
         "CHARACTER_MIKAELA": "Mikaela Reid",
         "CHARACTER_JONAH": "Jonah Vasquez",
         "CHARACTER_CLOWN": "Jeffrey Hawk (Clown)",
