@@ -217,8 +217,9 @@ a {
 
 #credits {
     clear: left;
-    font-size: 9px;
+    font-size: 10px;
     font-family: "Verdana";
     padding-top: 20px;
+    line-height: 20px;
     text-align: right;
 }
