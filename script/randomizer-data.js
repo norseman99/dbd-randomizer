@@ -27,7 +27,12 @@ const SURVIVORS = [
     'zarina',
     'cheryl',
     'felix',
-    'elodie'
+    'elodie',
+    'yun',
+    'jill',
+    'leon',
+    'mikaela',
+    'jonah'    
 ]; // list of all available survivors
 
 const KILLERS = [
@@ -52,7 +57,11 @@ const KILLERS = [
     'deathslinger',
     'executioner',
     'blight',
-    'twins'
+    'twins',
+    'trickster',
+    'nemesis',
+    'cenobite',
+    'artist'
 ]; // list of all available killers
 
 const KILLER_PERKS = [
@@ -133,7 +142,19 @@ const KILLER_PERKS = [
     'hexUndying',
     'oppression',
     'hoarder',
-    'coupDeGrace'
+    'coupDeGrace',
+    'starstruck',
+    'HexCrowdControl',
+    'noWayOut',
+    'lethalPursuer',
+    'hysteria',
+    'eruption',
+    'deadlock',
+    'hexPlaything',
+    'scourgeHookGiftofPain',
+    'grimEmbrace',
+    'painResonance',
+    'hexPentimento'
 ]; // list of all killers perks
 
 const SURVIVOR_PERKS = [
@@ -222,7 +243,22 @@ const SURVIVOR_PERKS = [
     'desperateMeasures',
     'powerStruggle',
     'deception',
-    'appraisal'
+    'appraisal',
+    'smashHit',
+    'fastTrack',
+    'selfPreservation',
+    'resurgence',
+    'blastMine',
+    'counterforce',
+    'flashBang',
+    'biteTheBullet',
+    'rookieSpirit',
+    'clairvoyance',
+    'boonCircleOfHealing',
+    'boonShadowStep',
+    'overcome',
+    'correctiveAction',
+    'boonExponential'
 ]; // list of all survivor perks
 
 const RARE_PERKS = [];
@@ -774,6 +810,106 @@ const KILLER_POWERS = {
             { name: 'Drop of Perfume', image: 'dropOfPerfume', rarity: 'veryrare' },
             { name: 'Silencing Cloth', image: 'silencingCloth', rarity: 'ultra' },
             { name: 'Iridescent Pendant', image: 'iridescentPendant', rarity: 'ultra' }
+        ]
+    },
+    'trickster' : {
+        image: 'showstopper',
+        addons: [
+            { name: 'Trick Pouch', image: 'TrickPouch', rarity: 'common' },
+            { name: 'Memento Blades', image: 'MementoBlades', rarity: 'common' },
+            { name: 'Killing Part Chords', image: 'KillingPartChords', rarity: 'common' },
+            { name: 'Inferno Wires', image: 'InfernoWires', rarity: 'common' },
+            { name: 'Tequila Moonrock', image: 'TequilaMoonrock', rarity: 'uncommon' },
+            { name: 'On Target Single', image: 'OnTargetSingle', rarity: 'uncommon' },
+            { name: 'Lucky Blade', image: 'LuckyBlade', rarity: 'uncommon' },
+            { name: 'Ji-Woon\'s Autograph', image: 'JiWoonsAutograph', rarity: 'uncommon' },
+            { name: 'Caged Heart Shoes', image: 'CagedHeartShoes', rarity: 'uncommon' },
+            { name: 'Melodious Murder', image: 'YumisMurder', rarity: 'rare' },
+            { name: 'Waiting for U Watch', image: 'WaitingForYouWatch', rarity: 'rare' },
+            { name: 'Ripper Brace', image: 'RipperBrace', rarity: 'rare' },
+            { name: 'Fizz-Spin Soda', image: 'FizzSpinSoda', rarity: 'rare' },
+            { name: 'Bloody Boa', image: 'BloodyBoa', rarity: 'rare' },
+            { name: 'Trick Blades', image: 'TrickBlades', rarity: 'veryrare' },
+            { name: 'Edge of Revival Album', image: 'EdgeOfRevivalAlbum', rarity: 'veryrare' },
+            { name: 'Diamond Cufflinks', image: 'DiamondCufflinks', rarity: 'veryrare' },
+            { name: 'Cut Through U Single', image: 'CutThruUSingle', rarity: 'veryrare' },
+            { name: 'Iridescent Photocard', image: 'IridescentPhotocard', rarity: 'ultra' },
+            { name: 'Death Throes Compilation', image: 'DeathThroesCompilation', rarity: 'ultra' }
+           ]                 
+    },
+    'nemesis' : {
+        image: 'TVirus',
+        addons: [
+            { name: 'Visitor Wristband', image: 'visitorWristband', rarity: 'common' },
+            { name: 'STARS Field Combat Manual', image: 'starsFieldCombatManual', rarity: 'common' },
+            { name: 'Damaged Syringe', image: 'damagedSyringe', rarity: 'common' },
+            { name: 'Brian\'s Intestine', image: 'briansIntestines', rarity: 'common' },
+            { name: 'Zombie Heart', image: 'zombieHeart', rarity: 'uncommon' },
+            { name: 'Mikhail\'s Eye', image: 'mikhailsEye', rarity: 'uncommon' },
+            { name: 'Marvin\'s Blood', image: 'marvinsBlood', rarity: 'uncommon' },
+            { name: 'Adrenaline Injector', image: 'adrenalineInjector', rarity: 'uncommon' },
+            { name: 'Admin Wristband', image: 'adminWristband', rarity: 'uncommon' },
+            { name: 'Tyrant Gore', image: 'tyrantGore', rarity: 'rare' },
+            { name: 'T-Virus Sample', image: 'tVirusSample', rarity: 'rare' },
+            { name: 'Serotonin Injector', image: 'serotoninInjector', rarity: 'rare' },
+            { name: 'Plant 43 Vines', image: 'plant43Vines', rarity: 'rare' },
+            { name: 'Licker Tongue', image: 'lickerTongue', rarity: 'rare' },
+            { name: 'NE-a Parasite', image: 'neaParasite', rarity: 'veryrare' },
+            { name: 'Jill\'s Sandwich', image: 'jillsSandwich', rarity: 'veryrare' },
+            { name: 'Depleted Ink Ribbon', image: 'depletedInkRibbon', rarity: 'veryrare' },
+            { name: 'Broken Recovery Coin', image: 'brokenRecoveryCoin', rarity: 'veryrare' },
+            { name: 'Shattered STARS Badge', image: 'shatteredStarsBadge', rarity: 'ultra' },
+            { name: 'Iridescent Umbrella Badge', image: 'iridescentUmbrellaBadge', rarity: 'ultra' }
+        ]
+    },
+    'cenobite' : {
+        image: 'SummonsofPain',
+        addons: [
+            { name: 'Leather Strip', image: 'leatherStrip', rarity: 'common' },
+            { name: 'Liverly Crickets', image: 'livelyCrickets', rarity: 'common' },
+            { name: 'Burning Candle', image: 'burningCandle', rarity: 'common' },
+            { name: 'Bent Nail', image: 'bentNail', rarity: 'common' },
+            { name: 'Wriggling Maggots', image: 'wrigglingMaggots', rarity: 'uncommon' },
+            { name: 'Spoiled Meal', image: 'spoiledMeal', rarity: 'uncommon' },
+            { name: 'Skewered Rat', image: 'skeweredRat', rarity: 'uncommon' },
+            { name: 'Liquified Gore', image: 'liquifiedGore', rarity: 'uncommon' },
+            { name: 'Flickering Television', image: 'flickeringTelevision', rarity: 'uncommon' },
+            { name: 'Torture Pillar', image: 'torturePillar', rarity: 'rare' },
+            { name: 'Slice of Frank', image: 'sliceofFrank', rarity: 'rare' },
+            { name: 'Larry\'s Remains', image: 'larrysRemains', rarity: 'rare' },
+            { name: 'Larry\'s Blood', image: 'larrysBlood', rarity: 'rare' },
+            { name: 'Frank\'s Heart', image: 'franksHeart', rarity: 'rare' },
+            { name: 'Original Pain', image: 'originalPain', rarity: 'veryrare' },
+            { name: 'Impaling Wire', image: 'impalingWire', rarity: 'veryrare' },
+            { name: 'Greasy Black Lens', image: 'greasyBlackLens', rarity: 'veryrare' },
+            { name: 'Chatterer\'s Tooth', image: 'chatterersTooth', rarity: 'veryrare' },
+            { name: 'Iridescent Lament Configuration', image: 'iridescentLamentConfiguration', rarity: 'ultra' },
+            { name: 'Engineer\'s Fang', image: 'engineersFang', rarity: 'ultra' }
+        ]
+    },
+    'artist' : {
+        image: 'BirdsofTorment',
+        addons: [
+            { name: 'Vibrant Obituary', image: 'VibrantObituary', rarity: 'common' },
+            { name: 'Thick Tar', image: 'ThickTar', rarity: 'common' },
+            { name: 'Oil Paints', image: 'OilPaints', rarity: 'common' },
+            { name: 'Choclo Corn', image: 'ChocloCorn', rarity: 'common' },
+            { name: 'Velvet Fabric', image: 'VelvetFabric', rarity: 'uncommon' },
+            { name: 'Untitled Agony', image: 'UntitledAgony', rarity: 'uncommon' },
+            { name: 'Still Life Crow', image: 'StillLifeCrow', rarity: 'uncommon' },
+            { name: 'Festering Carrion', image: 'FesteringCarrion', rarity: 'uncommon' },
+            { name: 'Automatic Drawing', image: 'AutomaticDrawing', rarity: 'uncommon' },
+            { name: 'Thorny Nest', image: 'ThornyNest', rarity: 'rare' },
+            { name: 'Silver Bell', image: 'SilverBell', rarity: 'veryrare' },
+            { name: 'O Grief O Lover', image: 'OGriefOLover', rarity: 'rare' },
+            { name: 'Darkest Ink', image: 'DarkestInk', rarity: 'rare' },
+            { name: 'Charcoal Stick', image: 'CharcoalStick', rarity: 'rare' },
+            { name: 'Severed Tongue', image: 'SeveredTongue', rarity: 'rare' },
+            { name: 'Severed Hands', image: 'SeveredHands', rarity: 'veryrare' },
+            { name: 'Matias\' Baby Shoes', image: 'JacobsBabyShoes', rarity: 'veryrare' },
+            { name: 'Ink Egg', image: 'InkEgg', rarity: 'veryrare' },
+            { name: 'Iridescent Feather', image: 'IridescentFeather', rarity: 'ultra' },
+            { name: 'Garden of Rot', image: 'GardenOfRot', rarity: 'ultra' }
         ]
     }
 };
