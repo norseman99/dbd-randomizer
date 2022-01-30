@@ -866,7 +866,7 @@ const KILLER_POWERS = {
         image: 'summonsOfPain',
         addons: [
             { name: 'Leather Strip', image: 'leatherStrip', rarity: 'common' },
-            { name: 'Liverly Crickets', image: 'livelyCrickets', rarity: 'common' },
+            { name: 'Lively Crickets', image: 'livelyCrickets', rarity: 'common' },
             { name: 'Burning Candle', image: 'burningCandle', rarity: 'common' },
             { name: 'Bent Nail', image: 'bentNail', rarity: 'common' },
             { name: 'Wriggling Maggots', image: 'wrigglingMaggots', rarity: 'uncommon' },
