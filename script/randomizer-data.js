@@ -888,7 +888,7 @@ const KILLER_POWERS = {
         ]
     },
     'artist' : {
-        image: 'BirdsofTorment',
+        image: 'birdsOfTorment',
         addons: [
             { name: 'Vibrant Obituary', image: 'VibrantObituary', rarity: 'common' },
             { name: 'Thick Tar', image: 'ThickTar', rarity: 'common' },
