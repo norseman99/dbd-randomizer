@@ -144,7 +144,7 @@ const KILLER_PERKS = [
     'hoarder',
     'coupDeGrace',
     'starstruck',
-    'HexCrowdControl',
+    'hexCrowdControl',
     'noWayOut',
     'lethalPursuer',
     'hysteria',
