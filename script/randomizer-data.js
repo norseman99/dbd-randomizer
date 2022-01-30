@@ -863,7 +863,7 @@ const KILLER_POWERS = {
         ]
     },
     'cenobite' : {
-        image: 'SummonsofPain',
+        image: 'summonsOfPain',
         addons: [
             { name: 'Leather Strip', image: 'leatherStrip', rarity: 'common' },
             { name: 'Liverly Crickets', image: 'livelyCrickets', rarity: 'common' },
