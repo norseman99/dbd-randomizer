@@ -151,7 +151,7 @@ const KILLER_PERKS = [
     'eruption',
     'deadlock',
     'hexPlaything',
-    'scourgeHookGiftofPain',
+    'scourgeHookGiftOfPain',
     'grimEmbrace',
     'painResonance',
     'hexPentimento'
